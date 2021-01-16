@@ -18,9 +18,10 @@ Venta de hardware, software y asesoramiento a la hora de la compra y armado del 
 
 ## Referencias:
 - Elegidas por los diseños y productos que ofrecen:
-https://www.fullh4rd.com.ar/
-https://compragamer.com/
-https://axa.com.ar/webaxa/
-https://www.hardgamers.com.ar/
+-https://www.fullh4rd.com.ar/
+-https://compragamer.com/
+-https://axa.com.ar/webaxa/
+-https://www.hardgamers.com.ar/
 - Elegida por los colores y estetica de la web:
-https://www.mercadolibre.com.ar/
+-https://www.mercadolibre.com.ar/
+-https://colorhunt.co/palettes
