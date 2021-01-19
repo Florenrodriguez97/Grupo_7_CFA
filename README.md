@@ -6,7 +6,6 @@
 
 - **_Cintia Ramos_** : 31 años, de San Miguel, madre de dos hijas, pisciana y futura programadora.
 - **_Florencia Rodriguez_**: 23 años, estudiante, aspirante a programadora y amante de los gatitos.
-- **_Micaela Fernandez_**: -
 - **_Jonathan Rivarola_**: 29 años, de Lanus, estudiante y programador.
 
 
