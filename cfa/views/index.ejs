@@ -1,11 +1,121 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <main>
+    <nav class="navbar navbar-light">
+      <div class="container">
+        <div class="col-1">
+          <a class="navbar-brand" href="/">
+            <img src="/images/LogoCFA.png" alt="" width="100">
+          </a>
+        </div>
+        <div class="col-10">
+          <form action="" method="get" class="search-form">
+            <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+            <button type="submit" class="search-form_button"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+        <div class="icons-nav col-1">
+          <div class="icon-nav">
+            <a href="">
+              <i class="bi bi-person-circle"></i>
+            </a>
+          </div>
+          <div class="icon-nav">
+            <a href="">
+              <i class="bi bi-cart2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="botonera">
+      <div class="container">
+        <div class="row">
+          <div class="col-1 "></div>
+          <div class="col-2 d-flex justify-content-center"><a href="">Inicio</a></div>
+          <div class="col-2 d-flex justify-content-center"><a href="">Productos</a></div>
+          <div class="col-2 d-flex justify-content-center"><a href="">PC Armadas</a></div>
+          <div class="col-2 d-flex justify-content-center"><a href="">FAQ</a></div>
+          <div class="col-2 d-flex justify-content-center"><a href="">Contacto</a></div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer>
+    
+      <div class="col-3">
+      <h4>Nosotros</h4>
+      <img src="/images/LogoCFA.png" alt="logo">
+      <p class="logo">Somos un grupo de amigos que se dedican a la venta de hardware, software y asesoramiento a la hora de la compra y armado del PC.</p>
+      </div>
+      <div class="col-3">
+        <h4>Sucursales</h4>
+        <div class="foot-sucursales">
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Hipolito Yrigoyen 4552, Lanus, Provincia de Buenos Aires</p>
+          <br>
+        </div>
+        <div class="foot-sucursales">
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Gaona 4041, Ciudadela, Provincia de Buenos Aires</p>
+          <br>
+        </div>
+        <div class="foot-sucursales">  
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Pres. Juan Domingo Perón 1616, San Miguel, Provincia de Buenos Aires</p>
+        </div>
+      </div>
+      
+      <div class="col-3">
+        <h4>Redes Sociales</h4>
+        <div class="sociales">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+      </div>
+      <div class="col-3">
+        <h4>Métodos de Pago</h4>
+        <div class="pagos">
+          <img src="/images/visa.png" alt="">
+          <img src="/images/mastercard.png" alt="">
+          <img src="/images/mercadopago.png" alt="">
+          <img src="/images/paypal.png" alt="">
+        </div>
+      </div>
+   
+  </footer>
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
