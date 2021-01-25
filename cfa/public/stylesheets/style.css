@@ -137,3 +137,26 @@ footer div.foot-sucursales{
 footer div.foot-sucursales i{
   margin: 0; 
 }
+
+.container {
+  display: flex;
+}
+
+.row {  
+  width: 15%;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 10px;
+}
+
+
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: .4rem 0;
+}
