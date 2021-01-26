@@ -241,3 +241,15 @@ div.form div.terminos {
   font-family: Raleway;
   font-size:15px;
 }
+
+/* Detalle de producto */
+
+div.productos{
+  background-color: white;
+  margin-left: 5px;
+
+}
+div.productos.img{
+  width: 50%;
+  height:auto;
+}
