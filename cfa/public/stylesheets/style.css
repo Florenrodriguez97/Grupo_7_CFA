@@ -193,7 +193,11 @@ footer div.foot-sucursales i{
 
 #categories .cats .column a .svg-icon {
 	margin: 60px 0 15px;
-	min-height: 48px
+  min-height: 48px;
+  
+}
+#categories .cats .column a img {
+  width:50px;
 }
 
 #categories .cats .column a .svg-icon .arma-item-fill {
