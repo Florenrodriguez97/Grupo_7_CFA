@@ -215,9 +215,7 @@ footer div.foot-sucursales i{
 /* Final home */
 
 /* Registro */
-body.someclass{
-  background-color: #e8e8e8;
-}
+
 .media {
   display: flex;
   align-items: flex-start;
@@ -234,9 +232,8 @@ div.h1{
   text-align: justify;
 }
 
-div.form{
-  width: 500px;    
-  margin:30px 0px 20px 300px;
+div.form{ 
+  margin:30px 0px 20px 0px;
   border-radius: 10px;
   border: none;
   background-color:white;
@@ -273,15 +270,17 @@ div.form div.Entradas input{
 
 
 div.form .guardar{
+  position: relative;
   border-radius: 10px;
   width: 20%;
- top:20px;
+  top:-30px;
   
  
 }
 div.form button{
   width:100%;
-  
+  position: relative;
+  bottom: 30px;
 }
 div.form p{
   color: red;
@@ -314,6 +313,7 @@ div.form div.terminos {
 
 }
 /* Final del Carrito */
+
 /* Detalle de producto */
 
 div.productos{
