@@ -215,6 +215,9 @@ footer div.foot-sucursales i{
 /* Final home */
 
 /* Registro */
+body.someclass{
+  background-color: #e8e8e8;
+}
 .media {
   display: flex;
   align-items: flex-start;
@@ -230,20 +233,17 @@ footer div.foot-sucursales i{
 div.h1{
   text-align: justify;
 }
-input:focus {
-  border: 2px solid #000;
-  background: #F3F3F3;
-}
+
 div.form{
   width: 500px;    
-  margin: 0 auto;
-  align-content: center;
+  margin:30px 0px 20px 300px;
   border-radius: 10px;
   border: none;
-  background-color:#E6EBF2;
+  background-color:white;
   position: relative;
-  top: 50px;
-    
+  overflow: hidden;
+  
+   
 }
 div.form h1{
   text-transform: uppercase;
@@ -275,8 +275,7 @@ div.form div.Entradas input{
 div.form .guardar{
   border-radius: 10px;
   width: 20%;
-  top:20px;
-  
+ top:20px;
   
  
 }
@@ -287,6 +286,9 @@ div.form button{
 div.form p{
   color: red;
   font-family: Raleway;
+  font-size:12px;
+  margin-left:10px;
+ 
 }
 
 div.form div.terminos {
@@ -295,7 +297,23 @@ div.form div.terminos {
   font-family: Raleway;
   font-size:15px;
 }
+/* Final Registro */
 
+/* Carrito */
+.texto{
+  margin-left: 20px;
+  margin-top: 20px;
+  }
+
+.container table{
+ background-color: white;
+}
+
+.content.total{
+  text-align:right;
+
+}
+/* Final del Carrito */
 /* Detalle de producto */
 
 div.productos{

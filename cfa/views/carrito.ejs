@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+    <%- include('partials/head.ejs') %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,100 +10,109 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+    <%- include('partials/header.ejs') %>
 <main>
        <div class="texto">
         <h1>Mi carrito</h1>
         </div>
-<div class="container">
-	<div class="row">
-	<div class="col">
-	<table class="table table-striped table-bordered table-hover">
+<div class="container table">
+    <div class="row">
+    <div class="col-lg-3"> </div></div>
+	<table class="table table-hover">
 	<thead>
 	<tr>
 	<th><div class="image"><img src="/images/computadora1.png" alt="placeholder"></div>
         </th>
 	<th><div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div></th>
-        <th>$30000</th>
-        <th><label for="tentacles">Cantidad:</label>
-            <input type="number" id="tentacles" name="tentacles"
-                   min="1" max="100"></th>
-        <th> <button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button></th>
+      <th>$30000</th>
+      <th><label for="tentacles">Cantidad:</label>
+      <input type="number" id="tentacles" name="tentacles"
+      min="1" max="100"></th>
+      <th> <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button></th>
 	</tr>
         </thead>
+
         <thead>
-            <tr>
-            <th><div class="image"><img src="/images/auriculares.png" alt="placeholder"></div>
-                </th>
-            <th><div class="content">Auriculares Sennheiser PNG transparente</div></th>
-                <th>$5000</th>
-                <th><label for="tentacles">Cantidad:</label>
-                    <input type="number" id="tentacles" name="tentacles"
-                           min="1" max="100"></th>
-                <th> <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button></th>
+        <tr>
+        <th><div class="image"><img src="/images/auriculares.png" alt="placeholder"></div>
+        </th>
+         <th><div class="content">Auriculares Sennheiser PNG transparente</div></th>
+          <th>$5000</th>
+          <th><label for="tentacles">Cantidad:</label>
+         <input type="number" id="tentacles" name="tentacles"
+           min="1" max="100"></th>
+           <th> <button type="button" class="close" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button></th>
             </tr>
-                </thead>
+             </thead>
 
-                <thead>
+             <thead>
+             <tr>
+             <th><div class="image"><img src="/images/computadora1.png" alt="placeholder"></div>
+             </th>
+             <th><div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div></th>
+             <th>$30000</th>
+             <th><label for="tentacles">Cantidad:</label>
+             <input type="number" id="tentacles" name="tentacles"
+              min="1" max="100"></th>
+             <th> <button type="button" class="close" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+               </button></th>
+              <tr>
+              </thead>
+              <thead>
+              <tr>
+               <th><div class="image"><img src="/images/auriculares.png" alt="placeholder"></div>
+               </th>
+               <th><div class="content">Auriculares Sennheiser PNG transparente</div></th>
+               <th>$5000</th>
+               <th><label for="tentacles">Cantidad:</label>
+                <input type="number" id="tentacles" name="tentacles"
+                min="1" max="100"></th>
+                <th> <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                 </button></th>
+                </tr>
+            </thead>
+
+               <thead>
+               <tr>
+               <th><div class="image"><img src="/images/computadora1.png" alt="placeholder"></div>
+                      </th>
+               <th><div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div></th>
+                <th>$30000</th>
+                 <th><label for="tentacles">Cantidad:</label>
+                <input type="number" id="tentacles" name="tentacles"
+                min="1" max="100"></th>
+                <th> <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button></th>
+                 </tr>
+                 </thead>
+
+                 <thead>
                     <tr>
-                    <th><div class="image"><img src="/images/computadora1.png" alt="placeholder"></div>
-                        </th>
-                    <th><div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div></th>
-                        <th>$30000</th>
-                        <th><label for="tentacles">Cantidad:</label>
-                            <input type="number" id="tentacles" name="tentacles"
-                                   min="1" max="100"></th>
-                        <th> <button type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button></th>
-                    </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                            <th><div class="image"><img src="/images/auriculares.png" alt="placeholder"></div>
-                                </th>
-                            <th><div class="content">Auriculares Sennheiser PNG transparente</div></th>
-                                <th>$5000</th>
-                                <th><label for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles"
-                                           min="1" max="100"></th>
-                                <th> <button type="button" class="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button></th>
-                            </tr>
-                                </thead>
-
-                                <thead>
-                                    <tr>
-                                    <th><div class="image"><img src="/images/computadora1.png" alt="placeholder"></div>
-                                        </th>
-                                    <th><div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div></th>
-                                        <th>$30000</th>
-                                        <th><label for="tentacles">Cantidad:</label>
-                                            <input type="number" id="tentacles" name="tentacles"
-                                                   min="1" max="100"></th>
-                                        <th> <button type="button" class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button></th>
-                                    </tr>
-                                        </thead>
-                                       
-                                                                            
-				</table>
-			</div>
-		</div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
-  
-  
-  
+                    <th><button type="button" class="btn btn-outline-primary">Seguir comprando</button>
+                           </th>
+                    <th><div class="content total">Total:</div></th>
+                     <th>$500000</th>
+                      <th><label for="tentacles"></label>
+                     </th>
+                     <th> <button type="button" class="btn btn-outline-secondary">Comprar</button></th>
+                      </tr>
+                      </thead>           
+                                                       			
+			
+		</table>
+        </div> 
+    </div>
+ 
+ 
   </main>
-  
-
+    
+  <%- include('partials/footer.ejs') %>
 </body>
 </html>
