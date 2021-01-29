@@ -316,12 +316,71 @@ div.form div.terminos {
 
 /* Detalle de producto */
 
-div.productos{
-  background-color: white;
-  margin-left: 5px;
-
+.container .product-title-1{
+  font-size: 20px;
+  color:#252525;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
-div.productos.img{
+
+.product-box_image{
+  background-color:white;
   width: 50%;
   height:auto;
 }
+.product-box{
+  background-color: white;
+}
+.description{
+  font-size: 15px;
+  color:#252525;
+  margin-top:10px;
+}
+.article-col-4{
+  background-color: white;
+}
+
+.title-2{
+  font-size: 20px;
+  color: #252525;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+.precio-tachado {
+  margin-top: 10px;
+  margin-right: 10px;
+  color: green;
+  text-align: start;
+}
+.precio-nuevo{
+  color: #252525;
+  font-size: 40px;
+
+  
+}
+.forma-pago{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ .product-sim_box{
+  background-color:white ;
+  margin-top: 30px;
+  margin-bottom: 50px;
+ 
+  
+}
+
+.product-title_sim{
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.product-simi-1-col-8{
+  float: right;
+}
+
