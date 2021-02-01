@@ -25,3 +25,6 @@ Venta de hardware, software y asesoramiento a la hora de la compra y armado del 
 ### Elegida por los colores y estetica de la web:
 - https://www.mercadolibre.com.ar
 - https://colorhunt.co/palettes
+
+## Link Trello:
+- https://trello.com/b/BmtOpRsF/grupo7cfa
