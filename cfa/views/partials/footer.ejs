@@ -1,44 +1,46 @@
-<footer>
-    <div class="col-3">
-    <h4>Nosotros</h4>
-    <img src="/images/LogoCFA.png" alt="logo">
-    <p class="logo">Somos un grupo de amigos que se dedican a la venta de hardware, software y asesoramiento a la hora de la compra y armado del PC.</p>
-    </div>
-    <div class="col-3">
-      <h4>Sucursales</h4>
-      <div class="foot-sucursales">
-        <i class="bi bi-geo-alt"></i>
-        <p>Av. Hipolito Yrigoyen 4552, Lanus, Provincia de Buenos Aires</p>
-        <br>
-      </div>
-      <div class="foot-sucursales">
-        <i class="bi bi-geo-alt"></i>
-        <p>Av. Gaona 4041, Ciudadela, Provincia de Buenos Aires</p>
-        <br>
-      </div>
-      <div class="foot-sucursales">  
-        <i class="bi bi-geo-alt"></i>
-        <p>Av. Pres. Juan Domingo Perón 1616, San Miguel, Provincia de Buenos Aires</p>
-      </div>
-    </div>
+<footer class="d-flex flex-wrap">
     
-    <div class="col-3">
-      <h4>Redes Sociales</h4>
-      <div class="sociales">
-        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></i></a>
-        <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+      <div class="col-12 col-md-6 col-lg-3 ">
+      <h4>Nosotros</h4>
+      <img src="/images/LogoCFA.png" alt="logo">
+      <p class="logo">Somos un grupo de amigos que se dedican a la venta de hardware, software y asesoramiento a la hora de la compra y armado del PC.</p>
       </div>
-    </div>
-    <div class="col-3">
-      <h4>Métodos de Pago</h4>
-      <div class="pagos">
-        <img src="/images/visa.png" alt="">
-        <img src="/images/mastercard.png" alt="">
-        <img src="/images/mercadopago.png" alt="">
-        <img src="/images/paypal.png" alt="">
+      <div class="col-12 col-md-6 col-lg-3 ">
+        <h4>Sucursales</h4>
+        <div class="foot-sucursales">
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Hipolito Yrigoyen 4552, Lanus, Provincia de Buenos Aires</p>
+          <br>
+        </div>
+        <div class="foot-sucursales">
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Gaona 4041, Ciudadela, Provincia de Buenos Aires</p>
+          <br>
+        </div>
+        <div class="foot-sucursales">  
+          <i class="bi bi-geo-alt"></i>
+          <p>Av. Pres. Juan Domingo Perón 1616, San Miguel, Provincia de Buenos Aires</p>
+        </div>
       </div>
+      
+      <div class="col-12 col-md-6 col-lg-3 ">
+        <h4>Redes Sociales</h4>
+        <div class="sociales">
+          <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></i></a>
+          <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 ">
+        <h4>Métodos de Pago</h4>
+        <div class="pagos">
+          <img src="/images/visa.png" alt="">
+          <img src="/images/mastercard.png" alt="">
+          <img src="/images/mercadopago.png" alt="">
+          <img src="/images/paypal.png" alt="">
+        </div>
+      
     </div>
  
 </footer>
@@ -51,8 +53,8 @@
     $(document).ready(function(){
       $('.center').slick({
   centerMode: true,
-  centerPadding: '10%',
-  slidesToShow: 3,
+  centerPadding: '9%',
+  slidesToShow: 2,
   responsive: [
     {
       breakpoint: 768,
@@ -64,12 +66,12 @@
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 450,
       settings: {
         arrows: true,
         centerMode: true,
         centerPadding: '40px',
-        slidesToShow: 1
+        slidesToShow: 1,
       }
     }
   ]

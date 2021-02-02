@@ -1,19 +1,19 @@
 <main>
-    <nav class="navbar navbar-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-1 col-lg-1">
+    <nav class="navbar navbar-main ">
+      <div class="container header-cont">
+        <div class="row" style="width: 100%;">
+          <div class="col-6 col-md-1 col-lg-1 header-img">
             <a class="navbar-brand" href="/">
               <img src="/images/LogoCFA.png" alt="">
             </a>
           </div>
-          <div class="col-sm-12 col-md-10 col-lg-10">
+          <div class="col-12 col-md-10 col-lg-10">
             <form action="" method="get" class="search-form">
               <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
               <button type="submit" class="search-form_button"><i class="bi bi-search"></i></button>
             </form>
           </div>
-          <div class="icons-nav col-sm-12 col-md-1 col-lg-1">
+          <div class="icons-nav col-6 col-md-1 col-lg-1 d-flex justify-content-end align-items-center">
             <div class="icon-nav">
               <a href="">
                 <i class="bi bi-person-circle"></i>
@@ -28,18 +28,32 @@
         </div>
       </div>
     </nav>
+  
+  </main>
 
-    <div class="botonera">
-      <div class="container">
-        <div class="row">
-          <div class="col-1 "></div>
-          <div class="col-2 d-flex justify-content-center"><a href="/">Inicio</a></div>
-          <div class="col-2 d-flex justify-content-center"><a href="">Productos</a></div>
-          <div class="col-2 d-flex justify-content-center"><a href="">PC Armadas</a></div>
-          <div class="col-2 d-flex justify-content-center"><a href="">FAQ</a></div>
-          <div class="col-2 d-flex justify-content-center"><a href="">Contacto</a></div>
-          <div class="col-1"></div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PC Armadas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </main>
+  </nav>
