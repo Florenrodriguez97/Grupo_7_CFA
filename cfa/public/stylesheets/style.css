@@ -79,6 +79,10 @@ body{
   margin-left: 20px;
 }
 
+li .nav-item a{
+  font-weight: bold;
+}
+
 /* Final Header */
 
 /* FOOTER */
@@ -219,12 +223,7 @@ footer div.foot-sucursales i{
 #categories .cats .column a .svg-icon .arma-item-fill {
 	fill:  #00587a;
 }
-/* #categories .cats .column {    -------------MOBILE--------------
-  width: 25%
-} 
-#categories .cats .column:last-child {
-  display: none
-}*/
+
 .air {
   padding: 10px
 }
@@ -637,7 +636,7 @@ float: right;
 
 @media (min-width: 1024px) { /* Escritorio */
   footer div.sociales a i{
-    margin: 40px;
+    margin: 23px;
   }
   .carousel{
     display: block;
@@ -646,6 +645,9 @@ float: right;
     width: 99%;
     margin: 30px 0px 30px 5px;
   }
+  .slick-slide{
+    width: 290px !important;
+  }
   #categories .cats .column {
     text-align: center;
     width: 20%
@@ -653,5 +655,11 @@ float: right;
   #categories .cats .column:last-child{
     display: block;
   }
-  
+  .navbar-nav{
+    justify-content: space-around;
+  }
+  .nav-link{
+    font-size: 20px;
+  }
+
 }
