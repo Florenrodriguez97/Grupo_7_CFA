@@ -402,13 +402,47 @@ div.form div.terminos {
 /* Final Registro */
 
 /* Carrito */
-.texto{
-  margin-left: 20px;
-  margin-top: 20px;
-  }
 
-.container table{
- background-color: white;
+  .container table{
+    width:100%;
+    max-width: 1000px;
+    background-color:white;
+    overflow: auto;
+    margin:0 auto;
+    border-radius: 10px;
+  }
+div.content{
+  color:rgb(82, 77, 77);
+}
+button.close{
+  border-radius: 2px;
+  background-color:#3759a3;
+  width:20px;
+  height:20px;
+ 
+}
+span{
+  width:60px;
+  top:30px;
+}
+label{
+  color:rgb(82, 77, 77);
+}
+
+  
+ 
+.div image{
+  width:800px;
+}
+@media screen and (max-width:320px){
+  .container table{
+    width:100%;
+      }
+
+   .table .table-hover{
+      width:100%;
+      }
+
 }
 
 .content.total{
