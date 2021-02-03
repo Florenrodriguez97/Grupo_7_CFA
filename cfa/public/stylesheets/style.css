@@ -316,6 +316,7 @@ footer div.foot-sucursales i{
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-radius: 25px;
 }
 /* Final Carga Prooducto */
 
@@ -677,6 +678,9 @@ float: right;
   label.cant{
     font-size:15px;
   }
+  .carga-content{
+    align-items: center;
+  }
 }
 
 @media (min-width: 1024px) { /* Escritorio */
@@ -706,10 +710,12 @@ float: right;
   .nav-link{
     font-size: 20px;
   }
-
+  .carga-content{
+    align-items: center;
+  }
 }
 @media (min-width: 425px) {
  .article-col-8 h3{
    float:inline-start;
-
  }
+}
