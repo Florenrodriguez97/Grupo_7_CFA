@@ -408,12 +408,14 @@ div.form div.terminos {
 /* Carrito */
 
   .container table{
-    width:100%;
-    max-width: 1000px;
+    width:100%;    
     background-color:white;
     overflow: auto;
     margin:0 auto;
     border-radius: 10px;
+  margin-bottom: 15px;
+  
+    
   }
 div.content{
   color:rgb(82, 77, 77);
@@ -442,7 +444,6 @@ label{
   color:rgb(82, 77, 77);
 }
 
-  
  
 .div image{
   width:800px;
@@ -453,27 +454,49 @@ label.cant{
 }
 
 button.btn.btn-outline-primary{
-  width:90px;
+  width:100%;
   height: 35px;
-  font-size:9px;
+  font-size:10px;
 }
 div.content.total{
   text-align:right;
+  font-size:15px;
 }
 button.btn.btn-outline-secondary{
-  width:90px;
+  width:100%;
   height: 35px;
-  font-size:9px; 
-  margin:left;
+  font-size:15px; 
+   
+   position:relative;
+   left:14px;
+   
+  
+   
+  
 }
- 
+ input#tentacles{
+   width:20%;
+   height: 20%;
 
-
+ }
+ h1.carrito{
+   margin-top: 20px;
+ }
 
 
  
 /* Final del Carrito */
+/*registro*/
+button.btn.btn-outline-primary.reg{
+  position: relative;
+  top: -25px;
+  left:17px;
+  font-size:13px;
+  
+  width:100%;
+}
 
+/*final de registro*/
 /* Detalle de producto */
 
 .container .product-title-1{
@@ -650,7 +673,12 @@ float: right;
      width: 99%;
      margin: 30px 0px 30px 15px;
    }
-  
+  div.content{
+    font-size:15px;
+  }
+  label.cant{
+    font-size:15px;
+  }
 }
 
 @media (min-width: 1024px) { /* Escritorio */
