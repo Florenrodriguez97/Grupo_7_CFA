@@ -523,7 +523,7 @@ button.btn.btn-outline-primary.reg{
   width: 100%;
 }
 .precios-detalle{
-  margin-top: 150px;
+  margin-top: 10px;
   
 }
 
@@ -601,7 +601,9 @@ button.btn.btn-outline-primary.reg{
 }
 .product-simi-1 h3{
   bottom: 5px;
-  text-align: center;
+  text-align: left;
+  
+ 
 }
 .product-title_sim-2 {
   text-align: center;
@@ -621,12 +623,9 @@ button.btn.btn-outline-primary.reg{
 }
 
 .product-simi-2 h3{
-  text-align: center;
+  text-align: left;
 }
-.product-simi-3 img{
-  text-align: center;
-  margin-left: 30px;
-}
+
 .product-simi-3 p{
  float: right;
  margin-top:  5px;
@@ -640,9 +639,8 @@ float: right;
  text-align: center;
 }
 .product-simi-4 img{
-  margin-top: 1px;
+ float: left;
 
-  text-align: center;
   
 }
 .product-simi-4 p{
@@ -710,3 +708,8 @@ float: right;
   }
 
 }
+@media (min-width: 425px) {
+ .article-col-8 h3{
+   float:inline-start;
+
+ }
