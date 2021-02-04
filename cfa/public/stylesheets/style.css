@@ -406,7 +406,9 @@ div.form div.terminos {
 /* Final Registro */
 
 /* Carrito */
-
+.btn-sm{
+  font-size:.600rem
+}
   .container table{
     width:100%;    
     background-color:white;
@@ -712,4 +714,4 @@ float: right;
  .article-col-8 h3{
    float:inline-start;
 
- }
+ }}
