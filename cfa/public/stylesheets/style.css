@@ -142,6 +142,7 @@ footer div.pagos img{
   border: none;
   justify-content: space-around;
   margin: 10px 10px;
+  max-width: 120px;
 }
 
 footer div.foot-sucursales{
@@ -696,9 +697,12 @@ float: right;
     width: 99%;
     margin: 30px 0px 30px 5px;
   }
-  .slick-slide{
+   .slick-slide{
     width: 290px !important;
   }
+  /* .slick-track{
+    width: 4350px !important;
+  }  */
   #categories .cats .column {
     text-align: center;
     width: 20%
