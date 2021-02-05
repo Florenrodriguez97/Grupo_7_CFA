@@ -325,6 +325,10 @@ footer div.foot-sucursales i{
 
 /* Registro */
 
+div.container.form{
+  max-width: 400px;
+  margin:30px auto 30px auto;
+}
 .media {
   display: flex;
   align-items: flex-start;
@@ -405,7 +409,28 @@ div.form div.terminos {
   font-family: Raleway;
   font-size:15px;
 }
+
+button.btn.btn-outline-primary.reg{
+  position: relative;
+  top: -25px;
+  left:17px;
+  font-size:13px;
+  
+  width:100%;
+}
 /* Final Registro */
+
+/*Login*/
+form.container.login{
+  max-width: 400px;
+  margin:30px auto 30px auto;
+  
+}
+
+button.btn.btn-primary{
+  width:200px;
+ 
+}
 
 /* Carrito */
 .btn-sm{
@@ -490,17 +515,9 @@ button.btn.btn-outline-secondary{
 
  
 /* Final del Carrito */
-/*registro*/
-button.btn.btn-outline-primary.reg{
-  position: relative;
-  top: -25px;
-  left:17px;
-  font-size:13px;
-  
-  width:100%;
-}
 
-/*final de registro*/
+
+
 /* Detalle de producto */
 
 .container .product-title-1{
