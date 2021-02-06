@@ -318,6 +318,10 @@ footer div.foot-sucursales i{
   display: flex;
   flex-direction: column;
   border-radius: 25px;
+  margin: 20px 0;
+}
+.carga-content h2{
+  margin: 30px 0;
 }
 /* Final Carga Prooducto */
 
@@ -326,9 +330,18 @@ footer div.foot-sucursales i{
 /* Registro */
 
 div.container.form{
-  max-width: 400px;
+  max-width: 800px;
   margin:30px auto 30px auto;
 }
+div.container.form h1{
+  padding-bottom: 20px;
+}
+div.container.form input{
+  width: 80%;
+  outline: none;
+  padding: 3px;
+}
+
 .media {
   display: flex;
   align-items: flex-start;
@@ -368,11 +381,7 @@ div.form h2{
   font-size: 25px;
   font-family: Raleway;
 }
-div.form div.Entradas{
-  margin-top: 5px;
-  padding-top: 5px;
-  
-}
+
 div.form div.Entradas input{
   width: 100%;
   margin: 10px 0px;
@@ -408,6 +417,10 @@ div.form div.terminos {
   font-weight: 300;
   font-family: Raleway;
   font-size:15px;
+  
+}
+div.form div.terminos input{
+  width: 10%;
 }
 
 button.btn.btn-outline-primary.reg{
@@ -676,6 +689,9 @@ float: right;
  text-align: center;
  margin-top: 20px;
 }
+.btn-login{
+  margin-top: 40px;
+}
 
 @media (min-width: 768px) { /* Tablet */
   .icons-nav{
@@ -700,6 +716,17 @@ float: right;
   }
   .carga-content{
     align-items: center;
+    margin: 20px 0px;
+  }
+  div.form div.Entradas input{
+    width: 70%;
+    margin-left: 15%;
+  }
+  div.form div.Entradas p{
+    margin-left: 15%;
+  }
+  .media {
+    margin-left: 5%;
   }
 }
 
@@ -736,9 +763,13 @@ float: right;
   .carga-content{
     align-items: center;
   }
+  .media {
+    margin-left: 5%;
+  }
 }
 @media (min-width: 425px) {
  .article-col-8 h3{
    float:inline-start;
+ }
 
- }}
+}
