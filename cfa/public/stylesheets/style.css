@@ -56,7 +56,7 @@ body{
   height: 60%;
   background-color: #ffffff;
   border: none;
-  color: var(--gray);
+  color: #6d6d6d;
   cursor: pointer;
   padding: 0px 10px;
 }
@@ -245,6 +245,14 @@ footer div.foot-sucursales i{
   margin-top: 15px;
 }
 
+.product-box-categ {
+  background-color: #ffffff;
+  border-radius: 5px; 
+  transition: 300ms;
+  margin: 20px 0;
+  padding: 5px 20px;
+  overflow: hidden;
+}
 .product-box-home {
   background-color: #ffffff;
   border-radius: 5px; 
@@ -285,6 +293,29 @@ footer div.foot-sucursales i{
 .tachado-home{
   text-decoration: line-through;
 }
+.product-box_data-prod{
+  color: #6d6d6d;
+}
+.categMnu li{
+  width: 400px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 5px 0;
+}
+.categMnu li:last-child{
+  border-bottom: none;
+}
+.dropdown-toggle{
+  color: #6d6d6d;
+  font-size: 20px;
+}
+.dropdown-toggle:hover{
+  color: #6d6d6d;
+}
+.dropdown-item{
+  color: #6d6d6d;
+}
 
 .product-box_data-home p {
   font-size: 1.5em;
@@ -294,6 +325,14 @@ footer div.foot-sucursales i{
   height: 0;
   transition: 300ms;
   overflow: hidden;
+}
+
+.product-box-categ:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.product-box-categ:hover a{
+  text-decoration: none;
+  color: #6d6d6d;
 }
 
 .product-box-home:hover {
@@ -566,6 +605,12 @@ button.btn.btn-outline-secondary{
   
 }
 
+.product-box-categ a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .product-box a {
   display: block;
   text-decoration: none;
@@ -576,7 +621,6 @@ button.btn.btn-outline-secondary{
 }
 .precios-detalle{
   margin-top: 10px;
-  
 }
 
 .description{

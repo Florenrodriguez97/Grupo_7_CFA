@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+  <body>
+
+    <%- include('partials/header.ejs') %>
+
+      <div class="container">
+
+        <section>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                    </a>
+                    
+                        <ul class="dropdown-menu categMnu" aria-labelledby="navbarDropdown">
+                            <% categoriasList.forEach(categoria => { %>
+                            <li><a class="dropdown-item" href="/productos/categoria/<%- categoria %>"><%- categoria %></a></li>
+                            <% }) %>
+                        </ul>
+                    
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="row">
+                
+                <% productos.forEach(producto => { %>
+                    <div class="productDiv col-12 col-sm-6 col-lg-3">
+                        <section class="product-box-categ">
+                            <a href="/productos/detalle/<%- producto.id %>">
+                                <figure class="product-box_image">
+                                    <img src="/<%= producto.imagen %> " alt="imagen de producto">
+                                </figure>
+                                <article class="product-box_data-prod">
+                                    <h2><%= producto.precio %> </h2>
+                                    
+                                    <p><%= producto.name %> </p>
+                                    
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                <% }) %>
+                
+            </div>
+        </section>
+      </div>
+    <%- include('partials/footer.ejs') %>
+
+  </body>
+
+</html>
