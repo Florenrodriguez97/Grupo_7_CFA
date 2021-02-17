@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+
+            <div class="container mt-1 mb-1">
+                <form action="/admin/productos/actualizar/<%= producto.id %>?_method=PUT " method="POST" enctype="multipart/form-data">
+                    <div class="carga-content">
+                        <div class="titulo-carga col-12">
+                            <h2 class="products-title-home">Editar Producto</h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="form-floating mb-3">
+                                <div class="">
+                                    <input class="form-control form-control-lg" type="file" id="formFile" name="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre">
+                                <label for="modelo">Nombre del Producto</label>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle"
+                                    style="height: 150px;">
+                                <label for="modelo">Detalle del Producto</label>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="precio" placeholder="precio" name="precio">
+                                <label for="modelo">Precio del Producto</label>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="oferta" placeholder="oferta" name="oferta">
+                                <label for="modelo">Oferta del Producto</label>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="oferta" placeholder="oferta" name="oferta">
+                                <label for="modelo">Categoría</label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 col-md-10 col-lg-8">
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <%- include('partials/footer.ejs') %>
+    </body>
+
+</html>

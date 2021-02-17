@@ -17,7 +17,7 @@
                     
                         <ul class="dropdown-menu categMnu" aria-labelledby="navbarDropdown">
                             <% categoriasList.forEach(categoria => { %>
-                            <li><a class="dropdown-item" href="/productos/categoria/<%- categoria %>"><%- categoria %></a></li>
+                            <li><a class="dropdown-item" href="/admin/productos/categoria/<%- categoria %>"><%- categoria %></a></li>
                             <% }) %>
                         </ul>
                     
@@ -41,6 +41,15 @@
                                     
                                 </article>
                             </a>
+                            <div class="m-2 d-flex justify-content-around">
+                                <form action="/admin/autos/edit/<%= producto.id %>">
+                                    <button class="btn btn-m btn-success" type="submit">Editar</a></button>
+                                </form>
+                                <form action="/admin/autos/delete/<%= producto.id %>?_method=DELETE"
+                                    method="POST">
+                                    <button class="btn btn-m btn-danger" type="submit">Eliminar</a></button>
+                                </form>
+                            </div>
                         </section>
                     </div>
                 <% }) %>
