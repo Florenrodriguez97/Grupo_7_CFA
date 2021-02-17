@@ -50,6 +50,29 @@ const productosController = {
             categoriasList,
             productosCateg
         })
+    },
+    editar: (req,res)=>{
+        res.render('editar')
+    },
+    buscar: (req,res)=>{
+        const buscar = req.query.buscar;
+        
+        let categorias = [] 
+        
+        productos.forEach(producto => {
+            categorias.push(producto.categoria)
+        });
+
+        const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
+        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
+
+        const resultado = productos.filter(producto=>{
+            return producto.name.toLowerCase().includes(buscar)
+        })
+        res.render('productos',{
+            categoriasList,
+            productos : resultado
+        })
     }
 }
 

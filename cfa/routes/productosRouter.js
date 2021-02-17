@@ -1,11 +1,16 @@
 var express = require('express');
 var router = express.Router();
-const productosController =require('../controllers/productosController')
+
+const {carga,carrito,categoria,detalle,editar,productos, buscar} = require('../controllers/productosController');
 
 /* GET home page. */
-router.get('/', productosController.productos);
-router.get('/carga', productosController.carga);
-router.get('/carrito', productosController.carrito);
-router.get('/detalle', productosController.detalle);
-router.get('/categoria/:categ', productosController.categoria);
+router.get('/', productos);
+router.get('/carga', carga);
+router.get('/carrito', carrito);
+router.get('/detalle', detalle);
+router.get('/categoria/:categ', categoria);
+router.get('/editar/:id', editar);
+router.get('/buscar', buscar);
+
+
 module.exports = router;
