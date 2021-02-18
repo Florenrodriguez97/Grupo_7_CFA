@@ -7,7 +7,7 @@ const {carga,carrito,categoria,detalle,editar,productos, buscar} = require('../c
 router.get('/', productos);
 router.get('/carga', carga);
 router.get('/carrito', carrito);
-router.get('/detalle', detalle);
+router.get('/detalle/:id', detalle);
 router.get('/categoria/:categ', categoria);
 router.get('/editar/:id', editar);
 router.get('/buscar', buscar);

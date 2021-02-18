@@ -22,9 +22,19 @@ const productosController = {
     carrito: (req,res) =>{
         res.render('carrito')
     },
+    
     detalle: (req,res) =>{
-        res.render('detalle')
+        const id = req.params.id;
+        console.log(typeof id)
+        const product = productos.find (product => {
+            return product.id === +id
+        });
+        res.render('detalle', {
+            product,
+        });
     },
+
+    
     categoria: (req,res) =>{
         let categ = req.params.categ;
         let productosCateg = [];
