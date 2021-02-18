@@ -32,12 +32,12 @@
                         <section class="product-box-categ">
                             <a href="/productos/detalle/<%- producto.id %>">
                                 <figure class="product-box_image">
-                                    <img src="/<%= producto.imagen %> " alt="imagen de producto">
+                                    <img src="/<%= producto.img %> " alt="imagen de producto">
                                 </figure>
                                 <article class="product-box_data-prod">
                                     <h2><%= producto.precio %> </h2>
                                     
-                                    <p><%= producto.name %> </p>
+                                    <p><%= producto.nombre %> </p>
                                     
                                 </article>
                             </a>
@@ -45,7 +45,7 @@
                                 <form action="/admin/autos/edit/<%= producto.id %>">
                                     <button class="btn btn-m btn-success" type="submit">Editar</a></button>
                                 </form>
-                                <form action="/admin/autos/delete/<%= producto.id %>?_method=DELETE"
+                                <form action="/productos/borrar/<%= producto.id %>?_method=DELETE"
                                     method="POST">
                                     <button class="btn btn-m btn-danger" type="submit">Eliminar</a></button>
                                 </form>

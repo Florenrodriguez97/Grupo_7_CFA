@@ -34,7 +34,7 @@
                                 <section class="product-box-categ">
                                     <a href="/admin/productos/detalle/<%- producto.id %>">
                                         <figure class="product-box_image">
-                                            <img src="/<%= producto.imagen %> " alt="imagen de producto">
+                                            <img src="/<%= producto.img %> " alt="imagen de producto">
                                         </figure>
                                         <article class="product-box_data-prod">
                                             <h2>
@@ -48,7 +48,7 @@
                                         </article>
                                     </a>
                                     <div class="m-2 d-flex justify-content-around">
-                                        <form action="/admin/productos/edit/<%= producto.id %>">
+                                        <form action="/admin/productos/editar/<%= producto.id %>">
                                             <button class="btn btn-m btn-success" type="submit">Editar</a></button>
                                         </form>
                                         <form action="/admin/productos/delete/<%= producto.id %>?_method=DELETE"

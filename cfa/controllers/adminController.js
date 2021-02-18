@@ -1,4 +1,5 @@
 const productos = require('../data/productos');
+const fs = require ('fs')
 
 module.exports = {
     index: (req,res) => {
@@ -43,7 +44,7 @@ module.exports = {
         let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
 
         const resultado = productos.filter(producto=>{
-            return producto.name.toLowerCase().includes(buscar)
+            return producto.nombre.toLowerCase().includes(buscar)
         })
         res.render('admin/productos',{
             categoriasList,
@@ -69,27 +70,49 @@ module.exports = {
         res.render('admin/cargaProducto');
     },
     guardarProducto: (req,res) => { //store
-        let lastID = 1;
-        productos.forEach(producto =>{
-            if (producto.id > lastID){
-                lastID = producto.id
+        let lastId = 1;
+        productos.forEach((producto) =>{
+            if (producto.id > lastId){
+                lastId = producto.id
+            }
+        });
+        const {img, nombre, detalle, precio, oferta, categoria}= req.body;
+        
+        let Producto= 
+        {
+        id,
+        img,
+         nombre, 
+         detalle, 
+         precio:+precio, 
+         oferta, 
+         categoria}
+
+       
+      
+        productos.push(producto);
+        fs.writeFileSync('/data/productos.json',JSON.stringify(autos),'utf-8');
+res.redirect('admin/productos');
+    },
+    editarProducto: (req,res) => {
+      const producto = productos.find(producto=>producto.id === +req.params.id)
+  res.render('admin/editarProducto')
+  producto
+    },
+    actualizarProducto: (req,res) => {
+res.send(req.body)
+    },
+    borrarProducto : (req,res) => {
+
+        productos.forEach(producto => {
+            if(producto.id === +req.params.id){
+                let eliminar = productos.indexOf(producto);
+                productos.splice(eliminar,1)
             }
         });
 
-        const {img, nombre, detalle, precio, oferta, categoria} = req.body;
+        fs.writeFileSync('./data/productos.json',JSON.stringify(productos),'utf-8');
 
-        let producto = {
-            
-        }
-
-    },
-    editarProducto: (req,res) => {
-        res.render('admin/editarProducto');
-    },
-    actualizarProducto: (req,res) => {
-
-    },
-    borrarProducto: (req,res) => {
-
+        res.redirect('/admin/productos');
     }
 }
