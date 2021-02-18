@@ -19,7 +19,7 @@
                     <div class="col-12">
                         <section class="product-box row ">
                             <section class="product-box_image col-lg-6 col-12">
-                                <img src="/<%- product.img %>" alt="">
+                                <img src="/images/<%- product.img %>" alt="">
 
                             </section>
                             <article class="title-2 col-lg-6 col-12">
@@ -59,44 +59,26 @@
                     <section class="row product-sim_box">
                         <section class="similar_1 col-lg-6 col-12">
                             <h2 class="product-title_sim">Productos similares</h2>
-
-                            <div class="product-simi-1 row">
+                            <% aleatorio.forEach(product => { %>
+                             <div class="product-simi-1 row">
                                 <div class="col-4">
-                                    <img src="/<%= product.img %>" width="100" height="100">
+                                    <img src="/images/<%= product.img %>" width="100" height="100">
                                 </div>
-
                                 <div class="col-8">
                                     <p><%= product.nombre %></p>
                                     <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
                                     <h3><%= product.precio %></h3>
                                 </div>
-
-
-
-
                             </div>
-
-                            <div class="product-simi-2 row">
-                                <div class="col-4">
-                                    <img src="/<%= product.img %>" width="100" height="100">
-                                </div>
-
-                                <div class="col-8">
-                                    <p><%= product.nombre %> </p>
-                                    <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
-                                    <h3><%= product.precio %></h3>
-                                </div>
+                            <% }) %>
                         </section>
-
-
-
 
                         <article class="product-similar_2 col-lg-6 col-12">
                             <h2 class="product-title_sim-2">Quizás te interese</h2>
-
-                            <div class="product-simi-3 row">
+                            <% aleatorio2.forEach(product => { %>
+                             <div class="product-simi-3 row">
                                 <div class="col-4">
-                                    <img src="/<%= product.img %>" width="100" height="100">
+                                    <img src="/images/<%= product.img %>" width="100" height="100">
                                 </div>
 
                                 <div class="col-8">
@@ -105,18 +87,7 @@
                                     <h3><%= product.precio %></h3>
                                 </div>
                             </div>
-
-                            <div class="product-simi-4 row">
-                                <div class="col-4">
-                                    <img src="/<%= product.img %>" width="100" height="100">
-                                </div>
-
-                                <div class="col-8">
-                                    <p><%= product.nombre %> </p>
-                                    <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
-                                    <h3><%= product.precio %></h3>
-                                </div>
-                            </div>
+                            <% }) %>
                         </article>
                     </section>
                 </div>

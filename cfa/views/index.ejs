@@ -25,90 +25,25 @@
           <h2 class="products-title-home">Productos destacados</h2>
         </div>
         <div class="center" style="text-align:center; color:rgb(90, 90, 90); ">
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
+          
+            <% aleatorio.forEach(product => { %>
+              <div>
+             <div class="card" style="width: 280px; height: 400px;">
               <figure class="d-flex justify-content-center align-items-center"
                 style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/images/hp-monitor.1.jpg" class="card-img-top" alt="...">
+                <img src="/images/<%= product.img %> " class="card-img-top" alt="...">
               </figure>
               <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
+                <h5 class="card-title"><%= product.nombre %></h5>
+                <p class="card-text"><%= product.precio %></p>
+                <a href="/productos/detalle/<%= product.id %>" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
                   producto</a>
               </div>
+            
             </div>
           </div>
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
-              <figure class="d-flex justify-content-center align-items-center"
-                style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/images/computadora1.png" class="card-img-top" alt="...">
-              </figure>
-              <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
-              <figure class="d-flex justify-content-center align-items-center"
-                style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/imagenProducto/armada3.jpg" class="card-img-top" alt="...">
-              </figure>
-              <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
-              <figure class="d-flex justify-content-center align-items-center"
-                style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/imagenProducto/armada3.jpg" class="card-img-top" alt="...">
-              </figure>
-              <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
-              <figure class="d-flex justify-content-center align-items-center"
-                style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/imagenProducto/armada3.jpg" class="card-img-top" alt="...">
-              </figure>
-              <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card" style="width: 280px; height: 400px;">
-              <figure class="d-flex justify-content-center align-items-center"
-                style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/images/auriculares.png" class="card-img-top" alt="...">
-              </figure>
-              <div class="card-body">
-                <h5 class="card-title">Nombre del producto</h5>
-                <p class="card-text">$PRECIO.</p>
-                <a href="/productos/detalle" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
-              </div>
-            </div>
-          </div>
+            <% }) %> 
+          
           
         </div> 
         <!-- slicky carousel -->
@@ -228,62 +163,22 @@
             <div class="col-12">
               <h2 class="products-title-home">Ofertas</h2>
             </div>
-            <div class="homediv-home col-12 col-md-6 col-lg-3">
+            <% aleatorio2.forEach(product => { %>
+             <div class="homediv-home col-12 col-md-6 col-lg-3">
               <section class="product-box-home">
-                <a href="/productos/detalle">
+                <a href="/productos/detalle/<%= product.id %>">
                   <figure class="product-box_image-home">
-                    <img src="/images/hp-monitor.1.jpg" alt="imagen de producto">
+                    <img src="/images/<%= product.img %>" alt="imagen de producto">
                   </figure>
                   <article class="product-box_data-home">
-                    <h2>$precio</h2>
-                    <span class="tachado-home">50% OFF</span>
-                    <p>nombre</p>
+                    <h2><%= product.precio %></h2>
+                    <span class="tachado-home"><%= product.oferta %>% OFF</span>
+                    <p><%= product.nombre %></p>
                   </article>
                 </a>
               </section>
             </div>
-            <div class="homediv-home col-12 col-md-6 col-lg-3">
-              <section class="product-box-home">
-                <a href="/productos/detalle">
-                  <figure class="product-box_image-home">
-                    <img src="/images/hp-monitor.1.jpg" alt="imagen de producto">
-                  </figure>
-                  <article class="product-box_data-home">
-                    <h2>$precio</h2>
-                    <span class="tachado-home">50% OFF</span>
-                    <p>nombre</p>
-                  </article>
-                </a>
-              </section>
-            </div>
-            <div class="homediv-home col-12 col-md-6 col-lg-3">
-              <section class="product-box-home">
-                <a href="/productos/detalle">
-                  <figure class="product-box_image-home">
-                    <img src="/images/hp-monitor.1.jpg" alt="imagen de producto">
-                  </figure>
-                  <article class="product-box_data-home">
-                    <h2>$precio</h2>
-                    <span class="tachado-home">50% OFF</span>
-                    <p>nombre</p>
-                  </article>
-                </a>
-              </section>
-            </div>
-            <div class="homediv-home col-12 col-md-6 col-lg-3">
-              <section class="product-box-home">
-                <a href="/productos/detalle">
-                  <figure class="product-box_image-home">
-                    <img src="/images/hp-monitor.1.jpg" alt="imagen de producto">
-                  </figure>
-                  <article class="product-box_data-home">
-                    <h2>$precio</h2>
-                    <span class="tachado-home">50% OFF</span>
-                    <p>nombre</p>
-                  </article>
-                </a>
-              </section>
-            </div>
+            <% }) %>
           </div>
         </div>
 

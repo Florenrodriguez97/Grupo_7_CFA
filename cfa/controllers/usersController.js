@@ -1,9 +1,16 @@
 const usersController = {
-    registro: (req,res) =>{
+    registro: (req,res) => {
+        
         res.render('registro')
     },
-    login:(req,res)=>{
+    procesoRegistro: (req,res) => {
+        res.send(req.body)
+    },
+    login:(req,res) => {
         res.render('login')
+    },
+    procesoLogin: (req,res) => {
+        res.send(req.body)
     }
 }
 

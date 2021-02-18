@@ -24,13 +24,28 @@ const productosController = {
     },
     
     detalle: (req,res) =>{
+        let prod=productos;
         const id = req.params.id;
-        console.log(typeof id)
         const product = productos.find (product => {
             return product.id === +id
         });
+        let aleatorio2 = [];
+        let aleatorio = [];
+        for (let i = 0; i < 2; i++) {
+            let ran = Math.floor(Math.random()*(prod.length))
+            let seleccion = prod[ran];
+             aleatorio.push(seleccion);
+            }
+        for (let i = 0; i < 2; i++) {
+            let ran = Math.floor(Math.random()*(prod.length))
+            let seleccion = prod[ran];
+                aleatorio2.push(seleccion);
+            }    
+           
         res.render('detalle', {
             product,
+            aleatorio,
+            aleatorio2
         });
     },
 
@@ -66,9 +81,9 @@ const productosController = {
     },
     buscar: (req,res)=>{
         const buscar = req.query.buscar;
-        
-        let categorias = [] 
-        
+
+        let categorias = []
+
         productos.forEach(producto => {
             categorias.push(producto.categoria)
         });
@@ -76,12 +91,13 @@ const productosController = {
         const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
         let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
 
-        const resultado = productos.filter(producto=>{
-            return producto.name.toLowerCase().includes(buscar)
+        const resultado = productos.filter(producto => {
+            return producto.nombre.toLowerCase().includes(buscar)
         })
-        res.render('productos',{
+        
+        res.render('productos', {
             categoriasList,
-            productos : resultado
+            productos: resultado
         })
     }
 }
