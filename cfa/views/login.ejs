@@ -14,10 +14,12 @@
               <h1>Iniciar Sesion</h1>
               
 
-              <input name="usuario" type="text" id="usuario" placeholder="Ingresa Usuario" autofocus="" required=""></p>
+              <input name="usuario" type="text" id="usuario" value="<%= (typeof data!='undefined' && data.usuario)?data.usuario : "" %>" placeholder="Ingresa Usuario" >
+              <p><%= (typeof errores!='undefined' && errores.usuario)?errores.usuario.msg : "" %></p>
 
-              <input name="contrasenia" type="password" id="contrasenia" placeholder="Ingresa Password" required=""></p>
-              
+              <input name="contrasenia" type="password" id="contrasenia" value="<%= (typeof data!='undefined' && data.contrasenia)?data.contrasenia : "" %>"placeholder="Ingresa Password" >
+              <p><%= (typeof errores!='undefined' && errores.contrasenia)?errores.contrasenia.msg : "" %></p>
+
               <button type="submit" class="btn btn-primary btn-login">Iniciar sesion</button>
               <div>
                 <a href="/users/registro">

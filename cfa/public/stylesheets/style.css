@@ -649,7 +649,8 @@ button.btn.btn-outline-secondary{
 .description{
   font-size: 15px;
   color:#252525;
-  margin-top:10px;
+  position: relative;
+  top: 15%;
 }
 .article-col-4{
   background-color: white;
@@ -684,6 +685,13 @@ button.btn.btn-outline-secondary{
 .forma-pago{
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: 50%;
+
+}
+.precios-detalle{
+  position: relative;
+  top: 20%;
 }
 
 

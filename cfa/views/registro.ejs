@@ -24,34 +24,34 @@
               <button type="button" class="btn btn-outline-primary reg"> Guardar</button>
             </div>
             <div class="Entradas">
-              <input type="text" name="email" id="email" placeholder="Ingresa tu email">
-              <span class="text-danger">
-                <%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %>
-              </span>
+              <input type="text" name="email" id="email" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa tu email">
+              
 
-              <p>Obligatorio</p>
+              <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
 
               <label for="pass"></label>
-              <input type="password" name="pass" id="contraseña" placeholder="Ingresa tu contraseña">
-              <span class="text-danger">
-                <%= (typeof errores!='undefined' && errores.pass)?errores.msg : "" %>
-              </span>
+              <input type="password" name="pass" id="contraseña" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>" placeholder="Ingresa tu contraseña">
+              
 
-              <p>Obligatorio</p>
+              <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : ""%></p>
+
               <label for="pass"></label>
-              <input type="password" name="contrasenia" id="contraseña" placeholder="Repetir contraseña">
+              <input type="password" name="passrepeat" id="contraseña" value="<%= (typeof data!='undefined' && data.passrepeat)?data.passrepeat : "" %>" placeholder="Repetir contraseña">
 
-              <p>Obligatorio</p>
+              <p><%= (typeof errores!='undefined' && errores.passrepeat)?errores.passrepeat.msg : "" %></p>
+
 
               <br>
               <div class="datos">
                 <h2>Datos personales</h2>
               </div>
 
-              <input type="text" name="nombre" id="" placeholder="Nombre">
+              <input type="text" name="nombre" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : "" %>"  id="" placeholder="Nombre">
+              <p><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : "" %></p>
 
               <label for="Apellido"></label>
-              <input type="text" name="apellido" id="" placeholder="Apellido">
+              <input type="text" name="apellido" id="" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : "" %>"  placeholder="Apellido">
+              <p><%= (typeof errores!='undefined' && errores.apellido)?errores.apellido.msg : "" %></p>
               <label for="dni"></label>
               <input type="text" name="dni" id="" size="10" maxlength="9" placeholder="Número de DNI">
               <label for="Fecha de nacimiento"></label>

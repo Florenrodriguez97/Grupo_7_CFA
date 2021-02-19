@@ -8,16 +8,25 @@ const usersController = {
         let errores = validationResult (req);
 
         if (!errores.isEmpty()){
-            return res.render('/users/registro',{ 
-                errores : errores.mapped()
+            return res.render('registro',{ 
+                errores : errores.mapped(),
+                data : req.body
             })
+           
         }
     },
     login:(req,res) => {
         res.render('login')
     },
     procesoLogin: (req,res) => {
-        res.send(req.body)
+        let errores = validationResult (req);
+
+        if(!errores.isEmpty ()){
+            return res.render ('login',{
+                errores : errores.mapped(),
+                data : req.body
+            })
+        }
     }
 }
 
