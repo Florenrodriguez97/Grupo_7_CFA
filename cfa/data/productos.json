@@ -358,5 +358,14 @@
         "precio": "$4999",
         "oferta": 50,
         "img": "teclado4.jpg"
+    },
+    {
+        "id": 41,
+        "img": "1613693149363.jpeg",
+        "nombre": "prueba",
+        "detalle": "detalle prueba",
+        "precio": "$500",
+        "oferta": "50",
+        "categoria": "Mouse"
     }
 ]
