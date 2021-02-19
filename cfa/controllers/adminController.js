@@ -15,7 +15,6 @@ module.exports = {
             }
         });
 
-
         let categorias = []
 
         productos.forEach(producto => {
@@ -66,6 +65,31 @@ module.exports = {
             categoriasList
         })
     },
+    detalle: (req,res) =>{
+        let prod=productos;
+        const id = req.params.id;
+        const product = productos.find (product => {
+            return product.id === +id
+        });
+        let aleatorio2 = [];
+        let aleatorio = [];
+        for (let i = 0; i < 2; i++) {
+            let ran = Math.floor(Math.random()*(prod.length))
+            let seleccion = prod[ran];
+             aleatorio.push(seleccion);
+            }
+        for (let i = 0; i < 2; i++) {
+            let ran = Math.floor(Math.random()*(prod.length))
+            let seleccion = prod[ran];
+                aleatorio2.push(seleccion);
+            }    
+           
+        res.render('admin/detalle', {
+            product,
+            aleatorio,
+            aleatorio2
+        });
+    },
     crearProducto: (req, res) => {
         res.render('admin/cargaProducto');
     },
@@ -101,13 +125,13 @@ module.exports = {
         })
         
     },
-    actualizarProducto: (req, res) => {
+    actualizarProducto: (req, res, next) => {
         const { img, nombre, detalle, precio, oferta, categoria } = req.body;
 
         productos.forEach(producto => {
             if(producto.id === +req.params.id){
                 producto.id = +req.params.id;
-                producto.img = img;
+                producto.img = req.files[0].filename;
                 producto.nombre = nombre;
                 producto.detalle = detalle;
                 producto.precio = precio;
@@ -115,8 +139,8 @@ module.exports = {
                 producto.categoria = categoria
             }
         });
-        fs.writeFileSync('/data/productos.json', JSON.stringify(productos), 'utf-8');
-        res.redirect('admin/productos'); 
+        fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
+        res.redirect('/admin/productos'); 
     },
     borrarProducto: (req,res) => {
 
@@ -130,5 +154,7 @@ module.exports = {
         fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
 
         res.redirect('/admin/productos');
-    }
+    },
+    
+    
 }

@@ -22,7 +22,6 @@
                                         </a></li>
                                     <% }) %>
                             </ul>
-
                         </li>
                     </ul>
                 </section>
@@ -37,22 +36,16 @@
                                             <img src="/images/<%= producto.img %> " alt="imagen de producto">
                                         </figure>
                                         <article class="product-box_data-prod">
-                                            <h2>
-                                                <%= producto.precio %>
-                                            </h2>
-
-                                            <p>
-                                                <%= producto.nombre %>
-                                            </p>
-
+                                            <h2><%= producto.precio %></h2>
+                                                
+                                            <p><%= producto.nombre %></p>
                                         </article>
                                     </a>
                                     <div class="m-2 d-flex justify-content-around">
                                         <form action="/admin/productos/editar/<%= producto.id %>">
                                             <button class="btn btn-m btn-success" type="submit">Editar</a></button>
                                         </form>
-                                        <form action="/admin/productos/delete/<%= producto.id %>?_method=DELETE"
-                                            method="POST">
+                                        <form action="/admin/productos/borrar/<%= producto.id %>?_method=DELETE" method="POST">
                                             <button class="btn btn-m btn-danger" type="submit">Eliminar</a></button>
                                         </form>
                                     </div>

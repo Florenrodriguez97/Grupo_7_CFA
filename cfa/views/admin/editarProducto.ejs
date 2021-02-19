@@ -14,11 +14,10 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="form-floating mb-3">
+                                <div><img src="/images/<%=producto.img %>" alt="" style="width: 30%;"></div>
                                 <div class="">
-                                    <input class="form-control form-control-lg" type="file" id="formFile" name="img" value="">
-                                   
-                                </div>
-                                <div><img src="/images/<%=producto.img %>" alt=""></div>
+                                    <input class="form-control form-control-lg" type="file" id="formFile" name="img" value="/images/<%=producto.img %>">
+                                </div>                 
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
@@ -52,7 +51,6 @@
                                 <label for="modelo">Categoria</label>
                             </div>
                         </div>
-                        
                         <div class="d-grid gap-2 col-md-10 col-lg-8">
                             <button class="btn btn-primary" type="submit">Guardar</button>
                         </div>

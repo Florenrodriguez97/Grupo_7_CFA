@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head.ejs') %>
+<%- include('partials/head.ejs') %>
 
-<body>
-    
-    
-       
-      <%- include('partials/header.ejs') %>
- 
-    
-    <div class="container">
+  <body>
+    <%- include('partials/header.ejs') %>
 
-      <div class="container form" >
-                  
-      <form class="container registro id=myDIV" action="" method="POST">
-      <h1>Registro</h1>
-      
-      <div class="Crear">
-      <h2>Crear cuenta</h2></div>
-      <div class="media">
-      <div class="image"><img src="/images/Registro.png" alt="placeholder"></div>
-      <div class="content"><input type="file" id="foto_x" name="foto_x"></div>
-      </div>
-                              
-      <div class="button guardar">                 
-      <button type="button"class="btn btn-outline-primary reg" > Guardar</button></div>
-      <div class="Entradas">
-      <input type="text" name="email" id="email" placeholder="Ingresa tu email">
-                     
-       <p>Obligatorio</p>
-                  
-      <label for="pass"></label>                     
-      <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
-                    
-      <p>Obligatorio</p>
-      <label for="pass"></label>                      
-      <input type="password" name="contraseña" id="contraseña" placeholder="Repetir contraseña">
-                    
-      <p>Obligatorio</p>
-                  
-      <br>
-      <div class="datos">
-      <h2>Datos personales</h2></div>
-      
-      <input type="text" name="nombre" id="" placeholder="Nombre">
-                                         
-      <label for="Apellido"></label>
-      <input type="text" name="apellido" id="" placeholder="Apellido">
-      <label for="dni"></label>
-      <input type="text" name="dni" id="" size="10" maxlength="9"  placeholder="Número de DNI">
-      <label for="Fecha de nacimiento"></label>
-      <input type="date" id="start" name="fechaNac" value="2018-07-22"
-        min="2018-01-01" max="2018-12-31"><br><br>
-                     
-      </div>
-                           
-      <!-- <div class="terminos">
-      <input type="checkbox" name="" id="accepto">
-      <label for="accepto">Acepto los terminos y condiciones.</label>
-      </div> 
-       <br>
-      <br>-->
-      <div class="button enviar">
-      <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
-      </div>
-      
-    </form>
-      
-      </div>
-    </div>
-    <%- include('partials/footer.ejs') %>
+      <div class="container">
 
-</body>
+        <div class="container form">
+
+          <form class="container registro id=myDIV" action="" method="POST">
+            <h1>Registro</h1>
+
+            <div class="Crear">
+              <h2>Crear cuenta</h2>
+            </div>
+            <div class="media">
+              <div class="image"><img src="/images/Registro.png" alt="placeholder"></div>
+              <div class="content"><input type="file" id="foto_x" name="foto_x"></div>
+            </div>
+
+            <div class="button guardar">
+              <button type="button" class="btn btn-outline-primary reg"> Guardar</button>
+            </div>
+            <div class="Entradas">
+              <input type="text" name="email" id="email" placeholder="Ingresa tu email">
+              <span class="text-danger">
+                <%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %>
+              </span>
+
+              <p>Obligatorio</p>
+
+              <label for="pass"></label>
+              <input type="password" name="pass" id="contraseña" placeholder="Ingresa tu contraseña">
+              <span class="text-danger">
+                <%= (typeof errores!='undefined' && errores.pass)?errores.msg : "" %>
+              </span>
+
+              <p>Obligatorio</p>
+              <label for="pass"></label>
+              <input type="password" name="contrasenia" id="contraseña" placeholder="Repetir contraseña">
+
+              <p>Obligatorio</p>
+
+              <br>
+              <div class="datos">
+                <h2>Datos personales</h2>
+              </div>
+
+              <input type="text" name="nombre" id="" placeholder="Nombre">
+
+              <label for="Apellido"></label>
+              <input type="text" name="apellido" id="" placeholder="Apellido">
+              <label for="dni"></label>
+              <input type="text" name="dni" id="" size="10" maxlength="9" placeholder="Número de DNI">
+              <label for="Fecha de nacimiento"></label>
+              <input type="date" id="start" name="fechaNac" value="2018-07-22" min="2018-01-01"
+                max="2018-12-31"><br><br>
+
+            </div>
+
+            <div class="button enviar">
+              <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
+            </div>
+
+            <% if (typeof error !='undefined' ) { %>
+              <div class="alert alert-danger">
+                <span>
+                  <%= error %>
+                </span>
+              </div>
+
+              <% } %>
+
+          </form>
+
+        </div>
+      </div>
+      <%- include('partials/footer.ejs') %>
+
+  </body>
+
 </html>
