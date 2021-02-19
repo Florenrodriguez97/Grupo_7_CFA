@@ -1,6 +1,9 @@
 const productos = require('../data/productos');
 const fs = require('fs')
 
+
+
+
 module.exports = {
     index: (req, res) => {
         res.render('admin/index');
@@ -130,5 +133,7 @@ module.exports = {
         fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
 
         res.redirect('/admin/productos');
-    }
+    },
+    
+    
 }

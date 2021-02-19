@@ -6,6 +6,9 @@ const {actualizarProducto,borrarProducto,crearProducto,editarProducto,guardarPro
 const upload = require('../utils/multerAdmin')
 
 router.get('/',index);
+
+
+
 router.get('/productos/categoria/:categ', categoria);
 router.get('/productos/buscar', buscar);
 

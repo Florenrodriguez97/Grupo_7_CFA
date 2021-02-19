@@ -27,12 +27,15 @@
       <button type="button"class="btn btn-outline-primary reg" > Guardar</button></div>
       <div class="Entradas">
       <input type="text" name="email" id="email" placeholder="Ingresa tu email">
+      <span class="text-danger"><%= (typeof errores!= 'undefined' && errores.email)?errores.email.msg : "" %> </span>
                      
        <p>Obligatorio</p>
                   
       <label for="pass"></label>                     
       <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
-                    
+      <span class="text-danger"><%= (typeof errores!= 'undefined' && errores.pass)?errores.msg : ""%> </span>
+
+             
       <p>Obligatorio</p>
       <label for="pass"></label>                      
       <input type="password" name="contraseña" id="contraseña" placeholder="Repetir contraseña">
@@ -64,7 +67,16 @@
       <div class="button enviar">
       <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
       </div>
+
+
+      <% if (typeof error != 'undefined') { %>
+        <div class="alert alert-danger">
+          <span><%= error  %> </span>
+        </div>
+        
+     <% } %>
       
+
     </form>
       
       </div>

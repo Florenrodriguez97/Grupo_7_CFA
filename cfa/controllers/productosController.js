@@ -100,6 +100,7 @@ const productosController = {
             productos: resultado
         })
     }
+    
 }
 
 module.exports = productosController;
