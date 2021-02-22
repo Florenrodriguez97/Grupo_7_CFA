@@ -656,6 +656,12 @@ button.btn.btn-outline-secondary{
   background-color: white;
 }
 
+.forma-pago-col-4{
+  position: relative;
+  bottom: 10%;
+
+}
+
 
 .title-2{
   font-size: 20px;
@@ -750,7 +756,8 @@ button.btn.btn-outline-secondary{
 }
 
 .product-simi-2 h3{
-  text-align: left;
+  bottom: 5px;
+  text-align: left
 }
 
 .product-simi-3 p{
@@ -763,7 +770,8 @@ float: right;
 }
 
 .product-simi-3 h3{
- text-align: center;
+  bottom: 5px;
+  text-align: left
 }
 .product-simi-4 img{
  float: left;
@@ -776,6 +784,10 @@ float: right;
 }
 .product-simi-4 a{
 float: right;
+}
+.product-simi-4 h3{
+  bottom: 5px;
+  text-align: left
 }
 
 .product-simi-4{
@@ -861,8 +873,23 @@ float: right;
   }
 }
 @media (min-width: 425px) {
- .article-col-8 h3{
-   float:inline-start;
+
+ .precios-detalle{
+   position: relative;
+   top: -1%;
+ }
+ .forma-pago{
+   position: relative;
+   top: -1%;
+ }
+ .description{
+   position: relative;
+   top: 2%;
+ }
+ .title-2{
+   position: relative;
+   top: -2%;
  }
 
 }
+
