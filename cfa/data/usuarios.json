@@ -62,5 +62,13 @@
     "nombre": "Florencia",
     "apellido": "Rodriguez",
     "avatar": "avatar-1614329815104.jpg"
+  },
+  {
+    "id": 9,
+    "email": "cintia@gmail.com",
+    "pass": "$2b$12$LIHCS.323rBbVGy7gckujO5NBRrC55RRS5i8HuCfl4PVdW074gqum",
+    "nombre": "cintia",
+    "apellido": "Ramos",
+    "avatar": "avatar-1614377511676.jpeg"
   }
 ]

@@ -54,6 +54,7 @@ const usersController = {
         if (!errores.isEmpty()) {
             return res.render('login', {
                 errores: errores.mapped(),
+                data:req.body
             })
         } else {
             let result = users_db.find(usuario => usuario.email === email.trim());
@@ -78,11 +79,12 @@ const usersController = {
 
             }
             res.render('login', {
-                errores: [
-                    {
-                        msg: "Datos invalidos"
+                errores: {
+                    pass:{
+                        msg:'Credenciales Invalidas'
                     }
-                ]
+                },
+                data:req.body
             })
         }
     },
