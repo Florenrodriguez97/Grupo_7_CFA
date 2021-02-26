@@ -49,40 +49,7 @@
         "nombre": "Martin",
         "apellido": "Gutierrez",
         "dni" : 39564254,
-        "fecha de nacimiento": "10/06/1994"},
+        "fecha de nacimiento": "10/06/1994"}
 
-    {"id":7,
-        "img-usuario": "img",
-        "correo electronico": "camilo_shadow_x@gmail.com",
-        "contrasenia": "camilo123456",
-        "nombre": "Camilo",
-        "apellido": "Ramirez",
-        "dni" : 40985642,
-        "fecha de nacimiento": "20/11/1992"},
-
-    {"id":8,
-        "img-usuario": "img",
-        "correo electronico": "mati_10@gmail.com",
-        "contrasenia": "matias123456",
-        "nombre": "Matias",
-        "apellido": "Fernandez",
-        "dni" : 39564845,
-        "fecha de nacimiento": "01/12/1993"},
-    {"id":9,
-        "img-usuario": "img",
-        "correo electronico": "valleceleste@gmail.com",
-        "contrasenia": "cele123456",
-        "nombre": "Celeste",
-        "apellido": "Valle",
-        "dni" : 40659862,
-        "fecha de nacimiento": "08/09/1998"},
-
-    {"id":10,
-        "img-usuario": "img",
-        "correo electronico": "alvaroLopez@gmail.com",
-        "contrasenia": "alvaro123456",
-        "nombre": "Karla",
-        "apellido": "Rojas",
-        "dni" : 38564251,
-        "fecha de nacimiento": "09/03/1991"}
+    
     ]
