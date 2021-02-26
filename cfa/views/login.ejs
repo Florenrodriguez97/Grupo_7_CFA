@@ -14,11 +14,17 @@
               <h1>Iniciar Sesion</h1>
               
 
-              <input name="usuario" type="text" id="usuario" value="<%= (typeof data!='undefined' && data.usuario)?data.usuario : "" %>" placeholder="Ingresa Usuario" >
-              <p><%= (typeof errores!='undefined' && errores.usuario)?errores.usuario.msg : "" %></p>
+              <input name="email" type="text" id="usuario" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
+              <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
 
-              <input name="contrasenia" type="password" id="contrasenia" value="<%= (typeof data!='undefined' && data.contrasenia)?data.contrasenia : "" %>"placeholder="Ingresa Password" >
-              <p><%= (typeof errores!='undefined' && errores.contrasenia)?errores.contrasenia.msg : "" %></p>
+              <input name="pass" type="password" id="contrasenia" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>"placeholder="Ingresa Password" >
+              <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
+
+              <div class="row">
+                <div class="d-flex justify-content-center"><input type="checkbox" name="recordar" id="recordar" value="recordarme"></div>
+                   
+                <div class="d-flex justify-content-center"><label for="recordar">Recordarme</label> </div>          
+              </div>
 
               <button type="submit" class="btn btn-primary btn-login">Iniciar sesion</button>
               <div>
@@ -28,6 +34,14 @@
               </div>
 
             </form>
+            <% if (typeof error !='undefined' ) { %>
+              <div class="alert alert-danger">
+                <span>
+                  <%= error %>
+                </span>
+              </div>
+
+              <% } %>
           </div>
         </div>
       </div>

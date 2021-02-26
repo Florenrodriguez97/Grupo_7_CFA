@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+
+            <h1>Perfil</h1>
+            <img src="/images/<%= usuario.avatar %> " alt="Avatar">
+            <h4>Nombre: <span><%= usuario.nombre %>  </span></h4>
+
+            <a href="/users/logout">Cerrar session</a>
+
+            <%- include('partials/footer.ejs') %>
+    </body>
+
+</html>

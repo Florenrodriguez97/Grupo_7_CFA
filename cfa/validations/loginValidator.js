@@ -1,10 +1,11 @@
-const fs = require('fs');
-const {check, body} = require('express-validator');
-const users_db=JSON.parse(fs.readFileSync('./data/usuarios.json'))
+const {check} = require('express-validator');
 
 module.exports = [
-    check('usuario')
-    .notEmpty().withMessage('Este campo es obligatorio'),
-    check('contrasenia')
-    .notEmpty().withMessage('Este campo es obligatorio'),
+    check('email')
+    .notEmpty().withMessage('El email es requerido')
+    .isEmail().withMessage('El email debe ser valido'),
+
+    check('pass')
+    .notEmpty().withMessage('La contraseña es requerida')
+
 ]

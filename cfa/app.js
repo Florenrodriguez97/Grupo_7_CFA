@@ -7,6 +7,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override')
 var session = require('express-session')
 
+var cookieCheck = require('./middlewares/cookieCheck')
 
 var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/usersRouter');
@@ -26,14 +27,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use(session ({
+  secret : "Este es un secreto!"
+}));
+
+app.use(cookieCheck)
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
 app.use('/admin', adminRouter);
 
-/* app.use(session ({
-  secret : ""
-})); */
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

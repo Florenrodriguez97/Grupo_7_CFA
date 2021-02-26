@@ -20,9 +20,9 @@
               <div class="content"><input type="file" id="foto_x" name="avatar"></div>
             </div>
 
-            <div class="button guardar">
+            <!-- <div class="button guardar">
               <button type="button" class="btn btn-outline-primary reg"> Guardar</button>
-            </div>
+            </div> -->
             <div class="Entradas">
               <input type="text" name="email" id="email" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa tu email">
               
@@ -36,9 +36,9 @@
               <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : ""%></p>
 
               <label for="pass"></label>
-              <input type="password" name="passrepeat" id="contraseña" value="<%= (typeof data!='undefined' && data.passrepeat)?data.passrepeat : "" %>" placeholder="Repetir contraseña">
+              <input type="password" name="pass2" id="contraseña" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : "" %>" placeholder="Repetir contraseña">
 
-              <p><%= (typeof errores!='undefined' && errores.passrepeat)?errores.passrepeat.msg : "" %></p>
+              <p><%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : "" %></p>
 
 
               <br>

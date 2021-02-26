@@ -1,55 +1,66 @@
-[{"id":1,"img-usuario": "Ricardo",
-    "correo electronico": "soliss_453@gmail.com",
-    "contrasenia": "solis23423",
+[
+  {
+    "id": 1,
+    "avatar": "Ricardo",
+    "email": "soliss_453@gmail.com",
+    "pass": "solis23423",
     "nombre": "Ricardo",
-    "apellido": "Solis",
-    "dni" : 32654956,
-    "fecha de nacimiento": "12/02/1980"},
-
-    {"id": 2,
-        "img-usuario": "img",
-        "correo electronico": "natu_53@gmail.com",
-        "contrasenia": "natu123456",
-        "nombre": "Natalia",
-        "apellido": "Romero",
-        "dni" : 38564215,
-        "fecha de nacimiento": "01/03/1994"},
-
-    {"id": 3,
-        "img-usuario": "img",
-        "correo electronico": "alvaroLopez@gmail.com",
-        "contrasenia": "alvaro123456",
-        "nombre": "Alvaro",
-        "apellido": "Lopez",
-        "dni" : 32546854,
-        "fecha de nacimiento": "03/04/1990"},
-
-        {"id": 4,
-            "img-usuario": "img",
-            "correo electronico": "marcoPolo1@gmail.com",
-            "contrasenia": "marco123456",
-            "nombre": "Marco",
-            "apellido": "Polo",
-            "dni" : 40521345,
-            "fecha de nacimiento": "12/07/1997"},
-
-    {"id":5,
-        "img-usuario": "img",
-        "correo electronico": "andrea.g1@gmail.com",
-        "contrasenia": "andrea123456",
-        "nombre": "Andrea",
-        "apellido": "Mendez",
-        "dni" : 38564125,
-        "fecha de nacimiento": "07/07/1997"},
-
-    {"id":6,
-        "img-usuario": "img",
-        "correo electronico": "martingutierrezOK@gmail.com",
-        "contrasenia": "martin123456",
-        "nombre": "Martin",
-        "apellido": "Gutierrez",
-        "dni" : 39564254,
-        "fecha de nacimiento": "10/06/1994"}
-
-    
-    ]
+    "apellido": "Solis"
+  },
+  {
+    "id": 2,
+    "avatar": "img",
+    "email": "natu_53@gmail.com",
+    "pass": "natu123456",
+    "nombre": "Natalia",
+    "apellido": "Romero"
+  },
+  {
+    "id": 3,
+    "avatar": "img",
+    "email": "alvaroLopez@gmail.com",
+    "pass": "alvaro123456",
+    "nombre": "Alvaro",
+    "apellido": "Lopez"
+  },
+  {
+    "id": 4,
+    "avatar": "img",
+    "email": "marcoPolo1@gmail.com",
+    "pass": "marco123456",
+    "nombre": "Marco",
+    "apellido": "Polo"
+  },
+  {
+    "id": 5,
+    "avatar": "img",
+    "email": "andrea.g1@gmail.com",
+    "pass": "andrea123456",
+    "nombre": "Andrea",
+    "apellido": "Mendez"
+  },
+  {
+    "id": 6,
+    "avatar": "img",
+    "email": "martingutierrezOK@gmail.com",
+    "pass": "martin123456",
+    "nombre": "Martin",
+    "apellido": "Gutierrez"
+  },
+  {
+    "id": 7,
+    "email": "batman_rivarola@hotmail.com",
+    "pass": "$2b$12$UuSJFmUqAxS9CE38etXQ9.rcgcPVbdkMLGtVW4Wj0NBPwrUkYJe72",
+    "nombre": "Jonathan",
+    "apellido": "Rivarola",
+    "avatar": "avatar-1614329500342.jpeg"
+  },
+  {
+    "id": 8,
+    "email": "flor@gmail.com",
+    "pass": "$2b$12$0KYR3uIpNMX7c87ggfCEeefNlpPPn/DZnpaWjEfT0TC2cZdikNVXi",
+    "nombre": "Florencia",
+    "apellido": "Rodriguez",
+    "avatar": "avatar-1614329815104.jpg"
+  }
+]

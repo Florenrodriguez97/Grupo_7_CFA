@@ -1,106 +1,100 @@
 const { validationResult, body } = require('express-validator');
-let fs = require('fs');
+const fs = require('fs');
+const bcrypt = require('bcrypt');
+const users_db = JSON.parse(fs.readFileSync('./data/usuarios.json'));
 
 const usersController = {
     registro: (req, res) => {
         res.render('registro')
     },
-    crear: function (req, res) {
-        let usuario = {
-            email: req.body.email,
-            pass: req.body.pass,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-        }
-        let archivoUsuarios = fs.readFile('usuarios.json', { encoding: 'utf-8' });
-        let usuarios;
-        if (archivoUsuarios == "") {
-            usuarios = [];
-        }else {
-             usuarios = JSON.parse(archivoUsuarios)
-        }
-        usuarios.push(usuarios);
-
-        usuariosJSON = JSON.stringify(usuarios);
-        fs.writeFileSync('usuarios.json', usuariosJSON);
-},
     procesoRegistro: (req, res) => {
+
         let errores = validationResult(req);
 
-if (!errores.isEmpty()) {
-    return res.render('registro', {
-        errores: errores.mapped(),
-        data: req.body
-    })
+        if (!errores.isEmpty()) {
+            return res.render('registro', {
+                errores: errores.mapped(),
+                data: req.body
+            })
 
-} else {
-    const { email, pass, nombre, apellido } = req.body;
-    let lastID = 0;
-    usuarios.forEach(usuarios => {
-        if (usuarios_id > lastID) {
-            lastID = usuarios.id
+        } else {
+            const { email, pass, nombre, apellido } = req.body;
+            let lastID = 0;
+            users_db.forEach(usuario => {
+                if (usuario.id > lastID) {
+                    lastID = usuario.id
+                }
+            });
+
+            const passHash = bcrypt.hashSync(pass, 12);
+            const nuevoUsuario = {
+                id: +lastID + 1,
+                email,
+                pass: passHash,
+                nombre,
+                apellido,
+                avatar: req.files[0].filename || 'sin avatar'
+            }
+
+            users_db.push(nuevoUsuario);
+            fs.writeFileSync('./data/usuarios.json', JSON.stringify(users_db, null, 2), 'utf-8');
+
+            res.redirect('login');
         }
-    });
-
-    const passHash = bcrypt.hashSync(pass, 12);
-    const nuevoUsuario = {
-        id: +lastID + 1,
-        email,
-        pass: passHash,
-        nombre,
-        apellido,
-        avatar: req.files[0].filename || 'sin avatar'
-    }
-
-    usuarios_db.push(nuevoUsuario);
-    fs.writeFileSync('./data/users.json', JSON.stringify(usuarios_db, null, 2), 'utf-8');
-    
-    res.redirect('users/login');
-}
     },
-login: (req, res) => {
-    res.render('login')
-},
+    login: (req, res) => {
+        res.render('login')
+    },
     procesoLogin: (req, res) => {
-        res.render ('login')
+       
         let errores = validationResult(req);
 
-        const {email, pass, recordar} = req.body;
+        const { email, pass, recordar } = req.body;
 
         if (!errores.isEmpty()) {
             return res.render('login', {
-                errores: errores.errors
-                
+                errores: errores.mapped(),
             })
+        } else {
+            let result = users_db.find(usuario => usuario.email === email.trim());
 
-        }else{
-            let result = users_db.find(user=> user.email === email);
-        if(result){
-            if(bycrypt.compareSync(pass.trim (), result.pass)){
+            if (result) {
+                if (bcrypt.compareSync(pass.trim(), result.pass)){
+                   
+                    req.session.usuario = {
+                        id : result.id,
+                        nombre : result.nombre,
+                        avatar : result.avatar
+                    }
 
-                req.session.user ={
-                    id : result.id,
-                    username : result.username,
+                    if(recordar != 'undefined'){
+                        res.cookie('perfilUsuario',req.session.usuario,{
+                            maxAge : 1000 * 60
+                        })
+                    }
 
+                    res.redirect('perfil')
                 }
-                if(recordar){
-                    res.cookie('usuario',req.session.user, {
-                        maxAge : 1000 * 60
-                    })
-                }
-                res.redirect ('/usuario/perfil')
-            }
 
-        }
-        res.render('login', {
-            errores : [
-            {
-                msg: "Datos invalidos"
             }
-
-            ]
-        })
+            res.render('login', {
+                errores: [
+                    {
+                        msg: "Datos invalidos"
+                    }
+                ]
+            })
         }
+    },
+    perfil : (req,res) => {
+        res.render('perfil')
+    },
+    logout : (req,res) => {
+        req.session.destroy();
+        if(req.cookies.perfilUsuario){
+            res.cookie('perfilUsuario','',{maxAge:-1})
+        }
+        res.redirect('/')
     }
 }
 
