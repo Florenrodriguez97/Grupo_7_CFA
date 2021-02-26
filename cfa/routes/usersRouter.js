@@ -4,7 +4,8 @@ var router = express.Router();
 const {check, body} = require('express-validator');
 
 const {login,procesoLogin,procesoRegistro,registro} = require('../controllers/usersController');
-
+const registroValidator= require('../validations/registroValidator');
+const uploadImages=require('../middlewares/uploadImages');
 /* GET home page. */
 
 // login y register
@@ -30,7 +31,7 @@ router.post ('/registro',[
     
 ], procesoRegistro);
 
-router.post('/registro', procesoRegistro);
+router.post('/registro', uploadImages.any(),procesoRegistro, registroValidator);
 
 
 router.get('/login', login);
