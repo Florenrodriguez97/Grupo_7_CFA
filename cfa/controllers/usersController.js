@@ -68,9 +68,9 @@ const usersController = {
                         avatar : result.avatar
                     }
 
-                    if(recordar != 'undefined'){
+                    if(recordar != undefined){
                         res.cookie('perfilUsuario',req.session.usuario,{
-                            maxAge : 1000 * 60
+                            maxAge : 1000 * 60 * 60 * 24 * 7 //cookie de una semana de duracion
                         })
                     }
 
