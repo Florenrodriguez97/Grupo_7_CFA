@@ -70,5 +70,13 @@
     "nombre": "cintia",
     "apellido": "Ramos",
     "avatar": "avatar-1614377511676.jpeg"
+  },
+  {
+    "id": 10,
+    "email": "maxi@gmail.com",
+    "pass": "$2b$12$mvyizPrVVqlLtzljE3X5mO00Le8QkaGElADapiRbMfMjV8GMwGpxm",
+    "nombre": "Maximo",
+    "apellido": "De Michieli",
+    "avatar": "avatar-1614452747302.jpg"
   }
 ]
