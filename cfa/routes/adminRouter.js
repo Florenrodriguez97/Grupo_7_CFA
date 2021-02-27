@@ -2,22 +2,22 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 const {actualizarProducto,borrarProducto,crearProducto,editarProducto,guardarProducto,listarProducto,index,categoria,buscar,detalle} = require('../controllers/adminController')
-
+const userCheck = require('../middlewares/userCheck')
 const upload = require('../utils/multerAdmin')
 
 router.get('/',index);
 
 
 
-router.get('/productos/categoria/:categ', categoria);
-router.get('/productos/buscar', buscar);
-router.get('/productos/detalle/:id', detalle);
-router.get('/productos', listarProducto);
+router.get('/productos/categoria/:categ',userCheck, categoria);
+router.get('/productos/buscar',userCheck, buscar);
+router.get('/productos/detalle/:id',userCheck, detalle);
+router.get('/productos',userCheck, listarProducto);
 
-router.get('/productos/carga', crearProducto);
+router.get('/productos/carga',userCheck, crearProducto);
 router.post('/productos/guardar', upload.any(), guardarProducto);//store
 
-router.get('/productos/editar/:id', editarProducto);
+router.get('/productos/editar/:id',userCheck, editarProducto);
 router.put('/productos/actualizar/:id', upload.any(), actualizarProducto);
 
 router.delete('/productos/borrar/:id',borrarProducto);
