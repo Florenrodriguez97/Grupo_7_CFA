@@ -74,7 +74,7 @@ const usersController = {
                         })
                     }
 
-                    res.redirect('perfil')
+                    return res.redirect('perfil')
                     
                 }
 
