@@ -78,5 +78,13 @@
     "nombre": "Maximo",
     "apellido": "De Michieli",
     "avatar": "avatar-1614452747302.jpg"
+  },
+  {
+    "id": 11,
+    "email": "elpepe@gmail.com",
+    "pass": "$2b$12$gF7plwyV2n5LsFJkLo0V9OUaAYzB9nMkIaV4Wl7rq02PWiG00X9.u",
+    "nombre": "el",
+    "apellido": "pepe",
+    "avatar": "avatar-1614547752877.jpeg"
   }
 ]

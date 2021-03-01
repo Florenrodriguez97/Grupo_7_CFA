@@ -45,7 +45,7 @@ const usersController = {
     login: (req, res) => {
         res.render('login')
     },
-    procesoLogin: (req, res) => {
+    procesoLogin: (req, res, next) => {
        
         let errores = validationResult(req);
 
@@ -75,6 +75,7 @@ const usersController = {
                     }
 
                     res.redirect('perfil')
+                    
                 }
 
             }

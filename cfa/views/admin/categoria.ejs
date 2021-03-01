@@ -42,10 +42,10 @@
                                 </article>
                             </a>
                             <div class="m-2 d-flex justify-content-around">
-                                <form action="/admin/autos/edit/<%= producto.id %>">
+                                <form action="/admin/productos/editar/<%= producto.id %>">
                                     <button class="btn btn-m btn-success" type="submit">Editar</a></button>
                                 </form>
-                                <form action="/productos/borrar/<%= producto.id %>?_method=DELETE"
+                                <form action="/admin/productos/borrar/<%= producto.id %>?_method=DELETE"
                                     method="POST">
                                     <button class="btn btn-m btn-danger" type="submit">Eliminar</a></button>
                                 </form>
