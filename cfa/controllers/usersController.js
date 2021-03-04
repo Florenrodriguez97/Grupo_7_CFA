@@ -64,7 +64,9 @@ const usersController = {
                    
                     req.session.usuario = {
                         id : result.id,
+                        email : result.email,
                         nombre : result.nombre,
+                        apellido : result.apellido,
                         avatar : result.avatar
                     }
 
