@@ -6,6 +6,7 @@
 
         <%- include('partials/header.ejs') %>
        
+
         <div class="container usuario-box_img ">
             <div class="row">
                 <h1 class="bienvenida-usuario">¡Bienvenido/a <%=usuario.nombre %>! </h1>
@@ -17,7 +18,7 @@
                             <img class="img-usuario_perfil" src="/images/<%= usuario.avatar %> " alt="Avatar">
                         </section>
 
-                <article class="col-lg-2 col-12">
+                <article class="perfil-box_datos col-lg-2 col-12">
 
                 
                 <div class="col-md-9  admin-content" id="profile">
@@ -30,7 +31,6 @@
                         </div>
                     </div>
                     <div class="panel panel-info" style="margin: 1em;">
-
                         <div class="panel-heading">
                             <h3 class="panel-email">Email</h3>
                         </div>
@@ -42,7 +42,7 @@
                 </div>
        
     
-                <div class="col-md-6  admin-content" id="change-password">
+                <div class="col-md-12  admin-content" id="change-password">
                     <form action="/password" method="post">
     
                
@@ -99,16 +99,16 @@
                         <article class=" product-box-other col-lg-5 col-12">
                             <div class="perfil-otros">
                                 <div class="perfil-deseados">
-                                    <h3 class="perfil-product_des"><i class="bi bi-heart"></i> Productos deseados</h3>
+                                    <a class="screen-reader-text skip-link" href="/productos/carrito"><i class="bi bi-heart"></i> Productos deseados</a>
                                 </div>
                                 <div class="perfil-carrito">
-                                    <h3 class="carrito-product"><i class="bi bi-cart"></i> Mi carrito</h3>
+                                    <a class="screen-reader-text skip-link" href="#content"><i class="bi bi-cart"></i> Mi carrito</a>
                                 </div>
                                 <div class="perfil-metodos">
-                                    <h3 class="perfil-metodo_pago"><i class="bi bi-credit-card-2-back"></i> Mis metodos de pago</h3>
+                                    <a class="screen-reader-text skip-link" href="#content"><i class="bi bi-credit-card-2-back"></i> Mis metodos de pago</a>
                                 </div>
                                 <div class="perfil-editar">
-                                    <h3 class="perfil-editar"> <i class="bi bi-pencil-square"></i>Editar datos personales</h3>
+                                    <a class="screen-reader-text skip-link" href="#content"><i class="bi bi-pencil-square"></i>Editar datos personales</a>
 
                                 </div>
                             </div>
