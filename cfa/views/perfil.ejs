@@ -6,15 +6,20 @@
 
         <%- include('partials/header.ejs') %>
        
-        <div class="container ">
-            <div class="row ">
-                <h1 class="perfil-usuario">Perfil</h1>
-                <div class="col-md-3">
-                    <img class="img-usuario_perfil" src="/images/<%= usuario.avatar %> " alt="Avatar">
-                        
-                </div>
+        <div class="container usuario-box_img ">
+            <div class="row">
+                <h1 class="bienvenida-usuario">¡Bienvenido/a <%=usuario.nombre %>! </h1>
+                <h1 class="perfil-usuario"> <i class="bi bi-person-fill"></i>Mi perfil  </h1>
+            </div>
+                 <div class="col-lg-8">
+                    <section class="usuario-box row">
+                        <section class="usuario-box_image col-lg-5 col-12"> 
+                            <img class="img-usuario_perfil" src="/images/<%= usuario.avatar %> " alt="Avatar">
+                        </section>
+
+                <article class="col-lg-2 col-12">
+
                 
-                <div class="row">
                 <div class="col-md-9  admin-content" id="profile">
                     <div class="panel panel-info" style="margin: 1em;">
                         <div class="panel-heading">
@@ -88,7 +93,29 @@
                 <div class="col-md-9  admin-content" id="logout">
                     <div class="panel panel-info" style="margin: 1em;">
                         <div class="panel-heading">
-                            <a href="/users/logout">Cerrar session</a>
+                            <a href="/users/logout"> <i class="bi bi-door-open-fill"></i> Cerrar sesion </a>
+                        </article>
+
+                        <article class=" product-box-other col-lg-5 col-12">
+                            <div class="perfil-otros">
+                                <div class="perfil-deseados">
+                                    <h3 class="perfil-product_des"><i class="bi bi-heart"></i> Productos deseados</h3>
+                                </div>
+                                <div class="perfil-carrito">
+                                    <h3 class="carrito-product"><i class="bi bi-cart"></i> Mi carrito</h3>
+                                </div>
+                                <div class="perfil-metodos">
+                                    <h3 class="perfil-metodo_pago"><i class="bi bi-credit-card-2-back"></i> Mis metodos de pago</h3>
+                                </div>
+                                <div class="perfil-editar">
+                                    <h3 class="perfil-editar"> <i class="bi bi-pencil-square"></i>Editar datos personales</h3>
+
+                                </div>
+                            </div>
+
+
+                        </article>
+                        </section>
                         </div>
                         
                     </div>
@@ -96,7 +123,8 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+    
            
                      
 

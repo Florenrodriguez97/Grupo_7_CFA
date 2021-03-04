@@ -798,17 +798,81 @@ float: right;
   margin-top: 40px;
 }
 
+/* Usuarios */
 
-.img-usuario_perfil{
-  width: 120%;
-  height: auto;
+.usuario-box_image{
+  border-right-color: #6d6d6d;
+    border-right-style: solid;
+    border-left-width: 1px;
+    padding-left: 12px;
 }
 
-.perfil-usuario h1{
+.usuario-box_img{
+  margin-top: 40px;
+  border-left: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  background-color: #fff;
+  
+}
+.bienvenida-usuario{
+  color: #6d6d6d;
+  font-size: 30px;
+}
+
+
+.img-usuario_perfil{
+  width: 80%;
+  height: auto;
+  border-radius: 10% 10% ;
+}
+
+.perfil-usuario {
+  font-size: 18px;
   margin-bottom: 10px;
   margin-top: 15px;
   border: #252525;
+  color: #6d6d6d;
 }
+.panel-title{
+  color: #6d6d6d;
+  font-size: 20px;
+}
+.panel-email{
+  color: #6d6d6d;
+  font-size: 20px;
+
+}
+
+  
+
+
+/*Perfil otro*/
+.product-box-other{ 
+  position: absolute;
+  right: 10px;
+  border-left-color: #6d6d6d;
+    border-left-style: solid;
+    border-left-width: 1px; /* Cambiando este valor, puedes cambiar el ancho del borde */
+    padding-right: 12px; 
+}
+.perfil-product_des{
+  font-size: 18px;
+  margin-top: 10%;
+}
+.carrito-product{
+  font-size: 18px;
+  margin-top: 10%;
+}
+.perfil-metodo_pago{
+  font-size: 18px;
+  margin-top: 10%;
+}
+.perfil-editar{
+  font-size: 18px;
+margin-top: 10%;
+}
+
 
 @media (min-width: 768px) { /* Tablet */
   .icons-nav{
