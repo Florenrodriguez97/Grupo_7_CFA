@@ -916,6 +916,66 @@ a.screen-reader-text:hover {
 margin-top: 10%;
 }
 
+/*Preguntas frecuentes*/
+
+.box-preguntas{
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: #00587a 5px solid;
+}
+.title-preg-frec{
+  padding-top: 30px ;
+  padding-bottom: 40px;
+  text-align: center;
+  
+}
+.preg-1{
+  padding-bottom: 15px;
+}
+
+.respuesta-1{
+  padding-bottom: 15px;
+}
+.preg-2{
+  font-size: 32px;
+}
+.respuesta-2{
+ padding-bottom: 15px;
+}
+.preg-3{
+  font-size: 32px;
+}
+.preg-4{
+  font-size: 32px;
+}
+.preg-5{
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+.respuesta-5{
+  padding-bottom: 50px;
+}
+
+ .bi-check2{
+  color: #39b54a;
+  font-size: 45px;
+}
+.bi-patch-question{
+  color: red;
+}
+.bi-journal-text{
+  color: #3759a3;
+}
+/*Fin de preguntas*/
+
+/*Contacto*/
+
+.bi-geo-alt{
+  color: red;
+}
+
+
 
 @media (min-width: 768px) { /* Tablet */
   .icons-nav{
