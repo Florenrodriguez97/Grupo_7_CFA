@@ -801,8 +801,12 @@ float: right;
 /* Usuarios */
 .perfil-box_datos{
   position: relative;
-  left: 20%;
-  width: 50%;
+  left: 10%;
+  width: 80%;
+}
+.perfil-button{
+  position: relative;
+  left: 17%; 
 }
 .usuario-box_image{
   border-right-color: #6d6d6d;
@@ -818,8 +822,8 @@ float: right;
   margin-bottom: 40px;
   position: relative;
   background-color: #fff;
-  
-  
+  border-radius: 15px;
+  overflow: hidden;
 }
 .bienvenida-usuario{
   color: #6d6d6d;
@@ -836,7 +840,7 @@ float: right;
   position: relative;
   bottom: -5%;
   right: -9%;
-
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .admin-content{
   text-align: left;
@@ -877,17 +881,20 @@ a.screen-reader-text:hover {
 .perfil-carrito{
   margin-bottom: 30px;
   text-decoration: none !important;
+  position: relative;
+  top: -40px;
+  left: -10px;
 }
 
 
 .product-box-other{ 
   position: absolute;
   left: 75%;
-  border-left-color: #6d6d6d;
+  /* border-left-color: #6d6d6d;
     border-left-style: solid;
-    border-left-width: 1px; /* Cambiando este valor, puedes cambiar el ancho del borde */
+    border-left-width: 1px;  
     padding-right: 12px; 
-    margin-top: 1%;
+    margin-top: 1%; */
 }
 .perfil-product_des{
   font-size: 18px;
@@ -1012,6 +1019,9 @@ margin-top: 10%;
   .media {
     margin-left: 5%;
   }
+  .perfil-box_datos{
+    margin-top: 30px;
+  }
 }
 
 @media (min-width: 1024px) { /* Escritorio */
@@ -1049,6 +1059,29 @@ margin-top: 10%;
   }
   .media {
     margin-left: 5%;
+  }
+  .perfil-box_datos{
+    width: 50%;
+  }
+  .product-box-other{ 
+    position: absolute;
+    top: 20%;
+     border-left-color: #6d6d6d;
+      border-left-style: solid;
+      border-left-width: 1px;  
+      padding-right: 12px; 
+      margin-top: 1%; 
+  }
+  .perfil-carrito{
+    margin-bottom: 30px;
+    text-decoration: none !important;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .perfil-button{
+    position: relative;
+    left: 4%; 
   }
 }
 @media (min-width: 425px) {

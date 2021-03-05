@@ -27,7 +27,7 @@
                             <h3 class="panel-title">Nombre</h3>
                         </div>
                         <div class="panel-body">
-                            <span><%= usuario.nombre %>  </span>
+                            <span><%= usuario.nombre %>  <%= usuario.apellido %></span>
                         </div>
                     </div>
                     <div class="panel panel-info" style="margin: 1em;">
@@ -75,14 +75,8 @@
                         </div>
     
                
-                        <div class="panel panel-info border" style="margin:1em;">
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <div class="pull-left" >
-                                        <input type="submit" class="btn btn-primary" name="submit" id="submit">
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="perfil-button">
+                                        <button type="submit" class="btn btn-primary">Confirmar</button>
                         </div>
     
                     </form>
@@ -98,20 +92,18 @@
 
                         <article class=" product-box-other col-lg-5 col-12">
                             <div class="perfil-otros">
-                                <div class="perfil-deseados">
-                                    <a class="screen-reader-text skip-link" href="/productos
-                                    /carrito"><i class="bi bi-heart"></i> Productos deseados</a>
-                                </div>
+                                <!-- <div class="perfil-deseados">
+                                    <a class="screen-reader-text skip-link" href="/productos/carrito"><i class="bi bi-heart"></i> Productos deseados</a>
+                                </div> -->
                                 <div class="perfil-carrito">
                                     <a class="screen-reader-text skip-link" href="/"><i class="bi bi-cart"></i> Mi carrito</a>
                                 </div>
-                                <div class="perfil-metodos">
-                                    <a class="screen-reader-text skip-link" href="#"><i class="bi bi-credit-card-2-back"></i> Mis metodos de pago</a>
-                                </div>
+                                <!-- <div class="perfil-metodos">
+                                    <a class="screen-reader-text skip-link" href="#content"><i class="bi bi-credit-card-2-back"></i> Mis metodos de pago</a>
+                                </div> 
                                 <div class="perfil-editar">
-                                    <a class="screen-reader-text skip-link" href="#"><i class="bi bi-pencil-square"></i>Editar datos personales</a>
-
-                                </div>
+                                    <a class="screen-reader-text skip-link" href="#content"><i class="bi bi-pencil-square"></i>Editar datos personales</a>
+                                </div>-->
                             </div>
 
 
@@ -126,8 +118,6 @@
             </div>
         </div>
     
-           
-                     
 
             <%- include('partials/footer.ejs') %>
     </body>
