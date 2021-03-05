@@ -86,5 +86,13 @@
     "nombre": "el",
     "apellido": "pepe",
     "avatar": "avatar-1614547752877.jpeg"
+  },
+  {
+    "id": 12,
+    "email": "eric@gmail.com",
+    "pass": "$2b$12$O7vbf.oHYSYrgeWe8WHm.usDwxkVOLtsZ/xTkkMU5Nuu9W07UPIr2",
+    "nombre": "Eric",
+    "apellido": "Mena",
+    "avatar": "avatar-1614893028094.jpeg"
   }
 ]
