@@ -929,7 +929,7 @@ margin-top: 10%;
   background-color: #ffffff;
   margin-top: 30px;
   margin-bottom: 30px;
-  border: #00587a 5px solid;
+  padding: 2em 1em
 }
 .title-preg-frec{
   padding-top: 30px ;
@@ -977,12 +977,48 @@ margin-top: 10%;
 /*Fin de preguntas*/
 
 /*Contacto*/
-
-.bi-geo-alt{
-  color: red;
+.box-contacto_ubi{
+  background-color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.titulo-contacto{
+  margin-left: 20px;
+}
+.ciudadela-contacto{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 50px;
 }
 
+.lanus-contacto{
+  margin-top: 40px ;
+  margin-bottom: 40px;
+  margin-left: 50px;
+}
+.sanmiguel-contacto{
+  margin-left: 50px;
+}
 
+.bi-geo-alt{
+  color: rgb(175, 47, 47);
+}
+
+.titulo-contacto{
+  font-weight: 300;
+}
+.ciudadela-titulo{
+font-weight: 600;
+}
+.lanus-titulo{
+font-weight: 600;
+}
+.sanmiguel-titulo{
+  font-weight: 600;
+
+}
 
 @media (min-width: 768px) { /* Tablet */
   .icons-nav{
