@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `cfa`.`users` (
   `password` VARCHAR(100) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(100) NOT NULL,
-  `dni` INT NOT NULL,
+  `dni` INT NULL DEFAULT NULL,
   `avatar` VARCHAR(500) NOT NULL,
   `admin` TINYINT NOT NULL,
   `province` VARCHAR(150) NULL DEFAULT NULL,
