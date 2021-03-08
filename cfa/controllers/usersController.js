@@ -2,6 +2,7 @@ const { validationResult, body } = require('express-validator');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const users_db = JSON.parse(fs.readFileSync('./data/usuarios.json'));
+const db = require ('../database/models');
 
 const usersController = {
     registro: (req, res) => {
@@ -103,4 +104,15 @@ const usersController = {
     }
 }
 
+module.exports = {
+    list: (req,res) => {
+        db.Usuarios.findAll()
+        .then(usuarios => {
+            return res.render ('usuarios.json' , {
+                usuarios
+            })
+        })
+        .catch(error => res.send (error))
+    }
+}
 module.exports = usersController;
