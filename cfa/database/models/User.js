@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-const alias = "Usuarios",
+const alias = "usuarios";
 
 
 const cols ={
@@ -11,51 +11,51 @@ const cols ={
         primaryKey: true
     },
     email : {
-        type: dataTypes.VARCHAR(100).UNSIGNED,
+        type: dataTypes.VARCHAR(100),
         allowNull : false,
         unique : true
 
     },
     password: {
-        type : dataTypes.VARCHAR(100).UNSIGNED,
+        type : dataTypes.VARCHAR(100),
         allowNull: false
     },
     name : { 
-        type : dataTypes.VARCHAR (100).UNSIGNED,
+        type : dataTypes.VARCHAR (100),
         allowNull: false
     },
     last_name : { 
-        type : dataTypes.VARCHAR(100).UNSIGNED,
+        type : dataTypes.VARCHAR(100),
         allowNull: false
     },
     dni : { 
-        type: dataTypes.INTERGER(11).UNSIGNED,
+        type: dataTypes.INTERGER(11),
         defaultValue : null
     },
     avatar : {
-        type : dataTypes.VARCHAR(500).UNSIGNED,
+        type : dataTypes.VARCHAR(500),
         allowNull: false
 
     },
     admin : {
-        type: dataTypes.TINYINT(4).UNSIGNED,
+        type: dataTypes.TINYINT(4),
         allowNull: false
     },
     province : {
-        type : dataTypes.VARCHAR(150).UNSIGNED,
+        type : dataTypes.VARCHAR(150),
         allowNull: false ,
         defaultValue: null
     },
     location: {
-        type : dataTypes.VARCHAR(150).UNSIGNED,
+        type : dataTypes.VARCHAR(15),
         defaultValue: null
     },
     address: { 
-        type: dataTypes.VARCHAR(150).UNSIGNED,
+        type: dataTypes.VARCHAR(150),
         defaultValue: null
     },
     phone : {
-        type: dataTypes.INTERGER(11),
+        type: dataTypes.INTEGER(11),
         defaultValue: null
     },
 
@@ -68,8 +68,15 @@ const cols ={
         underscored : false, 
 
     }
-    const Users = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
    
 
-    return Users;
+    return User;
 }
+
+
+
+
+
+
+
