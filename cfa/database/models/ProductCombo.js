@@ -28,6 +28,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     }
     const ProductCombo = sequelize.define(alias,cols,config);
+
+    ProductCombo.associate = function(models) {
+            ProductCombo.hasMany(models.Combo , {
+                as:"Combo",
+                foreignKey: "id_combo",
+            }) 
+    }
+    
+
     return ProductCombo
 
 }

@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             types: dataTypes.INTEGER,
             allowNull : false,
             },
-            id_product:{
+        id_product:{
                 types: dataTypes.INTEGER,
                 allowNull : false,
             },
@@ -32,5 +32,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const Cart = sequelize.define(alias,cols,config);
     return Cart
+
+
+    
+
 
 }

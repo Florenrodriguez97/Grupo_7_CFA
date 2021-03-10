@@ -21,6 +21,13 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Combo = sequelize.define(alias,cols,config);
+
+    Combo.associate = function(models) {
+        Combo.belongsTo(models.productCombo , {
+            as:"productCombo",
+            foreignKey: "id_combo",
+        }) 
+    }
     return Combo
 
 }
