@@ -30,8 +30,8 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     }
 
-    const Cart = sequelize.define(alias,cols,config);
-    return Cart
+    const cart = sequelize.define(alias,cols,config);
+    return cart
 
 
     

@@ -30,7 +30,7 @@
               <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
 
               <label for="pass"></label>
-              <input type="password" name="pass" id="contraseña" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>" placeholder="Ingresa tu contraseña">
+              <input type="password" name="password" id="contraseña" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>" placeholder="Ingresa tu contraseña">
               
 
               <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : ""%></p>
@@ -46,11 +46,11 @@
                 <h2>Datos personales</h2>
               </div>
 
-              <input type="text" name="nombre" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : "" %>"  id="" placeholder="Nombre">
+              <input type="text" name="name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : "" %>"  id="" placeholder="Nombre">
               <p><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : "" %></p>
 
               <label for="Apellido"></label>
-              <input type="text" name="apellido" id="" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : "" %>"  placeholder="Apellido">
+              <input type="text" name="last_name" id="" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : "" %>"  placeholder="Apellido">
               <p><%= (typeof errores!='undefined' && errores.apellido)?errores.apellido.msg : "" %></p>
               <br><br>
 

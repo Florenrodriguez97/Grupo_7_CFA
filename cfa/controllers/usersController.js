@@ -10,7 +10,7 @@ const usersController = {
     },
     procesoRegistro: (req, res) => {
 
-        let errores = validationResult(req);
+        /*let errores = validationResult(req);
 
         if (!errores.isEmpty()) {
             return res.render('registro', {
@@ -18,30 +18,49 @@ const usersController = {
                 data: req.body
             })
 
-        } else {
-            const { email, pass, nombre, apellido } = req.body;
-            let lastID = 0;
+        } else {*/
+            const { email, password, name, last_name,dni,avatar,admin,province,location,address,phone } = req.body;
+            const passHash = bcrypt.hashSync(password, 12);
+
+            db.user.create({
+                email: email(trim),
+                password: passHash,
+                name: name(trim),
+                last_name: last_name(trim),
+                dni,
+                avatar,
+                admin,
+                province,
+                location,
+                address,
+                phone,
+            })
+            .then(result => {
+                console.log(result)
+                return res.redirect('login');
+            })
+            .catch(errores=> console.log(errores))
+           /* let lastID = 0;
             users_db.forEach(usuario => {
                 if (usuario.id > lastID) {
                     lastID = usuario.id
                 }
-            });
-
-            const passHash = bcrypt.hashSync(pass, 12);
-            const nuevoUsuario = {
+            });*/
+           
+            /*const nuevoUsuario = {
                 id: +lastID + 1,
                 email,
                 pass: passHash,
                 nombre,
                 apellido,
                 avatar: req.files[0].filename || 'sin avatar'
-            }
+            }*/
 
-            users_db.push(nuevoUsuario);
-            fs.writeFileSync('./data/usuarios.json', JSON.stringify(users_db, null, 2), 'utf-8');
+            /*users_db.push(nuevoUsuario);
+            fs.writeFileSync('./data/usuarios.json', JSON.stringify(users_db, null, 2), 'utf-8');*/
 
-            res.redirect('login');
-        }
+           
+        
     },
     login: (req, res) => {
         res.render('login')

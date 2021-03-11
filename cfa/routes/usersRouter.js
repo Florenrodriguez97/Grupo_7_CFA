@@ -14,11 +14,11 @@ const sessionCheck = require('../middlewares/sessionCheck')
 
 // login y register
 router.get ('/registro', sessionCheck, registro);
-router.post('/registro', uploadImages.any(), registroValidator,procesoRegistro);
+router.post('/registro', uploadImages.any(),procesoRegistro);
 
 
 router.get('/login', sessionCheck, login);
-router.post('/login',loginValidator, procesoLogin);
+router.post('/login', procesoLogin);
 
 router.get('/logout',logout)
 

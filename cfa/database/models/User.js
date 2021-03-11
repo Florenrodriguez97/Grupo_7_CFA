@@ -66,6 +66,7 @@ const cols ={
         tableName : 'users',
         timestamps : false,
         underscored : false, 
+        modelName : "user"
 
     }
     const User = sequelize.define(alias, cols, config);
