@@ -71,6 +71,13 @@ const cols ={
     }
     const User = sequelize.define(alias, cols, config);
    
+    User.associate = function (models){
+        User.belongsToMany(models.cart ,{
+           as: "carrito",
+           through: "id_user",
+        })
+    
+    }
 
     return User;
 }
