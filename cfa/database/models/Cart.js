@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             as : 'user',
             foreingKey : 'id_user'
         }),
-        Cart.hasMany(models.Products,{
+        Cart.belongsTo(models.Products,{
             as : 'product',
             foreingKey : 'id_product'
         })

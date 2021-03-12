@@ -35,7 +35,6 @@ const cols ={
     avatar : {
         type : dataTypes.STRING(500),
         allowNull: false,
-        defaultValue: "no image"
 
     },
     admin : {
@@ -69,10 +68,20 @@ const cols ={
     const User = sequelize.define(alias, cols, config);
    
     User.associate = function (models){
-        User.belongsToMany(models.cart ,{
+        User.belongsToMany(models.Products ,{
            as: "carrito",
-           through: "id_user",
+           through: "cart", //nombre de la tabla
+           foreignKey: "id_user",
+           otherKey: "id_product",
+           timestamps: false
         })
+        User.belongsToMany(models.Products ,{
+            as: "historialcompra",
+            through: "purchase_history", //nombre de la tabla
+            foreignKey: "id_user",
+            otherKey: "id_product",
+            timestamps: false
+         })
     
     }
 

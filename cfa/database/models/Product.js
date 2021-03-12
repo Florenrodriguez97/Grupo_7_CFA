@@ -44,6 +44,35 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias,cols,config);
 
+    Product.associate = function (models){
+        Product.belongsToMany(models.Users ,{ //nombre del alias 'models.Users'
+           as: "carrito",
+           through: "cart", //nombre de la tabla
+           foreignKey: "id_product",
+           otherKey: "id_user",
+           timestamps: false
+        })
+        Product.belongsToMany(models.Users ,{ //nombre del alias 'models.Users'
+           as: "historialcompra",
+           through: "purchase_history", //nombre de la tabla
+           foreignKey: "id_product",
+           otherKey: "id_user",
+           timestamps: false
+        })
+        Product.hasMany(models.Categorys ,{
+            as: "category",
+            foreignKey: "id_category",
+            timestamps: false
+        })
+        Product.belongsToMany(models.Combos ,{ //nombre del alias 'models.Users'
+           as: "pcarmadas",
+           through: "combo", //nombre de la tabla
+           foreignKey: "id_product",
+           otherKey: "id_combo",
+           timestamps: false
+        })
+    
+    }
     
     return Product
 

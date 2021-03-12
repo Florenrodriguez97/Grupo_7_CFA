@@ -20,7 +20,7 @@ const usersController = {
 
         } else {*/
             
-            const {email, password, name, last_name, avatar, admin} = req.body;
+            const {email, password, name, last_name} = req.body;
             const passHash = bcrypt.hashSync(password.trim(), 12);
 
             db.Users.create({
@@ -28,8 +28,7 @@ const usersController = {
                 password: passHash,
                 name: name.trim(),
                 last_name: last_name.trim(),
-                avatar,
-                admin,
+                avatar: req.files[0] ? req.files[0].filename : 'default_user.png',
             })
             .then(result => {
                 console.log(result)
@@ -37,20 +36,6 @@ const usersController = {
             })
             .catch(errores=> console.log(errores))
            
-            /*const nuevoUsuario = {
-                id: +lastID + 1,
-                email,
-                pass: passHash,
-                nombre,
-                apellido,
-                avatar: req.files[0].filename || 'sin avatar'
-            }*/
-
-            /*users_db.push(nuevoUsuario);
-            fs.writeFileSync('./data/usuarios.json', JSON.stringify(users_db, null, 2), 'utf-8');*/
-
-           
-        
     },
     login: (req, res) => {
         res.render('login')

@@ -21,7 +21,17 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Combo = sequelize.define(alias,cols,config);
-
+    
+    Combo.associate = function (models){
+        Combo.belongsToMany(models.Products ,{
+           as: "pcarmadas",
+           through: "combo", //nombre de la tabla
+           foreignKey: "id_combo",
+           otherKey: "id_product",
+           timestamps: false
+        })
+    
+    }
     
     return Combo
 
