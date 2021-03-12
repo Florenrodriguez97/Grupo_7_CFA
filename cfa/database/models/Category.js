@@ -1,28 +1,29 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "Categoria",
+    let alias = "Categorys";
 
 
-    const cols = {
+    let cols = {
         id : {
-            type : dataTypes.INTERGER(11).UNSIGNED,
+            type : dataTypes.INTEGER,
             autoIncrement : true,
             allowNull : false,
             primaryKey: true
         },
         name : {
-            type : dataTypes.VARCHAR(50).UNSIGNED
+            type: dataTypes.STRING(50),
+            allowNull : false,
         },
 
     }
 
 
     const config = {
-        tableName : 'Category',
+        tableName : 'category',
         timestramps : false,
         underscored : false,
     }
 
-    const Category = sewquelize.define (alias, cols, config );
+    const Category = sequelize.define (alias, cols, config);
 
 
 

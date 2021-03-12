@@ -1,73 +1,70 @@
 module.exports = (sequelize, dataTypes) => {
 
-const alias = "usuarios";
+const alias = "Users";
 
 
 const cols ={
     id : {
-        type : dataTypes.INTERGER(10).UNSIGNED,
+        type : dataTypes.INTEGER,
         autoIncrement : true,
         allowNull : false,
         primaryKey: true
     },
     email : {
-        type: dataTypes.VARCHAR(100),
+        type: dataTypes.STRING(100),
         allowNull : false,
         unique : true
 
     },
     password: {
-        type : dataTypes.VARCHAR(100),
+        type : dataTypes.STRING(100),
         allowNull: false
     },
     name : { 
-        type : dataTypes.VARCHAR (100),
+        type : dataTypes.STRING (100),
         allowNull: false
     },
     last_name : { 
-        type : dataTypes.VARCHAR(100),
+        type : dataTypes.STRING(100),
         allowNull: false
     },
     dni : { 
-        type: dataTypes.INTERGER(11),
+        type: dataTypes.INTEGER(11),
         defaultValue : null
     },
     avatar : {
-        type : dataTypes.VARCHAR(500),
-        allowNull: false
+        type : dataTypes.STRING(500),
+        allowNull: false,
+        defaultValue: "no image"
 
     },
     admin : {
         type: dataTypes.TINYINT(4),
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
     },
     province : {
-        type : dataTypes.VARCHAR(150),
-        allowNull: false ,
+        type : dataTypes.STRING(150),
         defaultValue: null
     },
     location: {
-        type : dataTypes.VARCHAR(15),
+        type : dataTypes.STRING(15),
         defaultValue: null
     },
     address: { 
-        type: dataTypes.VARCHAR(150),
+        type: dataTypes.STRING(150),
         defaultValue: null
     },
     phone : {
         type: dataTypes.INTEGER(11),
         defaultValue: null
     },
-
-
 }
 
     const config = {
         tableName : 'users',
         timestamps : false,
-        underscored : false, 
-        modelName : "user"
-
+        underscored : true
     }
     const User = sequelize.define(alias, cols, config);
    

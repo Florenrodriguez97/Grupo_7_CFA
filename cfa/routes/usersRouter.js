@@ -4,8 +4,7 @@ var router = express.Router();
 const {check, body} = require('express-validator');
 
 const {login,procesoLogin,procesoRegistro,registro,perfil,logout} = require('../controllers/usersController');
-const loginValidator = require ('../validations/loginValidator');
-const registroValidator = require('../validations/registroValidator');
+
 const uploadImages = require('../middlewares/uploadImages');
 const userCheck = require('../middlewares/userCheck')
 const sessionCheck = require('../middlewares/sessionCheck')

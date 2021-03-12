@@ -19,33 +19,23 @@ const usersController = {
             })
 
         } else {*/
-            const { email, password, name, last_name,dni,avatar,admin,province,location,address,phone } = req.body;
-            const passHash = bcrypt.hashSync(password, 12);
+            
+            const {email, password, name, last_name, avatar, admin} = req.body;
+            const passHash = bcrypt.hashSync(password.trim(), 12);
 
-            db.user.create({
-                email: email(trim),
+            db.Users.create({
+                email: email.trim(),
                 password: passHash,
-                name: name(trim),
-                last_name: last_name(trim),
-                dni,
+                name: name.trim(),
+                last_name: last_name.trim(),
                 avatar,
                 admin,
-                province,
-                location,
-                address,
-                phone,
             })
             .then(result => {
                 console.log(result)
                 return res.redirect('login');
             })
             .catch(errores=> console.log(errores))
-           /* let lastID = 0;
-            users_db.forEach(usuario => {
-                if (usuario.id > lastID) {
-                    lastID = usuario.id
-                }
-            });*/
            
             /*const nuevoUsuario = {
                 id: +lastID + 1,
