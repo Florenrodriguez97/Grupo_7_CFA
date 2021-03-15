@@ -1,3 +1,5 @@
+const db = require ('../database/models')
+
 const productos = require('../data/productos');
 const fs = require('fs')
 
@@ -91,8 +93,9 @@ module.exports = {
         });
     },
     crearProducto: (req, res) => {
-        res.render('admin/cargaProducto');
+        res.render('cargaProducto');
     },
+    
     guardarProducto: (req, res, next) => { //store
         
         let lastId = 1;
@@ -101,7 +104,7 @@ module.exports = {
                 lastId = producto.id
             }
         });
-        const { img, nombre, detalle, precio, oferta, categoria } = req.body;
+        const {name, detail, image, prince, offer, featured, category }= req.body;
 
         let producto =
         {
@@ -118,15 +121,39 @@ module.exports = {
         fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
         res.redirect('/admin/productos'); 
     },
+
+
     editarProducto: (req, res) => {
         const producto = productos.find(producto => producto.id === +req.params.id)
         res.render('admin/editarProducto',{
             producto
         })
+        const {name, detail, image, prince, offer, featured, category }= req.body;
+     
+      
+        db.Product.update ({
+            name,
+            detail,
+            image,
+            price,
+            offer,
+            featured,
+             },
+        {
+            where: {
+                id: req.params.id
+            }
         
+        })
+        .then(result => {
+            console.log(result)
+            return res.redirect ('/admin/editarProducto/'+ req.params.id)
+        })
+        .catch(error => res.send(error))
+    
     },
     actualizarProducto: (req, res, next) => {
-        const { img, nombre, detalle, precio, oferta, categoria } = req.body;
+        const {name, detail, image, prince, offer, featured, category }= req.body;
 
         productos.forEach(producto => {
             if(producto.id === +req.params.id){
@@ -143,13 +170,24 @@ module.exports = {
         res.redirect('/admin/productos'); 
     },
     borrarProducto: (req,res) => {
-
         productos.forEach(producto => {
             if (producto.id === +req.params.id) {
                 let eliminar = productos.indexOf(producto);
                 productos.splice(eliminar, 1)
             }
         });
+
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(result => {
+            console.log ('El producto ha sido eliminado')
+            return res.redirect('/admin/eliminarProducto')
+        })
+
+      
 
         fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
 

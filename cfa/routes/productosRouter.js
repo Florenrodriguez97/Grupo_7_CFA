@@ -12,4 +12,5 @@ router.get('/categoria/:categ', categoria);
 router.get('/buscar', buscar);
 
 
+
 module.exports = router;

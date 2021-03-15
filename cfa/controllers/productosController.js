@@ -103,17 +103,19 @@ const productosController = {
         })
     },
     
-    create : (req,res) =>{
-     res.render('cargaProducto');
-    },
-    list : (req,res) =>{
+    listar : (req,res) =>{
          let offset = +req.params.offset || 0;
-         db.Productos.findAll()
-         .then (productos => {
-             return res.render('listaProductos', {
-                 producto,
+         db.Productos.findAll({
+             order: [
+                 ['productos' , 'ASC']
+             ]
+             .then (productos => {
+             return res.render('listarProducto', {
+                 productos,
              })
          })
+         })
+         
     },
     store : (req,res) =>{
         const {name,detail,image , price, offer , featured} = req.body;
