@@ -1,3 +1,5 @@
+const db = require ('../database/models');
+const {Op} = require('sequelize');
 const productos = require('../data/productos');
 
 const productosController = {
@@ -16,9 +18,9 @@ const productosController = {
             categoriasList
         })
     },
-    carga: (req,res) =>{
+   /* carga: (req,res) =>{
         res.render('cargaProducto')
-    },
+    },*/
     carrito: (req,res) =>{
         res.render('carrito')
     },
@@ -99,8 +101,42 @@ const productosController = {
             categoriasList,
             productos: resultado
         })
-    }
+    },
     
+    create : (req,res) =>{
+     res.render('cargaProducto');
+    },
+    list : (req,res) =>{
+         let offset = +req.params.offset || 0;
+         db.Productos.findAll()
+         .then (productos => {
+             return res.render('listaProductos', {
+                 producto,
+             })
+         })
+    },
+    store : (req,res) =>{
+        const {name,detail,image , price, offer , featured} = req.body;
+    
+        db.Productos.create({
+            name,
+            detail,
+           image,
+           price,
+           offer,
+           featured 
+        })
+        .then(newProduct => 
+            console.log(newProduct))
+            res.redirect('productos/listar')
+        .catch (error => res.send (error))
+    },
+    edit: (req,res) =>{
+
+    },
+    update: (req,res) =>{
+
+    },
 }
 
 module.exports = productosController;
