@@ -31,11 +31,11 @@
              <div class="card" style="width: 280px; height: 400px;">
               <figure class="d-flex justify-content-center align-items-center"
                 style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/images/<%= product.img %> " class="card-img-top" alt="...">
+                <img src="/images/<%= product.image %> " class="card-img-top" alt="...">
               </figure>
               <div class="card-body">
-                <h5 class="card-title"><%= product.nombre %></h5>
-                <p class="card-text"><%= product.precio %></p>
+                <h5 class="card-title"><%= product.name %></h5>
+                <p class="card-text">$<%= product.price %></p>
                 <a href="/productos/detalle/<%= product.id %>" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
                   producto</a>
               </div>
@@ -168,12 +168,12 @@
               <section class="product-box-home">
                 <a href="/productos/detalle/<%= product.id %>">
                   <figure class="product-box_image-home">
-                    <img src="/images/<%= product.img %>" alt="imagen de producto">
+                    <img src="/images/<%= product.image %>" alt="imagen de producto">
                   </figure>
                   <article class="product-box_data-home">
-                    <h2><%= product.precio %></h2>
-                    <span class="tachado-home"><%= product.oferta %>% OFF</span>
-                    <p><%= product.nombre %></p>
+                    <h2>$<%= product.price %></h2>
+                    <span class="tachado-home"><%= product.offer %>% OFF</span>
+                    <p><%= product.name %></p>
                   </article>
                 </a>
               </section>

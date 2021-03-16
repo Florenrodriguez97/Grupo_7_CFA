@@ -924,6 +924,12 @@ margin-top: 10%;
 }
 
 /*Preguntas frecuentes*/
+.linea {
+  border-top: 1px solid black;
+  height: 2px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
 
 .box-preguntas{
   background-color: #ffffff;
@@ -943,12 +949,14 @@ margin-top: 10%;
 
 .respuesta-1{
   padding-bottom: 15px;
+  margin: 1.6em 20px;
 }
 .preg-2{
   font-size: 32px;
 }
-.respuesta-2{
+.respuesta-2,.respuesta-3,.respuesta-4{
  padding-bottom: 15px;
+ margin: 1.6em 20px;
 }
 .preg-3{
   font-size: 32px;
@@ -962,6 +970,7 @@ margin-top: 10%;
 }
 .respuesta-5{
   padding-bottom: 50px;
+  margin: 1.6em 20px;
 }
 
  .bi-check2{

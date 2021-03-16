@@ -59,10 +59,10 @@ module.exports = (sequelize, dataTypes) => {
            otherKey: "id_user",
            timestamps: false
         })
-        Product.hasMany(models.Categorys ,{
+        Product.belongsTo(models.Categorys ,{
             as: "category",
-            foreignKey: "id_category",
-            timestamps: false
+            foreignKey: "id_category"
+           
         })
         Product.belongsToMany(models.Combos ,{ //nombre del alias 'models.Users'
            as: "pcarmadas",

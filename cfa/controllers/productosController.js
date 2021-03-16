@@ -4,19 +4,24 @@ const productos = require('../data/productos');
 
 const productosController = {
     productos:(req,res) =>{
-        let categorias = [] 
+        /*let categorias = [] 
         
         productos.forEach(producto => {
             categorias.push(producto.categoria)
         });
 
         const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
-        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
-
-        res.render('productos',{
-            productos,
-            categoriasList
+        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos*/
+        let productos = db.Products.findAll()
+        let categoriasList = db.Categorys.findAll()
+        Promise.all([productos,categoriasList])
+        .then(([productos,categoriasList])=>{
+            res.render('productos',{
+                productos,
+                categoriasList
+            })
         })
+        
     },
    /* carga: (req,res) =>{
         res.render('cargaProducto')
@@ -53,7 +58,7 @@ const productosController = {
 
     
     categoria: (req,res) =>{
-        let categ = req.params.categ;
+        /*let categ = req.params.categ;
         let productosCateg = [];
         
         productos.forEach(producto => {
@@ -65,24 +70,39 @@ const productosController = {
         
         let categorias = [] 
         
+
+
         productos.forEach(producto => {
             categorias.push(producto.categoria)
         });
 
         const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
-        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
+        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos*/
+ let items = db.Categorys.findOne({
+ where : {
+     id: req.params.categ
+ },
+ include :[
+     {association :'products'}
+ ]
+ })      
+ let categoriasList =db.Categorys.findAll()
 
-        res.render('categoria',{
-            productos,
-            categoriasList,
-            productosCateg
-        })
+ Promise.all([items,categoriasList])
+ .then(([items,categoriasList])=>{
+    res.render('productos',{
+        productos: items.products,
+        categoriasList,
+       
+    })
+ })
+ 
     },
     editar: (req,res)=>{
         res.render('editar')
     },
     buscar: (req,res)=>{
-        const buscar = req.query.buscar;
+        /*const buscar = req.query.buscar;
 
         let categorias = []
 
@@ -95,12 +115,35 @@ const productosController = {
 
         const resultado = productos.filter(producto => {
             return producto.nombre.toLowerCase().includes(buscar)
+        })*/
+        let productos = db.Products.findAll({
+            where:{
+                
+                    [Op.or] :[
+                        {
+                            'name' :{
+                                [Op.substring]: req.query.buscar}
+                            },                         
+                        {
+                            'detail': {
+                                [Op.substring]:req.query.buscar}
+                            },
+                    ]
+                },
+           
+        })
+        let categoriasList = db.Categorys.findAll()
+        
+        Promise.all([productos,categoriasList])
+        .then(([productos,categoriasList])=>{
+            res.render('productos',{
+                productos,
+                categoriasList
+            })
         })
         
-        res.render('productos', {
-            categoriasList,
-            productos: resultado
-        })
+
+       
     },
     
     listar : (req,res) =>{
