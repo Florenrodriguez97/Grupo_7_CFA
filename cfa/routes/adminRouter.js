@@ -9,7 +9,7 @@ router.get('/',userCheck,index);
 
 
 
-router.get('/productos/categoria/:categ',userCheck, categoria);
+
 router.get('/productos/buscar',userCheck, buscar);
 router.get('/productos/detalle/:id',userCheck, detalle);
 router.get('/productos',userCheck, listarProducto);

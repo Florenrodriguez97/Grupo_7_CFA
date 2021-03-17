@@ -45,9 +45,13 @@
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="categoria" placeholder="categoria" name="categoria">
-                                <label for="modelo">Categoría</label>
+                            <div class=" mb-3">
+                                <select name="categoria" id="categoria" class="form-select">
+                                        <option selected disabled>Elige Categoría</option>
+                                    <% categorias.forEach(categoria => { %>
+                                        <option value=<%=categoria.id%>> <%=categoria.name%> </option>
+                                    <% }) %>
+                                </select>
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-md-10 col-lg-8">

@@ -1,6 +1,5 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
-const productos = require('../data/productos');
 
 const productosController = {
     productos: (req, res) => {

@@ -1,190 +1,155 @@
-const db = require ('../database/models')
-const productos = require('../data/productos');
-const fs = require('fs')
+const db = require('../database/models')
+const {Op} = require('sequelize')
+
 
 module.exports = {
     index: (req, res) => {
         res.render('admin/index');
     },
-    categoria: (req, res) => {
-        let categ = req.params.categ;
-        let productosCateg = [];
-
-        productos.forEach(producto => {
-            if (producto.categoria == categ) {
-                productosCateg.push(producto)
-            }
-        });
-
-        let categorias = []
-
-        productos.forEach(producto => {
-            categorias.push(producto.categoria)
-        });
-
-        const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
-        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
-
-        res.render('admin/categoria', {
-            productos,
-            categoriasList,
-            productosCateg
-        })
-    },
+   
     buscar: (req, res) => {
-        const buscar = req.query.buscar;
+        let productos = db.Products.findAll({
+            where: {
+                [Op.or]: [
+                    {
+                        'name': {
+                            [Op.substring]: req.query.buscar
+                        }
+                    },
+                    {
+                        'detail': {
+                            [Op.substring]: req.query.buscar
+                        }
+                    },
+                ]
+            },
 
-        let categorias = []
-
-        productos.forEach(producto => {
-            categorias.push(producto.categoria)
-        });
-
-        const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
-        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
-
-        const resultado = productos.filter(producto => {
-            return producto.nombre.toLowerCase().includes(buscar)
         })
-        res.render('admin/productos', {
-            categoriasList,
-            productos: resultado
-        })
+        let categoriasList = db.Categorys.findAll()
+
+        Promise.all([productos, categoriasList])
+            .then(([productos, categoriasList]) => {
+                res.render('admin/productos', {
+                    usuario:req.session.usuario,
+                    productos,
+                    categoriasList
+                })
+            })
     },
     listarProducto: (req, res) => {
-        let categorias = []
-
-        productos.forEach(producto => {
-            categorias.push(producto.categoria)
-        });
-
-        const categoriasArr = new Set(categorias) //creo nuevo array con valores unicos
-        let categoriasList = [...categoriasArr] //guardo en el nuevo array los valores unicos
-
-        res.render('admin/productos', {
-            productos,
-            categoriasList
-        })
+        let productos = db.Products.findAll()
+        let categoriasList = db.Categorys.findAll()
+        Promise.all([productos, categoriasList])
+            .then(([productos, categoriasList]) => {
+                res.render('admin/productos', {
+                        usuario:req.session.usuario,
+                    productos,
+                    categoriasList
+                })
+            })
     },
-    detalle: (req,res) =>{
-        let prod=productos;
-        const id = req.params.id;
-        const product = productos.find (product => {
-            return product.id === +id
-        });
-        let aleatorio2 = [];
-        let aleatorio = [];
-        for (let i = 0; i < 2; i++) {
-            let ran = Math.floor(Math.random()*(prod.length))
-            let seleccion = prod[ran];
-             aleatorio.push(seleccion);
-            }
-        for (let i = 0; i < 2; i++) {
-            let ran = Math.floor(Math.random()*(prod.length))
-            let seleccion = prod[ran];
-                aleatorio2.push(seleccion);
-            }    
-           
-        res.render('admin/detalle', {
-            product,
-            aleatorio,
-            aleatorio2
-        });
+    detalle: (req, res) => {
+        let product = db.Products.findByPk(req.params.id)
+        
+        let aleatorio = db.Products.findAll({
+            limit : 2
+        })
+        let aleatorio2 =db.Products.findAll({
+            limit : 2
+        })
+        Promise.all([product,aleatorio,aleatorio2])
+        .then(([product,aleatorio,aleatorio2])=>{
+            res.render('admin/detalle',{
+                usuario:req.session.usuario,
+                product,
+                aleatorio,
+                aleatorio2
+            }); 
+        }) 
     },
     crearProducto: (req, res) => {
-        res.render('admin/cargaProducto');
+        db.Categorys.findAll()
+            .then(result => {
+                res.render('admin/cargaProducto', {
+                    categorias: result
+                });
+            })
+
     },
-    
+
     guardarProducto: (req, res, next) => { //store
-        
-        const {nombre, detalle, precio, oferta, categoria }= req.body;
 
+        const { nombre, detalle, precio, oferta, categoria } = req.body;
+        console.log(req.body);
         db.Products.create({
-            image:req.files[0] ? req.files[0].filename : 'default_product.png',
-            name:nombre,
-            detail:detalle,
-            price:precio,
-            offer:oferta,
-            category:categoria,
+            image: req.files[0] ? req.files[0].filename : 'default_product.png',
+            name: nombre,
+            detail: detalle,
+            price: precio,
+            offer: oferta,
+            id_category: categoria,
         })
-        .then(newProduct => {
-            console.log(newProduct)
-            res.redirect('/admin/productos');
-        })
-        .catch(error => res.send(error))
+            .then(newProduct => {
+                console.log(newProduct)
+                res.redirect('/admin/productos');
+            })
+            .catch(error => res.send(error))
     },
-
 
     editarProducto: (req, res) => {
-        const producto = productos.find(producto => producto.id === +req.params.id)
-        res.render('admin/editarProducto',{
-            producto
-        })
-        const {name, detail, image, price, offer, featured, category }= req.body;
-     
-      
-        db.Product.update ({
-            name,
-            detail,
-            image,
-            price,
-            offer,
-            featured,
-             },
-        {
-            where: {
-                id: req.params.id
+        let producto = db.Products.findOne({
+            where:{
+                id:req.params.id
             }
-        
+        })
+        let categorias = db.Categorys.findAll()
+
+        Promise.all([producto,categorias])
+        .then(([producto,categorias]) => {
+            res.render('admin/editarProducto', {
+            producto,
+            categorias
+            })
+        })
+        .catch(error => res.send(error))
+
+    },
+    actualizarProducto: (req, res, next) => {
+        const { nombre, detalle, precio, oferta, categoria} = req.body;
+        const {id} = req.params
+        db.Products.update({
+            image : req.files[0] ? req.files[0].filename : 'default_product.png',
+            name : nombre,
+            detail : detalle,
+            price : precio,
+            offer : oferta,
+            category : categoria,
+        },{
+            where:{
+                id:id
+            }
         })
         .then(result => {
             console.log(result)
-            return res.redirect ('/admin/editarProducto/'+ req.params.id)
+            return res.redirect('/admin/productos');
         })
         .catch(error => res.send(error))
-    
+        
     },
-    actualizarProducto: (req, res, next) => {
-        const {name, detail, image, prince, offer, featured, category }= req.body;
-
-        productos.forEach(producto => {
-            if(producto.id === +req.params.id){
-                producto.id = +req.params.id;
-                producto.img = req.files[0].filename;
-                producto.nombre = nombre;
-                producto.detalle = detalle;
-                producto.precio = precio;
-                producto.oferta = oferta;
-                producto.categoria = categoria
-            }
-        });
-        fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
-        res.redirect('/admin/productos'); 
-    },
-    borrarProducto: (req,res) => {
-        productos.forEach(producto => {
-            if (producto.id === +req.params.id) {
-                let eliminar = productos.indexOf(producto);
-                productos.splice(eliminar, 1)
-            }
-        });
-
-        db.Product.destroy({
+    borrarProducto: (req, res) => {
+        
+        db.Products.destroy({
             where: {
                 id: req.params.id
             }
         })
-        .then(result => {
-            console.log ('El producto ha sido eliminado')
-            return res.redirect('/admin/eliminarProducto')
-        })
-
-      
-
-        fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
-
-        res.redirect('/admin/productos');
+            .then(result => {
+                console.log('El producto ha sido eliminado')
+                return res.redirect('/admin/productos');
+            })
+            .catch(error => res.send(error))
+        
     },
-    
-    
+
+
 }

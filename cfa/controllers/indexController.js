@@ -1,5 +1,3 @@
-const productos = require('../data/productos');
-
 const db = require('../database/models');
 const indexController = {
     index: (req,res) =>{
