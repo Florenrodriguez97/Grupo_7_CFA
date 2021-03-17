@@ -1,5 +1,4 @@
 const db = require ('../database/models')
-
 const productos = require('../data/productos');
 const fs = require('fs')
 
@@ -93,33 +92,26 @@ module.exports = {
         });
     },
     crearProducto: (req, res) => {
-        res.render('cargaProducto');
+        res.render('admin/cargaProducto');
     },
     
     guardarProducto: (req, res, next) => { //store
         
-        let lastId = 1;
-        productos.forEach((producto) => {
-            if (producto.id > lastId) {
-                lastId = producto.id
-            }
-        });
-        const {name, detail, image, prince, offer, featured, category }= req.body;
+        const {nombre, detalle, precio, oferta, categoria }= req.body;
 
-        let producto =
-        {
-            id: lastId + 1,
-            img: req.files[0].filename,
-            nombre,
-            detalle,
-            precio,
-            oferta,
-            categoria
-        }
-        
-        productos.push(producto);
-        fs.writeFileSync('./data/productos.json', JSON.stringify(productos), 'utf-8');
-        res.redirect('/admin/productos'); 
+        db.Products.create({
+            image:req.files[0] ? req.files[0].filename : 'default_product.png',
+            name:nombre,
+            detail:detalle,
+            price:precio,
+            offer:oferta,
+            category:categoria,
+        })
+        .then(newProduct => {
+            console.log(newProduct)
+            res.redirect('/admin/productos');
+        })
+        .catch(error => res.send(error))
     },
 
 
@@ -128,7 +120,7 @@ module.exports = {
         res.render('admin/editarProducto',{
             producto
         })
-        const {name, detail, image, prince, offer, featured, category }= req.body;
+        const {name, detail, image, price, offer, featured, category }= req.body;
      
       
         db.Product.update ({

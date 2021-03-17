@@ -17,7 +17,7 @@
                     
                         <ul class="dropdown-menu categMnu" aria-labelledby="navbarDropdown">
                             <% categoriasList.forEach(categoria => { %>
-                            <li><a class="dropdown-item" href="/productos/categoria/<%- categoria.id %>"><%- categoria.name %></a></li>
+                            <li><a class="dropdown-item" href="/productos/<%- categoria.name %>"><%- categoria.name %></a></li>
                             <% }) %>
                         </ul>
                     
@@ -26,8 +26,11 @@
         </section>
         <section>
             <div class="row">
-                
+                <% if(productos.length == 0){%>
+                    <h2>No se encontraron productos</h2>
+                <% }%>
                 <% productos.forEach(producto => { %>
+                    
                     <div class="productDiv col-12 col-sm-6 col-lg-3">
                         <section class="product-box-categ">
                             <a href="/productos/detalle/<%- producto.id %>">

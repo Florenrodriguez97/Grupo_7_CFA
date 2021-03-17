@@ -14,22 +14,22 @@
             <main>
                 <div class="container product-box-img col-12">
                     <div class="row">
-                        <h1 class="product-title-1 col-lg-12 col-12 "> Detalle del producto: <%= product.nombre %></h1>
+                        <h1 class="product-title-1 col-lg-12 col-12 "> Detalle del producto: <%= product.name %></h1>
                     </div>
                     <div class="col-12">
                         <section class="product-box row ">
                             <section class="product-box_image col-lg-6 col-12">
-                                <img src="/images/<%- product.img %>" alt="">
+                                <img src="/images/<%- product.image %>" alt="">
 
                             </section>
                             <article class="title-2 col-lg-6 col-12">
-                                <h2><%= product.nombre %></h2>
-                                <p class="description col-12"> <%= product.detalle  %> </p>
+                                <h2><%= product.name %></h2>
+                                <p class="description col-12"> <%= product.detail  %> </p>
                                 <div class="precios-detalle row">
                                     <div class="precios-detalle col-8">
-                                        <h3 class="precio-nuevo"> <%= product.precio %></h3>
+                                        <h3 class="precio-nuevo"> <%= product.price %></h3>
                                         <strike class="precio-tachado ">$11.650</strike>
-                                        <span class="precio-descuento "><%= product.oferta %>% off</span>
+                                        <span class="precio-descuento "><%= product.offer %>% off</span>
                                         <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
                                     </div>
                                     <div class="forma-pago col-4">
@@ -55,11 +55,11 @@
                             <% aleatorio.forEach(product => { %>
                              <div class="product-simi-1 row">
                                 <div class="col-4">
-                                    <img src="/images/<%= product.img %>" width="100" height="100">
+                                    <img src="/images/<%= product.image %>" width="100" height="100">
                                 </div>
                                 <div class="col-8">
-                                    <p><%= product.nombre %></p>
-                                    <h3><%= product.precio %></h3>
+                                    <p><%= product.name %></p>
+                                    <h3><%= product.price %></h3>
                                     <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
 
                                 </div>
@@ -72,13 +72,13 @@
                             <% aleatorio2.forEach(product => { %>
                              <div class="product-simi-3 row">
                                 <div class="col-4">
-                                    <img src="/images/<%= product.img %>" width="100" height="100">
+                                    <img src="/images/<%= product.image %>" width="100" height="100">
                                 </div>
 
                                 <div class="col-8">
-                                    <p><%= product.nombre %></p>
+                                    <p><%= product.name %></p>
                                     <div class="precio-sugerencia">
-                                    <h3><%= product.precio %></h3>
+                                    <h3><%= product.price %></h3>
                                     </div>
                                     <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
 

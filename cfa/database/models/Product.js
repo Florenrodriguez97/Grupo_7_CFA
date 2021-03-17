@@ -31,6 +31,7 @@ module.exports = (sequelize, dataTypes) => {
         featured:{
             type: dataTypes.INTEGER,
             allowNull : false,
+            defaultValue: 0,
         },
         id_category:{
             type: dataTypes.INTEGER,

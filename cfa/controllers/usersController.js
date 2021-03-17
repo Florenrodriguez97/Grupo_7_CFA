@@ -1,47 +1,38 @@
 const { validationResult, body } = require('express-validator');
-const fs = require('fs');
 const bcrypt = require('bcrypt');
-const users_db = JSON.parse(fs.readFileSync('./data/usuarios.json'));
-const db = require ('../database/models');
+const db = require('../database/models');
 
 const usersController = {
     registro: (req, res) => {
-        res.render('registro')
+        res.render('registro',{
+            usuario:req.session.usuario
+        })
     },
     procesoRegistro: (req, res) => {
+        const { email, password, name, last_name } = req.body;
+        const passHash = bcrypt.hashSync(password.trim(), 12);
 
-        /*let errores = validationResult(req);
-
-        if (!errores.isEmpty()) {
-            return res.render('registro', {
-                errores: errores.mapped(),
-                data: req.body
-            })
-
-        } else {*/
-            
-            const {email, password, name, last_name} = req.body;
-            const passHash = bcrypt.hashSync(password.trim(), 12);
-
-            db.Users.create({
-                email: email.trim(),
-                password: passHash,
-                name: name.trim(),
-                last_name: last_name.trim(),
-                avatar: req.files[0] ? req.files[0].filename : 'default_user.png',
-            })
+        db.Users.create({
+            email: email.trim(),
+            password: passHash,
+            name: name.trim(),
+            last_name: last_name.trim(),
+            avatar: req.files[0] ? req.files[0].filename : 'default_user.png',
+        })
             .then(result => {
                 console.log(result)
                 return res.redirect('login');
             })
-            .catch(errores=> console.log(errores))
-           
+            .catch(errores => console.log(errores))
+
     },
     login: (req, res) => {
-        res.render('login')
+        res.render('login',{
+            usuario:req.session.usuario
+        })
     },
     procesoLogin: (req, res, next) => {
-       
+
         let errores = validationResult(req);
 
         const { email, pass, recordar } = req.body;
@@ -49,64 +40,61 @@ const usersController = {
         if (!errores.isEmpty()) {
             return res.render('login', {
                 errores: errores.mapped(),
-                data:req.body
+                data: req.body
             })
         } else {
-            let result = users_db.find(usuario => usuario.email === email.trim());
-
-            if (result) {
-                if (bcrypt.compareSync(pass.trim(), result.pass)){
-                   
-                    req.session.usuario = {
-                        id : result.id,
-                        email : result.email,
-                        nombre : result.nombre,
-                        apellido : result.apellido,
-                        avatar : result.avatar
-                    }
-
-                    if(recordar != undefined){
-                        res.cookie('perfilUsuario',req.session.usuario,{
-                            maxAge : 1000 * 60 * 60 * 24 * 7 //cookie de una semana de duracion
-                        })
-                    }
-
-                    return res.redirect('perfil')
-                    
+            /* let result = users_db.find(usuario => usuario.email === email.trim()); */
+            db.Users.findOne({
+                where: {
+                    email: email
                 }
-
-            }
-            res.render('login', {
-                errores: {
-                    pass:{
-                        msg:'Credenciales Invalidas'
-                    }
-                },
-                data:req.body
             })
+                .then(result => {
+                    if (bcrypt.compareSync(pass.trim(), result.password)) {                     
+                        req.session.usuario = {
+                            id: result.id,
+                            email: result.email,
+                            name: result.name,
+                            last_name: result.last_name,
+                            avatar: result.avatar,
+                            admin: result.admin
+                        }
+                        if (recordar != undefined) {
+                            res.cookie('perfilUsuario', req.session.usuario, {
+                                maxAge: 1000 * 60 * 60 * 24 * 7 //cookie de una semana de duracion
+                            })
+                        }   
+                        res.locals.usuario = req.session.usuario     
+                        return res.redirect('perfil')
+                    }else{
+                        return res.render('login', {
+                        errores: {
+                            pass: {
+                                msg: 'Credenciales Invalidas'
+                            }
+                        },
+                        data: req.body
+                    })
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    
+                })
         }
     },
-    perfil : (req,res) => {
-        res.render('perfil')
+    perfil: (req, res) => {
+        res.render('perfil',{
+            usuario:req.session.usuario
+        })
     },
-    logout : (req,res) => {
+    logout: (req, res) => {
         req.session.destroy();
-        if(req.cookies.perfilUsuario){
-            res.cookie('perfilUsuario','',{maxAge:-1})
+        if (req.cookies.perfilUsuario) {
+            res.cookie('perfilUsuario', '', { maxAge: -1 })
         }
         res.redirect('/')
     }
 }
 
-module.exports = {
-    list: (req,res) => {
-        db.Usuarios.findAll()
-        .then(usuarios => {
-            return res.render ('usuarios.json' , {
-                usuarios
-            })
-        })
-        .catch(error => res.send (error))
-    }
-}
 module.exports = usersController;

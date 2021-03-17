@@ -8,9 +8,8 @@ const productoCheck = require('../middlewares/productoCheck')
 router.get('/', productos);
 router.get('/carrito', productoCheck, carrito);
 router.get('/detalle/:id', detalle);
-router.get('/categoria/:categ', categoria);
 router.get('/buscar', buscar);
-
+router.get('/:categ', categoria);
 
 
 module.exports = router;
