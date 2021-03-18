@@ -22,4 +22,6 @@ router.put('/productos/actualizar/:id', upload.any(), actualizarProducto);
 
 router.delete('/productos/borrar/:id',borrarProducto);
 
+router.get('/productos/:categ',userCheck, categoria); 
+
 module.exports = router;

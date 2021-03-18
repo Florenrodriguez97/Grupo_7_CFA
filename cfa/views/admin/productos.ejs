@@ -17,8 +17,8 @@
 
                             <ul class="dropdown-menu categMnu" aria-labelledby="navbarDropdown">
                                 <% categoriasList.forEach(categoria=> { %>
-                                    <li><a class="dropdown-item" href="/admin/productos/categoria/<%- categoria %>">
-                                            <%- categoria %>
+                                    <li><a class="dropdown-item" href="/admin/productos/<%- categoria.name %>">
+                                            <%- categoria.name %>
                                         </a></li>
                                     <% }) %>
                             </ul>

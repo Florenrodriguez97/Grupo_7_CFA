@@ -150,6 +150,26 @@ module.exports = {
             .catch(error => res.send(error))
         
     },
+    categoria: (req, res) => {
+        let items = db.Categorys.findOne({
+            where: {
+                name: req.params.categ
+            },
+            include: [
+                { association: 'products' }
+            ]
+        })
+        let categoriasList = db.Categorys.findAll()
 
+        Promise.all([items, categoriasList])
+            .then(([items, categoriasList]) => {
+                res.render('admin/productos', {
+                    usuario:req.session.usuario,
+                    productos: items.products,
+                    categoriasList,
+                })
+            })
+            .catch(error => res.send(error))
+    },
 
 }
