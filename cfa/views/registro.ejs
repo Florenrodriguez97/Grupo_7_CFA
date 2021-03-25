@@ -17,28 +17,26 @@
             </div>
             <div class="media">
               <div class="image"><img src="/images/Registro.png" alt="placeholder"></div>
-              <div class="content"><input type="file" id="foto_x" name="avatar"></div>
+              <div class="content"><input type="file" id="Foto_x" name="avatar"></div>
             </div>
 
             <!-- <div class="button guardar">
               <button type="button" class="btn btn-outline-primary reg"> Guardar</button>
             </div> -->
             <div class="Entradas">
-              <input type="text" name="email" id="email" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa tu email">
-              
-
-              <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
-
-              <label for="pass"></label>
-              <input type="password" name="password" id="password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>" placeholder="Ingresa tu contraseña">
-              
-
-              <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : ""%></p>
+              <input type="text" name="email" id="Email" value="<%= (typeof data!='undefined' && data.email)?data.email : null %>" placeholder="Ingresa tu email">
+               
+             <p id="errorEmail" class="text-danger"><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : null %></p>
 
               <label for="pass"></label>
-              <input type="password" name="pass2" id="password2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : "" %>" placeholder="Repetir contraseña">
+              <input type="password" name="password" id="Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : null %>" placeholder="Ingresa tu contraseña">
+              
+              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : null %></p>
 
-              <p><%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : "" %></p>
+              <label for="pass"></label>
+              <input type="password" name="pass2" id="Password2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : null %>" placeholder="Repetir contraseña">
+             
+              <p id="errorPassword2" class="text-danger"><%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : null %></p>
 
 
               <br>
@@ -46,13 +44,14 @@
                 <h2>Datos personales</h2>
               </div>
 
-              <input type="text" name="name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : "" %>"  id="name" placeholder="Nombre">
-              <p><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : "" %></p>
-              <span id="errorName" class="text-danger"></span>
+             
+              <input type="text" name="name" id="Name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : null %>"  id="name" placeholder="Nombre">
+              <p id="errorName" class="text-danger" ><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg :null %></p>
+           
 
               <label for="Apellido"></label>
-              <input type="text" name="last_name" id="last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : "" %>"  placeholder="Apellido">
-              <p><%= (typeof errores!='undefined' && errores.apellido)?errores.apellido.msg : "" %></p>
+              <input type="text" name="last_name" id="Last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : null %>"  placeholder="Apellido">
+              <p id="errorLast_name" class="text-danger" ><%= (typeof errores!='undefined' && errores.apellido)?errores.apellido.msg : null %></p>
               <br><br>
 
             </div>
