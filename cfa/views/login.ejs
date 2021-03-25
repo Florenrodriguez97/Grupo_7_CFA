@@ -14,7 +14,7 @@
               <h1>Iniciar Sesion</h1>
               
 
-              <input name="email" type="text" id="usuario" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
+              <input name="email" type="text" id="usuario" id="inputEmaill" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
               <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
 
               <input name="pass" type="password" id="contrasenia" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>"placeholder="Ingresa Password" >

@@ -9,7 +9,7 @@
 
         <div class="container form">
 
-          <form class="container registro id=myDIV" action="" method="POST" enctype="multipart/form-data">
+          <form class="container registro id=myDIV" id="form" action="" method="POST" enctype="multipart/form-data">
             <h1>Registro</h1>
 
             <div class="Crear">
@@ -48,6 +48,7 @@
 
               <input type="text" name="name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : "" %>"  id="name" placeholder="Nombre">
               <p><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : "" %></p>
+              <span id="errorName" class="text-danger"></span>
 
               <label for="Apellido"></label>
               <input type="text" name="last_name" id="last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : "" %>"  placeholder="Apellido">
@@ -75,6 +76,8 @@
       </div>
       <%- include('partials/footer.ejs') %>
 
+
+      <script src="/javascripts/app.js"></script>
   </body>
 
 </html>
