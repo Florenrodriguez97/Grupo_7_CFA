@@ -14,11 +14,11 @@
               <h1>Iniciar Sesion</h1>
               
 
-              <input name="email" type="text" id="usuario" id="inputEmaill" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
-              <p><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
+              <input name="email" type="text" id="Email"  value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
+              <p id="errorEmail" class="text-danger"><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
 
-              <input name="pass" type="password" id="contrasenia" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>"placeholder="Ingresa Password" >
-              <p><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
+              <input name="pass" type="password" id="Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>"placeholder="Ingresa Password" >
+              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
 
               <div class="row">
                 <div class="d-flex justify-content-center"><input type="checkbox" name="recordar" id="recordar" value="recordarme"></div>
@@ -46,7 +46,7 @@
         </div>
       </div>
       <%- include('partials/footer.ejs') %>
-
+      <script src="/javascripts/login.js"></script>
   </body>
 
 </html>

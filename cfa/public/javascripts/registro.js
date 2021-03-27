@@ -3,14 +3,14 @@ const qs = (e) => document.querySelector(e)
 window.addEventListener('load', () => {
     console.log('Javascript está vinculado correctamente');
 
-    let Foto_X = document.getElementById("Foto_X");
+    let Foto_x = document.getElementById("Foto_x");
     let Email = document.getElementById("Email");
     let Password = document.getElementById("Password");
     let Password2 = document.getElementById("Password2");
     let Name = document.getElementById("Name");
     let Last_name = document.getElementById("Last_name");
   
- console.log(Email)
+/*  console.log(Email) */
 
     /*(inputFoto_x.value) ? inputFoto_x.value = "" : null */
     let regExLetras = /^[a-zA-Z\sñáéíóúü]*$/
@@ -19,18 +19,6 @@ window.addEventListener('load', () => {
     let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
 
-       Foto_x.addEventListener('blur', function () {
-            switch (true) {
-                case !inputFoto_x.value:
-                    errorFoto_x.innerHTML = "Este campo es obligatorio"
-                   Foto_x.classList.add('is-invalid')
-                    break
-                default:
-                   Foto_x.classList.remove('is-invalid');
-                   Foto_x.classList.add('is-valid');
-                    errorFoto_x.innerHTML = "";
-            }
-        })
         Foto_x.addEventListener('change', (e) => {
             switch (true) {
                 case !regExExt.exec(Foto_x.value):
