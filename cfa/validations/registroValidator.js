@@ -1,17 +1,13 @@
-const fs = require('fs');
 const {check, body} = require('express-validator');
-const db = require ('./database/models');
+const db = require ('../database/models');
 
 module.exports = [
-
-    check('avatar')
-    .notEmpty().withMessage('La imagen es requerida'),
 
     check('email')
     .notEmpty().withMessage('El email es requerido')
     .isEmail().withMessage('El email debe ser valido'),
     body('email').custom(value => {
-        return db.User.findOne({
+        return db.Users.findOne({
             where : {
                 email : value
             }
@@ -32,7 +28,7 @@ module.exports = [
     })
     .withMessage('La contraseña debe tener un mínimo de 6 y un máximo de 8'),
 
-    body('password2').custom((value,{req}) => value!== req.body.pass ? false : true)
+    body('pass2').custom((value,{req}) => value!== req.body.password ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 
     check('name')

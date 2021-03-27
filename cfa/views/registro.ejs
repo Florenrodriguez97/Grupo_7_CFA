@@ -31,7 +31,7 @@
               <label for="pass"></label>
               <input type="password" name="password" id="Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : null %>" placeholder="Ingresa tu contraseña">
               
-              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : null %></p>
+              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.password)?errores.password.msg : null %></p>
 
               <label for="pass"></label>
               <input type="password" name="pass2" id="Password2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : null %>" placeholder="Repetir contraseña">
@@ -46,12 +46,12 @@
 
              
               <input type="text" name="name" id="Name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : null %>"  id="name" placeholder="Nombre">
-              <p id="errorName" class="text-danger" ><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg :null %></p>
+              <p id="errorName" class="text-danger" ><%= (typeof errores!='undefined' && errores.name)?errores.name.msg :null %></p>
            
 
               <label for="Apellido"></label>
               <input type="text" name="last_name" id="Last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : null %>"  placeholder="Apellido">
-              <p id="errorLast_name" class="text-danger" ><%= (typeof errores!='undefined' && errores.apellido)?errores.apellido.msg : null %></p>
+              <p id="errorLast_name" class="text-danger" ><%= (typeof errores!='undefined' && errores.last_name)?errores.last_name.msg : null %></p>
               <br><br>
 
             </div>

@@ -8,9 +8,20 @@ const usersController = {
             usuario:req.session.usuario
         })
     },
-    procesoRegistro: (req, res) => {
+    procesoRegistro: (req, res,next) => {
+
+        let errores = validationResult(req);
+       
         const { email, password, name, last_name } = req.body;
         const passHash = bcrypt.hashSync(password.trim(), 12);
+
+        if (!errores.isEmpty()) {
+            return res.render('registro', {
+                errores: errores.mapped(),
+                data: req.body,
+                usuario:req.session.usuario
+            })
+        } else {
 
         db.Users.create({
             email: email.trim(),
@@ -20,10 +31,11 @@ const usersController = {
             avatar: req.files[0] ? req.files[0].filename : 'default_user.png',
         })
             .then(result => {
-                console.log(result)
+                
                 return res.redirect('login');
             })
             .catch(errores => console.log(errores))
+        }
 
     },
     login: (req, res) => {
@@ -40,7 +52,8 @@ const usersController = {
         if (!errores.isEmpty()) {
             return res.render('login', {
                 errores: errores.mapped(),
-                data: req.body
+                data: req.body,
+                usuario:req.session.usuario
             })
         } else {
             /* let result = users_db.find(usuario => usuario.email === email.trim()); */

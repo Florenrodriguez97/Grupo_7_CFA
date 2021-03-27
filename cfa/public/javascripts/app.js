@@ -99,15 +99,19 @@ window.addEventListener('load', () => {
                 errorPassword2.innerHTML = "El campo contraseña es obligatorio";
                 Password2.classList.add('is-invalid');
                 break;
-                case !regExPass.test(Password2.value):
-                    errorPassword2.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres"
-                    Password2.classList.add('is-invalid');
-                    break
-            default:
+            case !regExPass.test(Password2.value):
+                errorPassword2.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres"
+                Password2.classList.add('is-invalid');
+                break;
+            case Password2.value != Password.value:
                 errorPassword2.innerHTML = "Las contraseñas no coinciden";
+                Password2.classList.add('is-invalid');
+                break; 
+             default:
+                errorPassword2.innerHTML = "";
                 Password2.classList.remove('is-invalid');
                 Password2.classList.add('is-valid');
-                break;
+                break; 
         }
 
     })
