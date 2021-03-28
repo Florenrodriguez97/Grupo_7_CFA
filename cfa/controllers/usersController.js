@@ -14,7 +14,7 @@ const usersController = {
 
         const { email, password, name, last_name } = req.body;
         const passHash = bcrypt.hashSync(password.trim(), 12);
-
+        
         if (!errores.isEmpty()) {
             return res.render('registro', {
                 errores: errores.mapped(),

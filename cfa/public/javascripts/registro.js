@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
     let Name = document.getElementById("Name");
     let Last_name = document.getElementById("Last_name");
   
-/*  console.log(Email) */
 
     /*(inputFoto_x.value) ? inputFoto_x.value = "" : null */
     let regExLetras = /^[a-zA-Z\sñáéíóúü]*$/
@@ -51,7 +50,7 @@ window.addEventListener('load', () => {
                 Email.classList.add('is-invalid');
                 break;
                 case !regExEmail.test(Email.value):
-                    errorEmail.innerHTML = ""
+                    errorEmail.innerHTML = "el Email debe ser válido"
                     Email.classList.add('is-invalid');
                     break
             default:
