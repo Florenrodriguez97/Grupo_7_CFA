@@ -80,7 +80,7 @@ module.exports = {
     guardarProducto: (req, res, next) => { //store
 
         const { nombre, detalle, precio, oferta, categoria } = req.body;
-        console.log(req.body);
+        
         db.Products.create({
             image: req.files[0] ? req.files[0].filename : 'default_product.png',
             name: nombre,
@@ -90,7 +90,7 @@ module.exports = {
             id_category: categoria,
         })
             .then(newProduct => {
-                console.log(newProduct)
+                
                 res.redirect('/admin/productos');
             })
             .catch(error => res.send(error))

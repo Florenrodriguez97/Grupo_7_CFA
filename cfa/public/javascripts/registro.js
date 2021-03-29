@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
                     errorFoto_x.innerHTML = "El archivo debe pesar menos de 2Mb"
                     Foto_x.classList.add('is-invalid')
                     vistaPrevia.src = ""
-                    break
+                    break;
                 default:
                     Foto_x.classList.remove('is-invalid');
                     Foto_x.classList.add('is-valid');
@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
                 Password.classList.add('is-invalid');
                 break;
                 case !regExPass.test(Password.value):
-                    errorPassword.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres"
+                    errorPassword.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres y debe contener una mayuscula y una minuscula"
                     Password.classList.add('is-invalid');
                     break
             default:

@@ -18,7 +18,9 @@
             <div class="media">
               <div class="image"><img src="/images/Registro.png" alt="placeholder"></div>
               <div class="content"><input type="file" id="Foto_x" name="avatar"></div>
+
             </div>
+            <p id="errorFoto_x" class="text-danger"><%= (typeof errores!='undefined' && errores.Foto_x)?errores.Foto_x.msg : null %></p>
 
             <!-- <div class="button guardar">
               <button type="button" class="btn btn-outline-primary reg"> Guardar</button>

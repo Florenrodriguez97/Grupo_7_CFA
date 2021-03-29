@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
 
     let Email = document.getElementById("Email");
     let Password = document.getElementById("Password");
-
     let regExEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]:+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
 
     Email.addEventListener('blur', () => {
