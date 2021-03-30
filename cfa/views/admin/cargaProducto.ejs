@@ -22,28 +22,28 @@
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre">
-                                <p id="errorNombre" class="text-danger"><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : null %></p>
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre"  value="<%=(typeof old != 'undefined' && old.nombre)?old.nombre:""  %>">
+                                <p id="errorNombre" class="text-danger"><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : "" %></p>
                                 <label for="modelo">Nombre del Producto</label>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" style="height: 150px;">
+                                <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" style="height: 150px;" value=<%=(typeof old != 'undefined' && old.detalle)?old.detalle:null%>>
                                 <p id="errorDetalle" class="text-danger"><%= (typeof errores!='undefined' && errores.detalle)?errores.detalle.msg : null %></p>
                                 <label for="modelo">Detalle del Producto</label>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="precio" placeholder="precio" name="precio">
+                                <input type="number" class="form-control" id="precio" placeholder="precio" name="precio" value=<%=(typeof old != 'undefined' && old.precio)?old.precio:null%>>
                                 <p id="errorPrecio" class="text-danger"><%= (typeof errores!='undefined' && errores.precio)?errores.precio.msg : null %></p>
                                 <label for="modelo">Precio del Producto</label>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="oferta" placeholder="oferta" name="oferta">
+                                <input type="number" class="form-control" id="oferta" placeholder="oferta" name="oferta"  value=<%=(typeof old != 'undefined' && old.nombre)?old.nombre:null%>>
                                 <p id="errorOferta" class="text-danger"><%= (typeof errores!='undefined' && errores.nombre)?errores.nombre.msg : null %></p>
                                 <label for="modelo">Oferta del Producto</label>
                             </div>
@@ -64,6 +64,14 @@
                         </div>
                     </div>
                 </form>
+                <% if (typeof error !='undefined' ) { %>
+                    <div class="alert alert-danger">
+                      <span>
+                        <%= error %>
+                      </span>
+                    </div>
+      
+                    <% } %>
             </div>
 
             <%- include('partials/footer.ejs') %>

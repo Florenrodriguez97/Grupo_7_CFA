@@ -16,7 +16,7 @@ router.get('/productos/detalle/:id',userCheck, detalle);
 router.get('/productos',userCheck, listarProducto);
 
 router.get('/productos/carga',userCheck, crearProducto);
-router.post('/productos/guardar', upload.any(), guardarProducto);//store
+router.post('/productos/guardar', upload.any(),productoValidator, guardarProducto);//store
 
 router.get('/productos/editar/:id',userCheck, editarProducto);
 router.post('productos/editar/:id',productoValidator,editarProducto)

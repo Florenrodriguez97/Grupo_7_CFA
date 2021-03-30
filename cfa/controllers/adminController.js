@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const {Op} = require('sequelize')
+const {validationResult} = require('express-validator')
 
 
 module.exports = {
@@ -80,7 +81,8 @@ module.exports = {
     guardarProducto: (req, res, next) => { //store
 
         const { nombre, detalle, precio, oferta, categoria } = req.body;
-        
+        const errors = validationResult(req)
+        if(errors.isEmpty()){
         db.Products.create({
             image: req.files[0] ? req.files[0].filename : 'default_product.png',
             name: nombre,
@@ -94,16 +96,34 @@ module.exports = {
                 res.redirect('/admin/productos');
             })
             .catch(error => res.send(error))
+        }else{
+            db.Categorys.findAll({
+                order:[
+                    ['name','ASC']
+                ]
+            })
+            .then(categorias => {
+                return res.render('admin/cargaProducto',{
+                    errores : errors.mapped(),
+                    old : req.body,
+                    categorias
+                })
+            })
+            .catch(error => res.send(error))
+        }
     },
 
     editarProducto: (req, res) => {
+        const errors = validationResult(req)
+        if(errors.isEmpty()){
         let producto = db.Products.findOne({
             where:{
                 id:req.params.id
             }
         })
+        
         let categorias = db.Categorys.findAll()
-
+        
         Promise.all([producto,categorias])
         .then(([producto,categorias]) => {
             res.render('admin/editarProducto', {
@@ -112,6 +132,21 @@ module.exports = {
             })
         })
         .catch(error => res.send(error))
+    }else{
+        db.Categorys.findAll({
+            order:[
+                ['name','ASC']
+            ]
+        })
+        .then(categorias => {
+            return res.render('admin/editarProducto',{
+                errores : errors.mapped(),
+                old : req.body,
+                categorias
+            })
+        })
+        .catch(error => res.send(error))
+    }
 
     },
     actualizarProducto: (req, res, next) => {
