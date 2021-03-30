@@ -24,6 +24,7 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre" value ="<%= producto.name%>">
                                 <label for="modelo">Nombre del Producto</label>
+                                <span id="errornameProduct"></span>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
@@ -31,18 +32,21 @@
                                 <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" value ="<%= producto.detail%>"
                                     style="height: 150px;">
                                 <label for="modelo">Detalle del Producto</label>
+                                <span id="errordetailProduct"></span>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="precio" placeholder="precio" name="precio" value ="<%= producto.price%>">
                                 <label for="modelo">Precio del Producto</label>
+                                <span id="errorpriceProduct"></span>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="oferta" placeholder="oferta" name="oferta" value ="<%= producto.offer%>">
                                 <label for="modelo">Oferta del Producto</label>
+                                <span id="errorofferProduct"></span>
                             </div>
                         </div>
                         <div class="col-md-10 col-lg-8">
@@ -53,6 +57,7 @@
                                     <option value="<%=categoria.id%>" <%- categoria.id == producto.id_category ? 'selected' : '' %> > <%=categoria.name%> </option>
                                 <% }) %>
                             </select>
+                            <span id="errorcategoryProduct"></span>
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-md-10 col-lg-8">
