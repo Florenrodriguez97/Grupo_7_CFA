@@ -91,7 +91,7 @@ module.exports = {
             offer: oferta,
             id_category: categoria,
         })
-            .then(newProduct => {
+            .then(result => {
                 
                 res.redirect('/admin/productos');
             })
@@ -139,13 +139,14 @@ module.exports = {
             ]
         })
         .then(categorias => {
+            console.log(errores);
             return res.render('admin/editarProducto',{
                 errores : errors.mapped(),
                 old : req.body,
                 categorias
             })
         })
-        .catch(error => res.send(error))
+        .catch(error => console.log(error));
     }
 
     },

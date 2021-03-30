@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     let priceProduct = document.getElementById('precio');
     let offerProduct = document.getElementById('oferta');
     let categoryProduct = document.getElementById('categoria');
+    let formulario = document.getElementById('formulario')
 
     let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     let regExdetailProduct = /^([a-zA-Z\sñáéíóúü\d]).{1,200}$/;
@@ -25,6 +26,10 @@ window.addEventListener('load', () => {
             photoProduct.classList.add('is-invalid')
             vistaPrevia.src = ""
             break
+        case !photoProduct.value:
+            errorphotoProduct.innerHTML = "Actualice la imagen";
+            photoProduct.classList.add('is-invalid');
+            break;
         default:
             photoProduct.classList.remove('is-invalid');
             photoProduct.classList.add('is-valid');
@@ -108,4 +113,27 @@ window.addEventListener('load', () => {
                 break;
         }
     })
+    
+    formulario.addEventListener('submit',(e)=>{
+        let error = false;
+
+        e.preventDefault();
+
+        let elementsForm = formulario.elements;
+
+        for (let index = 0; index < elementsForm.length - 1 ; index++) {
+            
+            if(!elementsForm[index].value){
+                elementsForm[index].classList.add('is-invalid');
+                msgError.innerHTML = "Los campos señalados son obligatorios";
+                error = true
+            }
+        }
+
+        if(!error){
+            formulario.submit()
+        }
+
+    })
+ 
 })

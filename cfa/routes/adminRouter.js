@@ -19,8 +19,7 @@ router.get('/productos/carga',userCheck, crearProducto);
 router.post('/productos/guardar', upload.any(),productoValidator, guardarProducto);//store
 
 router.get('/productos/editar/:id',userCheck, editarProducto);
-router.post('productos/editar/:id',productoValidator,editarProducto)
-router.put('/productos/actualizar/:id', upload.any(), actualizarProducto);
+router.put('/productos/actualizar/:id', upload.any(),productoValidator, actualizarProducto);
 
 router.delete('/productos/borrar/:id',borrarProducto);
 

@@ -1,4 +1,4 @@
-const qs = (e) => document.querySelector(e)
+
 window.addEventListener('load', () => {
     console.log('Javascript está vinculado correctamente');
     
@@ -106,5 +106,25 @@ window.addEventListener('load', () => {
                 break;
         }
     })
+    formulario.addEventListener('submit',(e)=>{
+        let error = false;
 
+        e.preventDefault();
+
+        let elementsForm = formulario.elements;
+
+        for (let index = 0; index < elementsForm.length - 1 ; index++) {
+            
+            if(!elementsForm[index].value){
+                elementsForm[index].classList.add('is-invalid');
+                msgError.innerHTML = "Los campos señalados son obligatorios";
+                error = true
+            }
+        }
+
+        if(!error){
+            formulario.submit()
+        }
+
+    })
 })

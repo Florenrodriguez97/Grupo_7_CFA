@@ -1,6 +1,9 @@
 const {check} = require('express-validator');
 
 module.exports = [
+    check('img')
+    .notEmpty().withMessage('img es requerido'),
+
     check('nombre')
     .notEmpty().withMessage('El nombre es requerido'),
 
