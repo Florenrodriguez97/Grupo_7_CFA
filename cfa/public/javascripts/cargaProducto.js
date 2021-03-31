@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
     Nombre.addEventListener('blur', () => {
         switch (true) {
             case !Nombre.value:
-                errorNombre.innerHTML = "El campo Nombre es obligatorio";
+                errorNombre.innerHTML = "El campo nombre es obligatorio";
                 Nombre.classList.add('is-invalid');
                 break;
             default:

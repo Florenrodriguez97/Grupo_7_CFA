@@ -27,7 +27,7 @@
                                 <p class="description col-12"><%-product.detail %> </p>
                                 <div class="precios-detalle row">
                                     <div class=" col-8">
-                                        <h3 class="precio-nuevo"> <%= product.price %></h3>
+                                        <h3 class="precio-nuevo">$<%= product.price %></h3>
                                         <strike class="precio-tachado ">$11.650</strike>
                                         <span class="precio-descuento "><%= product.offer %>% off</span>
                                         <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
@@ -60,7 +60,7 @@
                                 <div class="col-8">
                                     <p><%= product.name %></p>
                                     <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
-                                    <h3><%= product.price %></h3>
+                                    <h3>$ <%= product.price %></h3>
                                 </div>
                             </div>
                             <% }) %>
@@ -77,7 +77,7 @@
                                 <div class="col-8">
                                     <p><%= product.name %></p>
                                     <a class="btn btn-primary  " href="#" role="button">COMPRAR AHORA</a>
-                                    <h3><%= product.price %></h3>
+                                    <h3>$ <%= product.price %></h3>
                                 </div>
                             </div>
                             <% }) %>

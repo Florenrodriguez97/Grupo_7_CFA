@@ -11,6 +11,8 @@ router.get('/',userCheck,index);
 
 
 
+
+
 router.get('/productos/buscar',userCheck, buscar);
 router.get('/productos/detalle/:id',userCheck, detalle);
 router.get('/productos',userCheck, listarProducto);

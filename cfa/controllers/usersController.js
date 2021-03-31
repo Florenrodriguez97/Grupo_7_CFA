@@ -111,6 +111,7 @@ const usersController = {
         res.render('perfil', {
             usuario: req.session.usuario
         })
+        
     },
     logout: (req, res) => {
         req.session.destroy();

@@ -5,7 +5,7 @@ const {validationResult} = require('express-validator')
 
 module.exports = {
     index: (req, res) => {
-        res.render('admin/index');
+        res.render('admin');
     },
    
     buscar: (req, res) => {

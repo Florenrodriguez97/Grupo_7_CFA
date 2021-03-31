@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-md-10 col-lg-8">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" style="height: 150px;" value=<%=(typeof old != 'undefined' && old.detalle)?old.detalle:null%>>
+                                <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" style="height: 80px;" value=<%=(typeof old != 'undefined' && old.detalle)?old.detalle:null%>>
                                 <p id="errorDetalle" class="text-danger"><%= (typeof errores!='undefined' && errores.detalle)?errores.detalle.msg : null %></p>
                                 <label for="modelo">Detalle del Producto</label>
                             </div>

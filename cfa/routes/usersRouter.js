@@ -21,7 +21,8 @@ router.post('/login', loginValidator, procesoLogin);
 
 router.get('/logout',logout)
 
-router.get('/perfil',userCheck, perfil)
+router.get('/perfil',userCheck, perfil);
+
 
 
 module.exports = router;
