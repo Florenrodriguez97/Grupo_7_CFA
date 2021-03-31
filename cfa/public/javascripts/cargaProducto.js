@@ -123,6 +123,7 @@ window.addEventListener('load', () => {
         }
 
         if(!error){
+            console.log('');
             formulario.submit()
         }
 

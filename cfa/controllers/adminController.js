@@ -71,7 +71,7 @@ module.exports = {
     crearProducto: (req, res) => {
         db.Categorys.findAll()
             .then(result => {
-                res.render('admin/cargaProducto', {
+                return res.render('admin/cargaProducto', {
                     categorias: result
                 });
             })
@@ -81,7 +81,9 @@ module.exports = {
     guardarProducto: (req, res, next) => { //store
 
         const { nombre, detalle, precio, oferta, categoria } = req.body;
+        
         const errors = validationResult(req)
+        
         if(errors.isEmpty()){
         db.Products.create({
             image: req.files[0] ? req.files[0].filename : 'default_product.png',
