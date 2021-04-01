@@ -14,6 +14,8 @@ window.addEventListener('load', () => {
     let regExdetailProduct = /^([a-zA-Z\sñáéíóúü\d]).{1,200}$/;
     
 
+   
+
     photoProduct.addEventListener('change', (e) => {
         switch (true) {
             case !regExExt.exec(photoProduct.value):

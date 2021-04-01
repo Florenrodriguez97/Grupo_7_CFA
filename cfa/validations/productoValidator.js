@@ -1,6 +1,15 @@
-const {check} = require('express-validator');
+const {check,body} = require('express-validator');
 
 module.exports = [
+    body('image')
+    .custom((value, {req}) => {
+        if(req.files[0]){
+            return true
+        }else{
+            return false
+        }
+    })
+    .withMessage('No ha subido ningun archivo!'),
    
     check('nombre')
     .notEmpty().withMessage('El nombre es requerido'),
