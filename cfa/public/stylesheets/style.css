@@ -1029,6 +1029,38 @@ font-weight: 600;
 
 }
 
+/*Armado PC*/
+
+.banner-cfa-pcArmadas{
+
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-left: 15%;
+}
+.product-box-title-pc h2{
+  font-size: 20px;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+.product-box-title-pc span{
+  font-size: 20px;
+  margin-left: 70%;
+
+}
+.product-box-title-pc p{
+  font-size: 30px;
+  color:#252525;
+  margin-left: 5%;
+
+}
+.homediv-home {
+  padding-bottom: 10%;
+}
+
+
+
+
+
 @media (min-width: 768px) { /* Tablet */
   .icons-nav{
     order: 1;
@@ -1150,7 +1182,13 @@ font-weight: 600;
  .producto-box-other{
    display: block;
  }
+ .banner-cfa-pcArmadas{
+   display: block;
+
+ }
+  
+ }
  
 
-}
+
 

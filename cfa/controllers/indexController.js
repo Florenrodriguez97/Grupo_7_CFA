@@ -22,6 +22,21 @@ const indexController = {
                 aleatorio2
             }); 
         })       
+    },
+    armadoPc: (req,res) =>{
+        res.render ('armadoPc', {
+            usuario:req.session.usuario
+        })
+    },
+    contacto: (req,res)=> {
+        res.render ('contacto', {
+            usuario:req.session.usuario
+        })
+    },
+    preguntas: (req,res) =>{
+        res.render ('preguntas',{
+            usuario:req.session.usuario
+        })
     }
 }
 
