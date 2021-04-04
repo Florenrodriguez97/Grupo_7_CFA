@@ -986,33 +986,27 @@ margin-top: 10%;
 /*Fin de preguntas*/
 
 /*Contacto*/
-.box-contacto_ubi{
-  background-color: #ffffff;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+
+
+
 .titulo-contacto{
-  margin-left: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 .ciudadela-contacto{
   margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 50px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 
 .lanus-contacto{
   margin-top: 40px ;
-  margin-bottom: 40px;
-  margin-left: 50px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 .sanmiguel-contacto{
-  margin-left: 50px;
-}
-
-.bi-geo-alt{
-  color: rgb(175, 47, 47);
+  margin-left: 5px;
+  margin-top: 40px ;
 }
 
 .titulo-contacto{
@@ -1027,6 +1021,9 @@ font-weight: 600;
 .sanmiguel-titulo{
   font-weight: 600;
 
+}
+.mapa-sm{
+  margin-bottom: 20px;
 }
 
 /*Armado PC*/
@@ -1099,6 +1096,19 @@ font-weight: 600;
   .perfil-box_datos{
     margin-top: 30px;
   }
+  div.ciudadela-contacto{
+      
+    margin-left: 150px;
+  }
+  div.lanus-contacto{
+      
+    margin-left: 150px;
+  }
+  div.sanmiguel-contacto{
+      
+    margin-left: 150px;
+  }
+
 }
 
 @media (min-width: 1024px) { /* Escritorio */
@@ -1159,6 +1169,33 @@ font-weight: 600;
   .perfil-button{
     position: relative;
     left: 4%; 
+  }
+  div.ciudadela-contacto{
+      
+    margin-left: 20px;
+  }
+  div.lanus-contacto{
+      
+    margin-left: 20px;
+  }
+  div.sanmiguel-contacto{
+      
+    margin-left: 20px;
+  }
+  div.mapa {
+    margin-left: 100px;
+  }
+  div.ciudadela-contacto{
+      
+    margin-left: 200px;
+  }
+  div.lanus-contacto{
+      
+    margin-left:200px;
+  }
+  div.sanmiguel-contacto{
+      
+    margin-left: 200px;
   }
 }
 @media (min-width: 425px) {
