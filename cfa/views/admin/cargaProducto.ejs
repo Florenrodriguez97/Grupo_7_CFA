@@ -16,7 +16,7 @@
                             <div class="form-floating mb-3">
                                 <div class="">
                                     <input class="form-control form-control-lg" type="file" id="formFile" name="img">
-                                    <p id="errorFormFile" class="text-danger"><%= (typeof errores!='undefined' && errores.formFile)?errores.formFile.msg : null %></p>
+                                    <p id="errorFormFile" class="text-danger"><%= (typeof errores!='undefined' && errores.image)?errores.image.msg : null %></p>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         <div class="col-md-10 col-lg-8">
                             <div class=" mb-3">
                                 <select name="categoria" id="categoria" class="form-select">
-                                        <option selected disabled value="null">Elige Categoría</option>
+                                        <option selected disabled value='undefined'>Elige Categoría</option>
                                     <% categorias.forEach(categoria => { %>
                                         <option value=<%=categoria.id%>> <%=categoria.name%> </option>
                                     <% }) %>

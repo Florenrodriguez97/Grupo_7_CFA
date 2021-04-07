@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const {Op} = require('sequelize')
-const {validationResult} = require('express-validator')
+const {validationResult} = require('express-validator');
 
 
 module.exports = {
@@ -83,8 +83,8 @@ module.exports = {
         const { nombre, detalle, precio, oferta, categoria } = req.body;
         
         const errors = validationResult(req)
-        
-        if(errors.isEmpty()){
+       
+        if(errors.isEmpty() && !req.fileValidationError){
         db.Products.create({
             image: req.files[0] ? req.files[0].filename : 'default_product.png',
             name: nombre,
@@ -105,8 +105,18 @@ module.exports = {
                 ]
             })
             .then(categorias => {
+                let errorsMapped = errors.mapped()
+                if(req.fileValidationError){
+                    errorsMapped = {
+                        ...errorsMapped,
+                        image: {
+                            msg: req.fileValidationError
+                        }
+                    }
+                }
+                
                 return res.render('admin/cargaProducto',{
-                    errores : errors.mapped(),
+                    errores : errorsMapped,
                     old : req.body,
                     categorias
                 })
@@ -156,7 +166,7 @@ module.exports = {
         const { nombre, detalle, precio, oferta, categoria} = req.body;
         const {id} = req.params
         db.Products.update({
-            image : req.files[0] ? req.files[0].filename : 'default_product.png',
+            image : req.files[0] ? req.files[0].filename : undefined,
             name : nombre,
             detail : detalle,
             price : precio,

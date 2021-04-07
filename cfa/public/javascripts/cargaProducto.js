@@ -2,6 +2,7 @@
 window.addEventListener('load', () => {
     console.log('Javascript está vinculado correctamente');
     
+    const oneMB = 1048576;
     let FormFile = document.getElementById('formFile')
     let Nombre = document.getElementById('nombre');
     let Detalle = document.getElementById('detalle');
@@ -12,23 +13,35 @@ window.addEventListener('load', () => {
     let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     let regExDetalle = /^([a-zA-Z\sñáéíóúü\d]).{1,200}$/;
     
-
+    FormFile.addEventListener('blur', () => {
+        switch (true) {
+            case !FormFile.value:
+                errorFormFile.innerHTML = "El campo imagen es obligatorio";
+                FormFile.classList.add('is-invalid');
+                break;
+            /* default:
+                errorFormFile.innerHTML = "";
+                FormFile.classList.remove('is-invalid');
+                FormFile.classList.add('is-valid');
+                break; */
+        }
+    })
     FormFile.addEventListener('change', (e) => {
         switch (true) {
             case !regExExt.exec(FormFile.value):
                 errorFormFile.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"
                 FormFile.classList.add('is-invalid')
-                vistaPrevia.src = ""
+                /* vistaPrevia.src = "" */
                 break;
             case FormFile.files[0].size > oneMB * 2:
                 errorFormFile.innerHTML = "El archivo debe pesar menos de 2Mb"
                 FormFile.classList.add('is-invalid')
-                vistaPrevia.src = ""
-                break
+                /* vistaPrevia.src = "" */
+                break;
             default:
+                errorFormFile.innerHTML = "";
                 FormFile.classList.remove('is-invalid');
                 FormFile.classList.add('is-valid');
-                errorFormFile.innerHTML = "";
                 let reader = new FileReader();
                 reader.readAsDataURL(e.target.files[0])
                 reader.onload = () => {

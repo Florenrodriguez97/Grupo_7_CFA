@@ -10,7 +10,7 @@
 
         <div class="container form">
           <div class="col-md-12 text-center">
-            <form class="container login" action="" method="POST">
+            <form class="container login" action="" method="POST" id="formulario">
               <h1>Iniciar Sesion</h1>
               
 
@@ -25,8 +25,13 @@
                    
                 <div class="d-flex justify-content-center"><label for="recordar">Recordarme</label> </div>          
               </div>
+     
+              <div>
+                <button type="submit" class="btn btn-primary btn-login">Iniciar sesion</button>
+              </div>
+              
+              <span id="msgError" class="text-danger" style="width: 75%;"><%= (typeof errores!='undefined' && errores.form)?errores.form.msg : "" %></span>
 
-              <button type="submit" class="btn btn-primary btn-login">Iniciar sesion</button>
               <div>
                 <a href="/users/registro">
                   ¿No estas registrado?

@@ -2,6 +2,7 @@ const qs = (e) => document.querySelector(e)
 window.addEventListener('load', () => {
     console.log('Javascript está vinculado correctamente');
     
+    const oneMB = 1048576;
     let photoProduct = document.getElementById('formFile')
     let nameProduct = document.getElementById('nombre');
     let detailProduct = document.getElementById('detalle');
@@ -21,17 +22,13 @@ window.addEventListener('load', () => {
             case !regExExt.exec(photoProduct.value):
             errorphotoProduct.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"
             photoProduct.classList.add('is-invalid')
-            vistaPrevia.src = ""
+            /* vistaPrevia.src = "" */
             break;
         case photoProduct.files[0].size > oneMB * 2:
             errorphotoProduct.innerHTML = "El archivo debe pesar menos de 2Mb"
             photoProduct.classList.add('is-invalid')
-            vistaPrevia.src = ""
+            /* vistaPrevia.src = "" */
             break
-        case !photoProduct.value:
-            errorphotoProduct.innerHTML = "Actualice la imagen";
-            photoProduct.classList.add('is-invalid');
-            break;
         default:
             photoProduct.classList.remove('is-invalid');
             photoProduct.classList.add('is-valid');
@@ -123,7 +120,7 @@ window.addEventListener('load', () => {
 
         let elementsForm = formulario.elements;
 
-        for (let index = 0; index < elementsForm.length - 1 ; index++) {
+        for (let index = 1; index < elementsForm.length - 1 ; index++) {
             
             if(!elementsForm[index].value){
                 elementsForm[index].classList.add('is-invalid');

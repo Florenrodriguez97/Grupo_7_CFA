@@ -61,6 +61,7 @@
             <div class="button enviar">
               <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
             </div>
+            <span id="msgError" class="text-danger" style="width: 75%;"><%= (typeof errores!='undefined' && errores.form)?errores.form.msg : "" %></span>
 
             <% if (typeof error !='undefined' ) { %>
               <div class="alert alert-danger">

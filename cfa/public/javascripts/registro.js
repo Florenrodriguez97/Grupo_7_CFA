@@ -140,7 +140,27 @@ window.addEventListener('load', () => {
         }
 
     })
+    form.addEventListener('submit',(e)=>{
+        let error = false;
 
+        e.preventDefault();
+
+        let elementsForm = form.elements;
+
+        for (let index = 1; index < elementsForm.length - 1 ; index++) {
+            
+            if(!elementsForm[index].value){
+                elementsForm[index].classList.add('is-invalid');
+                msgError.innerHTML = "Los campos señalados son obligatorios";
+                error = true
+            }
+        }
+
+        if(!error){
+            form.submit()
+        }
+
+    })
     
 
 })
