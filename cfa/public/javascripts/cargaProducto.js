@@ -108,7 +108,7 @@ window.addEventListener('load', () => {
     })
     Categoria.addEventListener('blur', () => {
         switch (true) {
-            case Categoria.value == "null":
+            case Categoria.value == "":
                 errorCategoria.innerHTML = "El campo categoria es obligatorio";
                 Categoria.classList.add('is-invalid');
                 break;
