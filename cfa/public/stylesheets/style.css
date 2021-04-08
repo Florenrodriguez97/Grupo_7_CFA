@@ -1049,6 +1049,12 @@ font-weight: 600;
   .product-box_image{
     min-height: 290px;
   }
+  .product-box-categ-admin{
+    height: 490px;
+  }
+  .product-box_image-admin{
+    min-height: 200px;
+  }
   .icons-nav{
     order: 1;
   }
