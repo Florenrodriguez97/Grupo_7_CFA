@@ -404,9 +404,8 @@ div.container.form h1{
   padding-bottom: 20px;
 }
 div.container.form input{
-  width: 80%;
+  width:100%;
   outline: none;
-  padding: 3px;
 }
 
 .media {
@@ -449,15 +448,6 @@ div.form h2{
   font-size: 25px;
   font-family: Raleway;
 }
-
-div.form div.Entradas input{
-  width: 100%;
-  margin: 10px 0px;
-  height: 30px;
-  padding-left: 10px;
-  font-family:PT Serif;
-}
-
 
 div.form .guardar{
   position: relative;
@@ -892,11 +882,6 @@ a.screen-reader-text:hover {
 .product-box-other{ 
   position: absolute;
   left: 75%;
-  /* border-left-color: #6d6d6d;
-    border-left-style: solid;
-    border-left-width: 1px;  
-    padding-right: 12px; 
-    margin-top: 1%; */
 }
 .perfil-product_des{
   font-size: 18px;
@@ -926,12 +911,6 @@ margin-top: 10%;
 }
 
 /*Preguntas frecuentes*/
-
-
-/*max-width: 800px;
-margin: 30px auto 30px auto;
-filter: drop-shadow(8px 8px 10px gray);
--webkit-filter: drop-shadow(8px 8px 10px gray);*/
 
 .linea {
   border-top: 1px solid black;
@@ -1088,10 +1067,10 @@ font-weight: 600;
     align-items: center;
     margin: 20px 0px;
   }
-  div.form div.Entradas input{
+  /* div.form div.Entradas input{
     width: 70%;
     margin-left: 15%;
-  }
+  } */
   div.form div.Entradas p{
     margin-left: 15%;
   }
@@ -1117,6 +1096,10 @@ font-weight: 600;
 }
 
 @media (min-width: 1024px) { /* Escritorio */
+  .registro div{
+    margin: 3% 0% 0% 5%;
+  }
+
   footer div.sociales a i{
     margin: 23px;
   }

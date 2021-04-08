@@ -5,64 +5,91 @@
   <body>
     <%- include('partials/header.ejs') %>
 
-      <div class="container">
+      <div class="container form">
 
-        <div class="container form">
+        <div class="container ">
 
-          <form class="container registro id=myDIV" id="form" action="" method="POST" enctype="multipart/form-data">
+          <form class="container registro id=myDIV " id="form" action="" method="POST" enctype="multipart/form-data">
             <h1>Registro</h1>
 
             <div class="Crear">
               <h2>Crear cuenta</h2>
             </div>
-            <div class="media">
-              <div class="image"><img src="/images/Registro.png" alt="placeholder"></div>
-              <div class="content"><input type="file" id="Foto_x" name="avatar"></div>
 
+            <div class="col-lg-10">
+              <div class="form-floating mb-3">
+                <div class="">
+                  <input class="form-control form-control-lg" type="file" id="Foto_x" name="avatar">
+                  <p id="errorFoto_x" class="text-danger">
+                    <%= (typeof errores!='undefined' && errores.Foto_x)?errores.Foto_x.msg : null %>
+                  </p>
+                </div>
+              </div>
             </div>
-            <p id="errorFoto_x" class="text-danger"><%= (typeof errores!='undefined' && errores.Foto_x)?errores.Foto_x.msg : null %></p>
 
-            <!-- <div class="button guardar">
-              <button type="button" class="btn btn-outline-primary reg"> Guardar</button>
-            </div> -->
             <div class="Entradas">
-              <input type="text" name="email" id="Email" value="<%= (typeof data!='undefined' && data.email)?data.email : null %>" placeholder="Ingresa tu email">
-               
-             <p id="errorEmail" class="text-danger"><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : null %></p>
+              <div class="col-md-12 col-lg-10">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="Email" placeholder="Ingresa tu email" name="email"
+                    value="<%= (typeof data!='undefined' && data.email)?data.email : null %>">
+                  <p id="errorEmail" class="text-danger">
+                    <%= (typeof errores!='undefined' && errores.email)?errores.email.msg : null %>
+                  </p>
+                  <label for="modelo">Ingresa tu email</label>
+                </div>
+              </div>
 
-              <label for="pass"></label>
-              <input type="password" name="password" id="Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : null %>" placeholder="Ingresa tu contraseña">
-              
-              
-              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.password)?errores.password.msg : null %></p>
+              <div class="col-md-12 col-lg-10">
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="Password" placeholder="Ingresa tu contraseña"
+                    name="password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : null %>">
+                  <p id="errorPassword" class="text-danger">
+                    <%= (typeof errores!='undefined' && errores.password)?errores.password.msg : null %>
+                  </p>
+                  <label for="modelo">Ingresa tu contraseña</label>
+                </div>
+              </div>
 
-              <label for="pass"></label>
-              <input type="password" name="pass2" id="Password2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : null %>" placeholder="Repetir contraseña">
-             
-              <p id="errorPassword2" class="text-danger"><%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : null %></p>
-
+              <div class="col-md-12 col-lg-10">
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="Password2" placeholder="Ingresa tu contraseña"
+                    name="pass2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : null %>">
+                  <p id="errorPassword2" class="text-danger">
+                    <%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : null %>
+                  </p>
+                  <label for="modelo">Repita la contraseña</label>
+                </div>
+              </div>
 
               <br>
               <div class="datos">
                 <h2>Datos personales</h2>
               </div>
 
-             
-              <input type="text" name="name" id="Name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : null %>"  id="name" placeholder="Nombre">
-              <p id="errorName" class="text-danger" ><%= (typeof errores!='undefined' && errores.name)?errores.name.msg :null %></p>
-           
+              <div class="col-md-12 col-lg-10">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Name" placeholder="Nombre" name="name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : null %>">
+                    <p id="errorName" class="text-danger"><%= (typeof errores!='undefined' && errores.name)?errores.name.msg :null %></p>
+                    <label for="modelo">Nombre</label>
+                </div>
+              </div>
 
-              <label for="Apellido"></label>
-              <input type="text" name="last_name" id="Last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : null %>"  placeholder="Apellido">
-              <p id="errorLast_name" class="text-danger" ><%= (typeof errores!='undefined' && errores.last_name)?errores.last_name.msg : null %></p>
+              <div class="col-md-12 col-lg-10">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Last_name" placeholder="Apellido" name="last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : null %>">
+                    <p id="errorLast_name" class="text-danger"><%= (typeof errores!='undefined' && errores.last_name)?errores.last_name.msg : null %></p>
+                    <label for="modelo">Apellido</label>
+                </div>
+              </div>
               <br><br>
-
             </div>
 
             <div class="button enviar">
               <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
             </div>
-            <span id="msgError" class="text-danger" style="width: 75%;"><%= (typeof errores!='undefined' && errores.form)?errores.form.msg : "" %></span>
+            <span id="msgError" class="text-danger" style="width: 75%;">
+              <%= (typeof errores!='undefined' && errores.form)?errores.form.msg : "" %>
+            </span>
 
             <% if (typeof error !='undefined' ) { %>
               <div class="alert alert-danger">
@@ -80,7 +107,7 @@
       <%- include('partials/footer.ejs') %>
 
 
-      <script src="/javascripts/registro.js"></script>
+        <script src="/javascripts/registro.js"></script>
   </body>
 
 </html>

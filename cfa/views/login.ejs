@@ -12,13 +12,22 @@
           <div class="col-md-12 text-center">
             <form class="container login" action="" method="POST" id="formulario">
               <h1>Iniciar Sesion</h1>
-              
 
-              <input name="email" type="text" id="Email"  value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>" placeholder="Ingresa Email" >
-              <p id="errorEmail" class="text-danger"><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
+              <div class="col-md-12 col-lg-12">
+                <div class="form-floating mb-3">
+                    <input name="email" type="text" id="Email" class="form-control"  placeholder="Ingresa Email" value="<%= (typeof data!='undefined' && data.email)?data.email : "" %>">
+                    <p id="errorEmail" class="text-danger"><%= (typeof errores!='undefined' && errores.email)?errores.email.msg : "" %></p>
+                    <label for="modelo">Ingresa Email</label>
+                </div>
+              </div>
 
-              <input name="pass" type="password" id="Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>"placeholder="Ingresa Password" >
-              <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
+              <div class="col-md-12 col-lg-12">
+                <div class="form-floating mb-3">
+                    <input name="pass" type="password" id="Password" class="form-control"  placeholder="Ingresa Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>">
+                    <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
+                    <label for="modelo">Ingresa Password</label>
+                </div>
+              </div>
 
               <div class="row">
                 <div class="d-flex justify-content-center"><input type="checkbox" name="recordar" id="recordar" value="recordarme"></div>
