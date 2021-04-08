@@ -28,8 +28,11 @@
                                 <div class="precios-detalle row">
                                     <div class="precios-detalle col-8">
                                         <h3 class="precio-nuevo"> $ <%= product.price %></h3>
-                                        <strike class="precio-tachado ">$11.650</strike>
-                                        <span class="precio-descuento "><%= product.offer %>% off</span>
+                                        <!-- <strike class="precio-tachado ">$11.650</strike> -->
+                                        <% if (product.offer >= 1) { %>
+                                          <span class="precio-descuento "><%= product.offer %>% off</span>
+                                        <% } %>
+                                       
                                         <a class="btn btn-primary  " href="/users/login" role="button">COMPRAR AHORA</a>
                                     </div>
                                     <div class="forma-pago col-4">

@@ -27,7 +27,13 @@
         <section>
             <div class="row">
                 <% if(productos.length == 0){%>
-                    <h2>No se encontraron productos</h2>
+                    <div class="d-flex justify-content-center">
+                            <h2>No se encontraron productos</h2>
+                        </div>
+                    <div class="d-flex justify-content-center">
+                        
+                        <img src="/images/nopuedeser.png" alt="" style="width: 400px;">
+                    </div>
                 <% }%>
                 <% productos.forEach(producto => { %>
                     

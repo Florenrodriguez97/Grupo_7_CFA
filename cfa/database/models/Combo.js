@@ -13,7 +13,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull : false,
         },
-        
+        image:{
+            type: dataTypes.STRING(45),
+            allowNull : false,
+        },
     }
     const config ={
         tableName: 'combo',

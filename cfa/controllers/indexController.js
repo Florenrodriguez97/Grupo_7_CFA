@@ -24,10 +24,16 @@ const indexController = {
         })       
     },
     armadoPc: (req,res) =>{
-        res.render ('armadoPc', {
-            usuario:req.session.usuario
+        db.Combos.findAll()
+        .then(combos=>{
+            res.render ('armadoPc', {
+            usuario:req.session.usuario,
+            combos
         })
+        })
+        .catch(errors=>console.log(errors))
     },
+    
     contacto: (req,res)=> {
         res.render ('contacto', {
             usuario:req.session.usuario
