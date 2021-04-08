@@ -97,13 +97,13 @@ const usersController = {
                                     msg: 'Credenciales Invalidas'
                                 }
                             },
-                            data: req.body
+                            data: req.body,
+                            usuario: req.session.usuario
                         })
                     }
                 })
                 .catch(error => {
                     console.log(error);
-                    res.send(error)
                 })
         }
     },
