@@ -268,6 +268,8 @@ footer div.foot-sucursales i{
   margin-top: 15px;
 }
 
+
+
 .product-box-categ {
   background-color: #ffffff;
   border-radius: 5px; 
@@ -924,18 +926,28 @@ margin-top: 10%;
 }
 
 /*Preguntas frecuentes*/
+
+
+/*max-width: 800px;
+margin: 30px auto 30px auto;
+filter: drop-shadow(8px 8px 10px gray);
+-webkit-filter: drop-shadow(8px 8px 10px gray);*/
+
 .linea {
   border-top: 1px solid black;
   height: 2px;
   padding: 0;
   margin: 20px auto 0 auto;
+ 
 }
 
 .box-preguntas{
   background-color: #ffffff;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding: 2em 1em
+  padding: 2em 1em;
+  -webkit-filter: drop-shadow(8px 8px 10px gray);
+  filter: drop-shadow(8px 8px 10px gray);
 }
 .title-preg-frec{
   padding-top: 30px ;
@@ -943,43 +955,13 @@ margin-top: 10%;
   text-align: center;
   
 }
-.preg-1{
-  padding-bottom: 15px;
-}
 
-.respuesta-1{
-  padding-bottom: 15px;
-  margin: 1.6em 20px;
-}
-.preg-2{
-  font-size: 32px;
-}
-.respuesta-2,.respuesta-3,.respuesta-4{
- padding-bottom: 15px;
- margin: 1.6em 20px;
-}
-.preg-3{
-  font-size: 32px;
-}
-.preg-4{
-  font-size: 32px;
-}
-.preg-5{
-  font-size: 32px;
-  padding-bottom: 10px;
-}
-.respuesta-5{
-  padding-bottom: 50px;
-  margin: 1.6em 20px;
-}
 
  .bi-check2{
   color: #39b54a;
   font-size: 45px;
 }
-.bi-patch-question{
-  color: red;
-}
+
 .bi-journal-text{
   color: #3759a3;
 }
@@ -987,6 +969,15 @@ margin-top: 10%;
 
 /*Contacto*/
 
+.box-contacto_ubi{
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 2em 1em;
+  -webkit-filter: drop-shadow(8px 8px 10px gray);
+  filter: drop-shadow(8px 8px 10px gray);
+
+}
 
 
 .titulo-contacto{
@@ -1041,7 +1032,7 @@ font-weight: 600;
 }
 .product-box-title-pc span{
   font-size: 20px;
-  margin-left: 70%;
+  text-align: right;
 
 }
 .product-box-title-pc p{
@@ -1052,10 +1043,24 @@ font-weight: 600;
 }
 .homediv-home {
   padding-bottom: 10%;
+  display: -webkit-box;
 }
 
 
+.product-box_image-home img {
+  width: 100%;
+  height: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
 
+.card-img-top{
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
 
 
 @media (min-width: 768px) { /* Tablet */

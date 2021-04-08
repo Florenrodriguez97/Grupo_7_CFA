@@ -37,6 +37,12 @@ const indexController = {
         res.render ('preguntas',{
             usuario:req.session.usuario
         })
+    },
+    comboSeleccionado: (req,res)=> {
+        res.render('comboSeleccionado', {
+            usuario:req.session.usuario
+        })
+
     }
 }
 

@@ -31,13 +31,13 @@
              <div class="card" style="width: 280px; height: 400px;">
               <figure class="d-flex justify-content-center align-items-center"
                 style="border: 1px solid #e8e8e8; height: 250px; margin: 0; overflow: hidden;">
-                <img src="/images/<%= product.image %> " class="card-img-top" alt="...">
+                <a href="/productos/detalle/<%= product.id %>">
+                <img src="/images/<%= product.image %> "  class="card-img-top" style=" padding-top: 5%; padding-bottom: 5%;" alt="..." >
+              </a>
               </figure>
               <div class="card-body">
                 <h5 class="card-title"><%= product.name %></h5>
-                <p class="card-text">$<%= product.price %></p>
-                <a href="/productos/detalle/<%= product.id %>" class="btn btn-primary" style="background-color: #00587a; border-color: #00587a;">Ir al
-                  producto</a>
+                <p class="card-text" style="font-size: 20px; text-align: center; font-weight: bold; ">$<%= product.price %></p>
               </div>
             
             </div>

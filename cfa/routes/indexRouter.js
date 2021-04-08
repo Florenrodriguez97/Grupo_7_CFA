@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {index, contacto, preguntas,armadoPc} =require('../controllers/indexController')
+const {index, contacto, preguntas,armadoPc,comboSeleccionado} =require('../controllers/indexController')
 
 /* GET home page. */
 router.get('/', index);
@@ -11,6 +11,7 @@ router.get('/preguntas', preguntas);
 
 router.get('/armadoPc', armadoPc);
 
+router.get ('/armadoPc/comboSeleccionado', comboSeleccionado)
 
 
 
