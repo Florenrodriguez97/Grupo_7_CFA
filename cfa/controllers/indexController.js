@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
+const ProductCombo = require('../database/models/ProductCombo');
 const indexController = {
     index: (req,res) =>{
         let aleatorio = db.Products.findAll()
@@ -45,6 +46,8 @@ const indexController = {
         })
     },
     comboSeleccionado: (req,res)=> {
+        let comboSeleccionado = db.ProductCombo.findAll()
+  
         res.render('comboSeleccionado', {
             usuario:req.session.usuario
         })

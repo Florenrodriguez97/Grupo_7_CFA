@@ -26,20 +26,31 @@
                                 <h2><%= product.name %></h2>
                                 <p class="description col-12"> <%= product.detail  %> </p>
                                 <div class="precios-detalle row">
-                                    <div class="precios-detalle col-8">
+                                    <div class="precios-detalle col-12">
                                         <h3 class="precio-nuevo"> $ <%= product.price %></h3>
+<<<<<<< HEAD
                                         <!-- <strike class="precio-tachado ">$11.650</strike> -->
                                         <% if (product.offer >= 1) { %>
                                           <span class="precio-descuento "><%= product.offer %>% off</span>
                                         <% } %>
                                        
                                         <a class="btn btn-primary  " href="/users/login" role="button">COMPRAR AHORA</a>
+=======
+                                        <strike class="precio-tachado ">$11.650</strike>
+                                        <span class="precio-descuento "><%= product.offer %>% off</span>
+                                        <a class="btn btn-primary col-6  " href="/users/login" role="button">COMPRAR AHORA</a>
+>>>>>>> 120eab3d9bb204d5f0a5589919c061ff430912ab
                                     </div>
-                                    <div class="forma-pago col-4">
+                                    <div class="forma-pago col-8">
                                         <img src="/images/visa.png" width="70 " height="40">
                                         <img src="/images/mastercard.png" width="50 " height="30">
                                         <img src="/images/mercadopago.png" width="50 " height="30">
                                         <img src="/images/paypal.png" width="50 " height="30">
+                                    </div>
+                                    <div class="texto-detalle ">
+                                        <p>Tenemos todas las formas de pago ¡con envio gratis! <i class="bi bi-bag-fill"></i>
+                                            
+                                        </p>
                                     </div>
                                 </div>
                             </article>
@@ -79,10 +90,8 @@
                                 </div>
 
                                 <div class="col-8">
-                                    <p><%= product.name %></p>
-                                    <div class="precio-sugerencia">
+                                    <p class="col-12"><%= product.name %></p>
                                     <h3>$ <%=  product.price %></h3>
-                                    </div>
                                     <a class="btn btn-primary  " href="/users/login" role="button">COMPRAR AHORA</a>
 
                                 </div>

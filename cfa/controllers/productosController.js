@@ -78,6 +78,7 @@ const productosController = {
                     },
                 ]
             },
+            
 
         })
         let categoriasList = db.Categorys.findAll()
