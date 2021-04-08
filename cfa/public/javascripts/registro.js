@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
                 Password.classList.add('is-invalid');
                 break;
                 case !regExPass.test(Password.value):
-                    errorPassword.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres y debe contener una mayuscula y una minuscula"
+                    errorPassword.innerHTML = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula y una minuscula"
                     Password.classList.add('is-invalid');
                     break
             default:
@@ -95,7 +95,7 @@ window.addEventListener('load', () => {
                 Password2.classList.add('is-invalid');
                 break;
             case !regExPass.test(Password2.value):
-                errorPassword2.innerHTML = "La contraseña debe tener entre 6 y 8 caracteres"
+                errorPassword2.innerHTML = "La contraseña debe tener entre 6 y 12 caracteres"
                 Password2.classList.add('is-invalid');
                 break;
             case Password2.value != Password.value:

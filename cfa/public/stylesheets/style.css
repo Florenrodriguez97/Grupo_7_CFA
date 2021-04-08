@@ -1043,6 +1043,12 @@ font-weight: 600;
 
 
 @media (min-width: 768px) { /* Tablet */
+  .product-box-categ{
+    height: 451px;
+  }
+  .product-box_image{
+    min-height: 290px;
+  }
   .icons-nav{
     order: 1;
   }
@@ -1096,6 +1102,20 @@ font-weight: 600;
 }
 
 @media (min-width: 1024px) { /* Escritorio */
+  .product-box-categ{
+    height: 400px;
+  }
+  .product-box_image{
+    min-height: 230px;
+  }
+  
+  .product-box-categ-admin{
+    height: 430px;
+  }
+  .product-box_image-admin{
+    min-height: 210px;
+  }
+  
   .registro div{
     margin: 3% 0% 0% 5%;
   }

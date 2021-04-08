@@ -30,9 +30,9 @@
 
                         <% productos.forEach(producto=> { %>
                             <div class="productDiv col-12 col-sm-6 col-lg-3">
-                                <section class="product-box-categ">
+                                <section class="product-box-categ product-box-categ-admin">
                                     <a href="/admin/productos/detalle/<%- producto.id %>">
-                                        <figure class="product-box_image">
+                                        <figure class="product-box_image product-box_image-admin">
                                             <img src="/images/<%= producto.image %> " alt="imagen de producto">
                                         </figure>
                                         <article class="product-box_data-prod">
