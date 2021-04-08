@@ -605,18 +605,22 @@ button.btn.btn-outline-secondary{
 
 /* Detalle de producto */
 
+
 .container .product-title-1{
   font-size: 20px;
   color:#252525;
   margin-top: 40px;
   margin-bottom: 20px;
   font-weight: bold;
+  
 }
 
 .product-box{
   background-color: #ffffff;
   border-radius: 5px; 
   margin: 20px 0;
+  -webkit-filter: drop-shadow(8px 8px 10px gray);
+  filter: drop-shadow(8px 8px 10px gray);
   
 }
 
@@ -634,8 +638,10 @@ button.btn.btn-outline-secondary{
 .product-box_image img{
   width: 100%;
 }
-.precios-detalle{
-  margin-top: 10px;
+.btn-primary{
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .description{
@@ -677,21 +683,28 @@ button.btn.btn-outline-secondary{
 .precio-nuevo{
   color: #252525;
   font-size: 40px;
+  margin-top: 5%;
 
   
 }
 .forma-pago{
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  top: 50%;
+ margin-left: 15%;
 
 }
 .precios-detalle{
   position: relative;
   top: 20%;
 }
-
+.texto-detalle{
+  font-size: 15px;
+  color:#252525;
+  position: relative;
+  top: 15%;
+}
+.bi-bag-fill{
+  color: #00587a;
+  font-size: 25px;
+}
 
 /* Productos similares */
 
@@ -703,6 +716,8 @@ button.btn.btn-outline-secondary{
   padding-right: 20px;
   padding-left: 10px;
   border-radius: 10px;
+  -webkit-filter: drop-shadow(8px 8px 10px gray);
+  filter: drop-shadow(8px 8px 10px gray);
 }
 .product-sim_box h2{
   font-size: 25px;
