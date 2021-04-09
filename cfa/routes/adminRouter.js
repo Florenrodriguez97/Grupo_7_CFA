@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const path = require('path');
+
 const {actualizarProducto,borrarProducto,crearProducto,editarProducto,guardarProducto,listarProducto,index,categoria,buscar,detalle} = require('../controllers/adminController')
 const userCheck = require('../middlewares/adminCheck')
 const upload = require('../utils/multerAdmin');
