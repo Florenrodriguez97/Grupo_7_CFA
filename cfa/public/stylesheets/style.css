@@ -1005,10 +1005,16 @@ font-weight: 600;
 }
 .sanmiguel-titulo{
   font-weight: 600;
-
+}
+.mapa-ciudadela{
+  margin-bottom:20px;
+}
+.mapa-lanus{
+  margin-bottom:20px;
 }
 .mapa-sm{
   margin-bottom: 20px;
+  margin-top:20px;
 }
 
 /*Armado PC*/
@@ -1216,16 +1222,32 @@ font-weight: 600;
   }
   div.ciudadela-contacto{
       
-    margin-left: 200px;
+    margin-left: 100px;
   }
   div.lanus-contacto{
       
-    margin-left:200px;
+    margin-left:100px;
   }
   div.sanmiguel-contacto{
       
-    margin-left: 200px;
+    margin-left: 100px;
   }
+  
+  .mapa-ciudadela{
+    
+    margin-left: -110px;
+  }
+  .mapa-lanus{
+    width:720px;
+    margin-left: -110px;
+  }
+  .mapa-sm{
+    
+    margin-left: -110px;
+    width:720px;
+  }
+  
+
 }
 @media (min-width: 425px) {
 
