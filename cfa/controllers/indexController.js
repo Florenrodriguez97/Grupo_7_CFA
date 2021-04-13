@@ -1,17 +1,28 @@
 const db = require('../database/models');
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 const ProductCombo = require('../database/models/ProductCombo');
 const indexController = {
     index: (req,res) =>{
-        let aleatorio = db.Products.findAll()
+        let aleatorio = db.Products.findAll({
+            where:{
+                'featured':{
+                    [Op.eq]: 1
+                },    
+            },
+            order : [
+                [Sequelize.literal('RAND()')]
+            ],
+        })
         let aleatorio2 =db.Products.findAll({
             where:{
                 'offer':{
                     [Op.gt]: 1
-                }
+                },    
             },
-            limit : 4,
-            offset: 6
+            order : [
+                [Sequelize.literal('RAND()')]
+            ],
+            limit : 4
         })
         Promise.all([aleatorio,aleatorio2])
         .then(([aleatorio,aleatorio2])=>{
@@ -46,12 +57,20 @@ const indexController = {
         })
     },
     comboSeleccionado: (req,res)=> {
-        let comboSeleccionado = db.ProductCombo.findAll()
-  
-        res.render('comboSeleccionado', {
-            usuario:req.session.usuario
+        db.Combos.findAll({
+            where:{
+                id: req.params.id
+            },
+            include:[{association:"products"}],
         })
-
+        .then(productCombo => {
+            
+            res.render('comboSeleccionado', {
+            usuario:req.session.usuario,
+            productCombo
+        })
+        })
+        .catch(error =>{res.send(error)})
     }
 }
 

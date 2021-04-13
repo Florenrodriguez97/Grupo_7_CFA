@@ -11,7 +11,7 @@ router.get('/preguntas', preguntas);
 
 router.get('/armadoPc', armadoPc);
 
-router.get ('/armadoPc/comboSeleccionado', comboSeleccionado)
+router.get ('/armadoPc/comboSeleccionado/:id', comboSeleccionado)
 
 
 

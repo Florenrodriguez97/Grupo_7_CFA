@@ -41,6 +41,7 @@ module.exports = (sequelize, dataTypes) => {
     const config ={
         tableName: 'product',
         timestamps: false,
+        underscored: true
     }
 
     const Product = sequelize.define(alias,cols,config);
@@ -66,13 +67,12 @@ module.exports = (sequelize, dataTypes) => {
            
         })
         Product.belongsToMany(models.Combos ,{ //nombre del alias 'models.Users'
-           as: "pcarmadas",
-           through: "combo", //nombre de la tabla
+           as: "combos",
+           through: "product_combo", //nombre de la tabla
            foreignKey: "id_product",
            otherKey: "id_combo",
            timestamps: false
         })
-    
     }
     
     return Product

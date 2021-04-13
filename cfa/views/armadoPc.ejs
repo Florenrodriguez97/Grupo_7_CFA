@@ -14,69 +14,19 @@
           </div>
             
           <% combos.forEach(combo => { %>
-            <h2><%= combo.name %></h2>
-            <% }) %>
-            
-           <div class="homediv-home col-12 col-md-6 col-lg-3">
-            <section class="product-box-home">
-              <a href="/armadoPc/comboSeleccionado">
-                <figure class="product-box_image-home">
-                  <img src="/images/pcarmadas1.jpg" alt="imagen de producto">
-                </figure>
-                <article class="product-box-title-pc">
-                  <h2> Pc Armada Amd E1-6010n Dual Core 8 Gb RAM</h2>
-                  <p>$12312</p>
-                  
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="homediv-home col-12 col-md-6 col-lg-3">
-            <section class="product-box-home">
-              <a href="/armadoPc/comboSeleccionado">
-                <figure class="product-box_image-home">
-                  <img src="/images/pcarmadas2.jpg" alt="imagen de producto">
-                </figure>
-                <article class="product-box-title-pc">
-                  <h2>
-                    Pc Armada Amd Athlon 8gb Ram 240gb Ssd Wifi</h2>
-                  <p>$12312</p>
-                  
-                </article>
-              </a>
-            </section>
-          </div>
-          
-          <div class="homediv-home col-12 col-md-6 col-lg-3">
-            <section class="product-box-home">
-              <a href="/armadoPc/comboSeleccionado">
-                <figure class="product-box_image-home">
-                  <img src="/images/pcarmadas3.jpg" alt="imagen de producto">
-                </figure>
-                <article class="product-box-title-pc">
-                  <h2> Pc Armada Amd Dual Core E6010n 4gb Ram Ssd Wifi</h2>
-                  <p>$12312</p>
-                  
-                </article>
-              </a>
-            </section>
-          </div>
-
-          <div class="homediv-home col-12 col-md-6 col-lg-3">
-            <section class="product-box-home">
-              <a href="/armadoPc/comboSeleccionado">
-                <figure class="product-box_image-home">
-                  <img src="/images/pcarmadas4.jpg" alt="imagen de producto">
-                </figure>
-                <article class="product-box-title-pc">
-                  <h2> Pc Armada Amd E1-6010n Dual Core 8 Gb RAM
-                  Dual Core 8 Gb Ram</h2>
-                  <p>$12312</p>
-                  
-                </article>
-              </a>
-            </section>
-          </div>
+            <div class="homediv-home col-12 col-md-6 col-lg-3">
+              <section class="product-box-home">
+                <a href="/armadoPc/comboSeleccionado/<%- combo.id %>">
+                  <figure class="product-box_image-home">
+                    <img src="/images/<%= combo.image %>" alt="imagen de producto">
+                  </figure>
+                  <article class="product-box-title-pc">
+                    <h2><%= combo.name %></h2> 
+                  </article>
+                </a>
+              </section>
+            </div>
+          <% }) %>
     
         </div>
         

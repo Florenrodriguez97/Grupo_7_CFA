@@ -22,19 +22,9 @@ module.exports = (sequelize, dataTypes) => {
     const config ={
         tableName: 'product_combo',
         timestamps: false,
+        underscored: true, 
     }
     const ProductCombo = sequelize.define(alias,cols,config);
-
-    ProductCombo.assosiate=function(models){
-        ProductCombo.belongsTo(models.Products,{
-            as : 'product',
-            foreingKey : 'id_product'
-        }),
-        ProductCombo.belongsTo(models.Combos,{
-            as : 'combo',
-            foreingKey : 'id_combo'
-        })
-    }
     
 
     return ProductCombo
