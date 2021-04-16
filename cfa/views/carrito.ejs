@@ -15,95 +15,44 @@
                     <div class=" table-responsive">
                     <table class="table table-sm">
                         <thead>
-                            <tr>
-                                <th>
-                                    <div class="image"><img class="primer" src="/images/computadora1.png" alt="placeholder"></div>
-                                </th>
-                                <th>
-                                    <div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div>
-                                </th>
-                                <th>$30000</th>
-                                <th><label class="cant" for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles" min="1" max="100">
-                                </th>
-                                <th class="last"> <button type="button" class="btn btn-danger btn-sm">X</button>
-                                    </button></th>
-                            </tr>
+                            <% carrito.forEach(product => { %>
+                                <tr>
+                                    <th>
+                                        <div class="image"><img class="primer" src="/images/<%- product.product.image %>" alt="placeholder"></div>
+                                    </th>
+                                    <th>
+                                        <div class="content"><%= product.product.name %></div>
+                                    </th>
+                                    <th>$<%= product.product.price %></th>
+                                    <th>
+                                        
+                                    </th>
+                                    <th class="last"> 
+                                        <form action="/productos/carrito/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                        </form>
+                                        
+                                    </th>
+                                </tr>
+                            <% }) %>
+                            
                        
-                           <tr>
-                                <th>
-                                    <div class="image"><img class="primer" src="/images/auricular3.jpg" alt="placeholder"></div>
-                                </th>
-                                <th>
-                                    <div class="content">Auriculares Sennheiser PNG transparente</div>
-                                </th>
-                                <th>$5000</th>
-                                <th><label class="cant" for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles" min="1" max="100">
-                                </th>
-                                <th class="last"> <button type="button" class="btn btn-danger btn-sm">X</button></th>
-                            </tr>
+    
                         
                         
                        
+                          
+    
                             <tr>
-                                <th>
-                                    <div class="image"><img class="primer" src="/images/computadora1.png" alt="placeholder"></div>
-                                </th>
-                                <th>
-                                    <div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div>
-                                </th>
-                                <th>$30000</th>
-                                <th><label class="cant" for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles" min="1" max="100">
-                                </th>
-                                <th class="last"> <button type="button" class="btn btn-danger btn-sm">X</button></th>
-                            <tr>
-                       
-                     
-                       
-                            <tr>
-                                <th>
-                                    <div class="image"><img class="primer" src="/images/auriculares.png" alt="placeholder"></div>
-                                </th>
-                                <th>
-                                    <div class="content">Auriculares Sennheiser PNG transparente</div>
-                                </th>
-                                <th>$5000</th>
-                                <th><label class="cant" for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles" min="1" max="100">
-                                </th>
-                                <th> <button type="button" class="btn btn-danger btn-sm">X</button></th>
-                            </tr>
-                        
-                            <tr>
-                                <th>
-                                    <div class="image"><img class="primer" src="/images/computadora1.png" alt="placeholder"></div>
-                                </th>
-                                <th>
-                                    <div class="content">Notebook HP ENVY x360 Convertible 13-ay0103la</div>
-                                </th>
-                                <th>$30000</th><br>
-                                <th><label class="cant" for="tentacles">Cantidad:</label>
-                                    <input type="number" id="tentacles" name="tentacles" min="1" max="100">
-                                </th>
-                                <th class="last"> <button type="button" class="btn btn-danger btn-sm">X</button></th>
-                            </tr>
-                        
-                            <tr>
-                                <th><button type="button" class="btn btn-outline-primary">Seguir comprando</button>
-                                </th>
+                                <th><a class="btn btn-outline-primary" href="/productos">Seguir comprando</a></th>
                                 <th>
                                     <div class="content total">Total:</div>
                                 </th>
-                                <th>$500000</th>
-                                <th class="last"> <button type="button" class="btn btn-outline-secondary">Comprar</button></th>
-                                </th>
-                                
+                                <th>$<%= total %></th>
+                                <th class="last"><button type="button" class="btn btn-outline-secondary">Comprar</button></th>
+                                </th>       
                             </tr>
                         </thead>
-
-
                     </table>
                     </div>
                     </div>

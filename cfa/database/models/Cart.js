@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull : false,
         },
-        id_User:{
+        id_user:{
             type: dataTypes.INTEGER,
             allowNull : false,
         },
@@ -29,14 +29,14 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Cart = sequelize.define(alias,cols,config);
-    Cart.assosiate=function(models){
+    Cart.associate=function(models){
         Cart.belongsTo(models.Users,{
             as : 'user',
-            foreingKey : 'id_user'
+            foreignKey : 'id_user'
         }),
         Cart.belongsTo(models.Products,{
             as : 'product',
-            foreingKey : 'id_product'
+            foreignKey : 'id_product'
         })
     }
 

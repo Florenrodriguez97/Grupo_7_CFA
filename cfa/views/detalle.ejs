@@ -14,7 +14,8 @@
             <main>
                 <div class="container product-box-img col-12">
                     <div class="row">
-                        <h1 class="product-title-1 col-lg-12 col-12 "> Detalle del producto: <%= product.name %></h1>
+                        <h1 class="product-title-1 col-lg-12 col-12 "> Detalle del producto: <%= product.name %>
+                        </h1>
                     </div>
                     <div class="col-12">
                         <section class="product-box row ">
@@ -23,17 +24,24 @@
 
                             </section>
                             <article class="title-2 col-lg-6 col-12">
-                                <h2><%= product.name %></h2>
-                                <p class="description col-12"> <%= product.detail  %> </p>
+                                <h2>
+                                    <%= product.name %>
+                                </h2>
+                                <p class="description col-12">
+                                    <%= product.detail %>
+                                </p>
                                 <div class="precios-detalle row">
                                     <div class="precios-detalle col-12">
-                                        <h3 class="precio-nuevo"> $ <%= product.price %></h3>
-                                        <!-- <strike class="precio-tachado ">$11.650</strike> -->
-                                        <% if (product.offer >= 1) { %>
-                                          <span class="precio-descuento "><%= product.offer %>% off</span>
-                                        <% } %>
-                                       
-                                        <a class="btn btn-primary-detalle  " href="/users/login" role="button">COMPRAR AHORA</a>
+                                        <h3 class="precio-nuevo"> $ <%= product.price %>
+                                        </h3>
+                                        <% if (product.offer>= 1) { %>
+                                            <span class="precio-descuento ">
+                                                <%= product.offer %>% off
+                                            </span>
+                                            <% } %>
+                                                <form action="/productos/carrito/<%= product.id %>" method="POST">
+                                                    <button class="btn btn-primary-detalle" type="submit">Agregar al Carrito</button>
+                                                </form>
                                     </div>
                                     <div class="forma-pago col-8">
                                         <img src="/images/visa.png" width="70 " height="40">
@@ -42,8 +50,9 @@
                                         <img src="/images/paypal.png" width="50 " height="30">
                                     </div>
                                     <div class="texto-detalle ">
-                                        <p>Tenemos todas las formas de pago ¡con envio gratis! <i class="bi bi-bag-fill"></i>
-                                            
+                                        <p>Tenemos todas las formas de pago ¡con envio gratis! <i
+                                                class="bi bi-bag-fill"></i>
+
                                         </p>
                                     </div>
                                 </div>
@@ -61,40 +70,48 @@
                         <section class="similar_1 col-lg-6 col-12">
                             <h2 class="product-title_sim">Productos similares</h2>
                             <hr class="solid">
-                            <% limite.forEach(product => { %>
-                             <div class="product-simi-1 row">
-                                <div class="col-4">
-                                    <img src="/images/<%= product.image %>" width="100" height="100">
+                            <% limite.forEach(product=> { %>
+                                <div class="product-simi-1 row">
+                                    <div class="col-4">
+                                        <img src="/images/<%= product.image %>" width="100" height="100">
+                                    </div>
+                                    <div class="col-8">
+                                        <p>
+                                            <%= product.name %>
+                                        </p>
+                                        <h3>$<%= product.price %>
+                                        </h3>
+                                        <a class="btn btn-primary btn-detalle" href="/users/login" role="button">COMPRAR
+                                            AHORA</a>
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    <p><%= product.name %></p>
-                                    <h3>$<%= product.price %></h3>
-                                    <a class="btn btn-primary btn-detalle" href="/users/login" role="button">COMPRAR AHORA</a>
-                                </div>
-                            </div>
-                            <hr class="solid">
-                            <% }) %>
+                                <hr class="solid">
+                                <% }) %>
                         </section>
                         <section class="similar_1 col-lg-6 col-12">
                             <h2 class="product-title_sim">Quizás te interese</h2>
-                            
+
                             <hr class="solid">
-                            <% aleatorio2.forEach(product => { %>
-                             <div class="product-simi-1 row">
-                                <div class="col-4">
-                                    <img src="/images/<%= product.image %>" width="100" height="100">
+                            <% aleatorio2.forEach(product=> { %>
+                                <div class="product-simi-1 row">
+                                    <div class="col-4">
+                                        <img src="/images/<%= product.image %>" width="100" height="100">
+                                    </div>
+                                    <div class="col-8">
+                                        <p>
+                                            <%= product.name %>
+                                        </p>
+                                        <h3>$<%= product.price %>
+                                        </h3>
+                                        <a class="btn btn-primary btn-detalle" href="/users/login" role="button">COMPRAR
+                                            AHORA</a>
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    <p><%= product.name %></p>
-                                    <h3>$<%= product.price %></h3>
-                                    <a class="btn btn-primary btn-detalle" href="/users/login" role="button">COMPRAR AHORA</a>
-                                </div>
-                            </div>
-                            <hr class="solid">
-                            <% }) %>
+                                <hr class="solid">
+                                <% }) %>
                         </section>
 
-                        
+
                         <!-- <article class="product-similar_2 col-lg-6 col-12">
                             <h2 class="product-title_sim-2">Quizás te interese</h2>
                             <% aleatorio2.forEach(product => { %>
@@ -120,7 +137,7 @@
 
                     </section>
                 </div>
-                
+
 
 
             </main>

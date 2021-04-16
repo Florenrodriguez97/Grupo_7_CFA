@@ -16,11 +16,52 @@ const productosController = {
     },
 
     carrito: (req, res) => {
-        res.render('carrito',{
-            usuario:req.session.usuario
+        db.Carts.findAll({
+            where:{
+                id_user: req.session.usuario.id
+            },
+            include: [
+                { association: 'product' }
+            ]
         })
+        .then(result => {
+            
+            let total=0;
+            result.forEach(prod => {
+                total += prod.product.price
+            });
+            res.render('carrito',{
+            usuario:req.session.usuario,
+            carrito:result,
+            total
+        })
+        })
+        .catch(error => res.send(error))
     },
 
+    processCarrito: (req,res,next) => {
+        db.Carts.create({
+            quantity:1,
+            id_user:req.session.usuario.id,
+            id_product:req.params.id
+        })
+        .then(result => {
+            res.redirect(`/productos/detalle/${req.params.id}`);
+        })
+        .catch(error => console.log(error));
+    },
+    carritoDelete:(req,res)=>{
+        db.Carts.destroy({
+            where: {
+                id: req.params.idProd
+            }
+        })
+        .then(result => {
+            console.log('El producto ha sido eliminado del carrito')
+            return res.redirect('/productos/carrito');
+        })
+        .catch(error => res.send(error))
+    },
     detalle: (req, res) => {
         let product = db.Products.findByPk(req.params.id)
         
