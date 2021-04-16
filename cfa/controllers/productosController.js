@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 
 const productosController = {
     productos: (req, res) => {
@@ -25,17 +25,31 @@ const productosController = {
         let product = db.Products.findByPk(req.params.id)
         
         let aleatorio = db.Products.findAll({
-            limit : 2
+            order : [
+                [Sequelize.literal('RAND()')]
+            ],   
         })
         let aleatorio2 =db.Products.findAll({
+            order : [
+                [Sequelize.literal('RAND()')]
+            ],
             limit : 2
         })
         Promise.all([product,aleatorio,aleatorio2])
         .then(([product,aleatorio,aleatorio2])=>{
+            
+            let similares = aleatorio.filter(dato=>{
+                return dato.id_category==product.id_category
+            })
+            let limite = []
+            for (let i = 0; i < 1; i++) {
+                limite.push(similares[0]);
+                limite.push(similares[1]);
+            }
             res.render('detalle',{
                 usuario:req.session.usuario,
                 product,
-                aleatorio,
+                limite,
                 aleatorio2
             }); 
         }) 
@@ -78,8 +92,6 @@ const productosController = {
                     },
                 ]
             },
-            
-
         })
         let categoriasList = db.Categorys.findAll()
 

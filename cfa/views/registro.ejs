@@ -42,7 +42,7 @@
               <div class="col-md-12 col-lg-10">
                 <div class="form-floating mb-3">
                   <input type="password" class="form-control" id="Password" placeholder="Ingresa tu contraseña"
-                    name="password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : null %>">
+                    name="password" value="">
                   <p id="errorPassword" class="text-danger">
                     <%= (typeof errores!='undefined' && errores.password)?errores.password.msg : null %>
                   </p>
@@ -53,7 +53,7 @@
               <div class="col-md-12 col-lg-10">
                 <div class="form-floating mb-3">
                   <input type="password" class="form-control" id="Password2" placeholder="Ingresa tu contraseña"
-                    name="pass2" value="<%= (typeof data!='undefined' && data.pass2)?data.pass2 : null %>">
+                    name="pass2" value="">
                   <p id="errorPassword2" class="text-danger">
                     <%= (typeof errores!='undefined' && errores.pass2)?errores.pass2.msg : null %>
                   </p>
@@ -68,7 +68,7 @@
 
               <div class="col-md-12 col-lg-10">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="Name" placeholder="Nombre" name="name" value="<%= (typeof data!='undefined' && data.nombre)?data.nombre : null %>">
+                    <input type="text" class="form-control" id="Name" placeholder="Nombre" name="name" value="<%= (typeof data!='undefined' && data.name)?data.name : null %>">
                     <p id="errorName" class="text-danger"><%= (typeof errores!='undefined' && errores.name)?errores.name.msg :null %></p>
                     <label for="modelo">Nombre</label>
                 </div>
@@ -76,7 +76,7 @@
 
               <div class="col-md-12 col-lg-10">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="Last_name" placeholder="Apellido" name="last_name" value="<%= (typeof data!='undefined' && data.apellido)?data.apellido : null %>">
+                    <input type="text" class="form-control" id="Last_name" placeholder="Apellido" name="last_name" value="<%= (typeof data!='undefined' && data.last_name)?data.last_name : null %>">
                     <p id="errorLast_name" class="text-danger"><%= (typeof errores!='undefined' && errores.last_name)?errores.last_name.msg : null %></p>
                     <label for="modelo">Apellido</label>
                 </div>

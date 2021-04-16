@@ -708,6 +708,7 @@ button.btn.btn-outline-secondary{
   color:#252525;
   position: relative;
   top: 15%;
+  margin-bottom: 5%;
 }
 .bi-bag-fill{
   color: #00587a;
@@ -1123,15 +1124,15 @@ font-weight: 600;
   }
   div.ciudadela-contacto{
       
-    margin-left: 150px;
+    margin-left: 5%;
   }
   div.lanus-contacto{
       
-    margin-left: 150px;
+    margin-left: 5%;
   }
   div.sanmiguel-contacto{
       
-    margin-left: 150px;
+    margin-left: 5%;
   }
 
 }
@@ -1213,18 +1214,10 @@ font-weight: 600;
     position: relative;
     left: 4%; 
   }
-  div.ciudadela-contacto{
-      
-    margin-left: 20px;
+  .usuario-box_img{
+    min-height: 400px;
   }
-  div.lanus-contacto{
-      
-    margin-left: 20px;
-  }
-  div.sanmiguel-contacto{
-      
-    margin-left: 20px;
-  }
+  
   div.mapa {
     margin-left: 100px;
   }
@@ -1246,13 +1239,13 @@ font-weight: 600;
     margin-left: -110px;
   }
   .mapa-lanus{
-    width:720px;
+    
     margin-left: -110px;
   }
   .mapa-sm{
     
     margin-left: -110px;
-    width:720px;
+    
   }
   
 

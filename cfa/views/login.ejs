@@ -23,7 +23,7 @@
 
               <div class="col-md-12 col-lg-12">
                 <div class="form-floating mb-3">
-                    <input name="pass" type="password" id="Password" class="form-control"  placeholder="Ingresa Password" value="<%= (typeof data!='undefined' && data.pass)?data.pass : "" %>">
+                    <input name="pass" type="password" id="Password" class="form-control"  placeholder="Ingresa Password" value="">
                     <p id="errorPassword" class="text-danger"><%= (typeof errores!='undefined' && errores.pass)?errores.pass.msg : "" %></p>
                     <label for="modelo">Ingresa Password</label>
                 </div>
