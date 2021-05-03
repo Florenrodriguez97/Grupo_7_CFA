@@ -65,9 +65,16 @@ const indexController = {
         })
         .then(productCombo => {
             
+            let total=0;
+            productCombo.forEach(prod => {
+                prod.products.forEach(data => {
+                    total += data.price
+                })
+            });
             res.render('comboSeleccionado', {
             usuario:req.session.usuario,
-            productCombo
+            productCombo,
+            total
         })
         })
         .catch(error =>{res.send(error)})

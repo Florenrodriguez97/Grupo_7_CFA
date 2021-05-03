@@ -64,7 +64,6 @@ const productosController = {
     },
     detalle: (req, res) => {
         let product = db.Products.findByPk(req.params.id)
-        
         let aleatorio = db.Products.findAll({
             order : [
                 [Sequelize.literal('RAND()')]
@@ -78,7 +77,6 @@ const productosController = {
         })
         Promise.all([product,aleatorio,aleatorio2])
         .then(([product,aleatorio,aleatorio2])=>{
-            
             let similares = aleatorio.filter(dato=>{
                 return dato.id_category==product.id_category
             })
@@ -95,7 +93,6 @@ const productosController = {
             }); 
         }) 
     },
-
 
     categoria: (req, res) => {
         let items = db.Categorys.findOne({

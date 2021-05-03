@@ -29,14 +29,15 @@
                             </tr>
                             <% }) %>
                             <tr>
-                                <th><button type="button" class="btn btn-outline-primary">Seguir comprando</button></th>
-                                <th class="last"> <button type="button" class="btn btn-outline-secondary">Comprar</button></th>
-                                <th>
-                                    <div class="content total">Total:</div>
+                                <th><a type="button" class="btn btn-outline-primary" href="/productos">Seguir comprando</a></th>
+                                <th class=""> 
+                                    <!-- <form action="/productos/carrito/<%- productCombo.id %>" method="POST">
+                                        <button class="btn btn-primary-detalle" type="submit">Agregar al Carrito</button>
+                                    </form> -->
                                 </th>
-                                <th></th>
-                                
-        
+                                <th>
+                                    <div class="">Total: $<%- total %></div>
+                                </th>   
                             </tr>
                         </thead>
                     </table>
@@ -44,10 +45,6 @@
                     </div>
                 </div>
             </div>
-      
-
-            
-
             <%- include('partials/footer.ejs') %>
     </body>
 
